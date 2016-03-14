@@ -41,11 +41,11 @@ interval: 2000 //TIME IN MILLI SECONDS
 /*====================================
 VAGAS SLIDESHOW SCRIPTS
 ======================================*/
-// img/1.jpg this loads the bg
+// img/1.jpg
 $.vegas('slideshow', {
 backgrounds: [
-{ src: '', fade: 1000, delay: 9000 },
-{ src: '', fade: 1000, delay: 9000 },
+{ src: 'assets/img/darkgrey.jpg', fade: 1000, delay: 9000 },
+{ src: 'assets/img/darkgrey.jpg', fade: 1000, delay: 9000 },
 ]
 })('overlay', {
 /** SLIDESHOW OVERLAY IMAGE **/
