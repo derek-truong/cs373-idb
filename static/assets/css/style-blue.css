@@ -347,7 +347,7 @@ position: relative;
 -ms-transform: all 0.2s ease;
 -o-transition: all 0.2s ease;
 transition: all 0.2s ease;
-margin-bottom:30px;
+margin-bottom:20px;
 }
 .team-wrapper:hover {
 -webkit-transform: scale(1.1);
@@ -368,7 +368,6 @@ border-right: 1px solid #fff;
 border-left: 1px solid #fff;
 border-radius: 10px 10px 0px 0px;
 }
-
 .team-wrapper > .team-inner > a {
 color: rgb(40, 141, 203);
 width: 80px;
@@ -395,19 +394,61 @@ text-decoration: none;
 background-color: rgb(40, 141, 203);
 }
 
-
 .team-wrapper .description {
-padding: 30px 20px 20px;
+padding: 5px 20px 5px;
 text-align: center;
 border-bottom: 1px solid #fff;
 border-right: 1px solid #fff;
 border-left: 1px solid #fff;
+border-radius: 0px 0px 10px 10px;
 }
 
 .team-wrapper .description h5 {
 color: rgb(40, 141, 203);
 }
+.team-wrapper .description a {
+color: white;
+}
+.team-wrapper .description .bio {
+padding: 5px 20px 20px;
+text-align: left;
+}
 
+/*============================
+ABOUT PROJECT SECTION STYLES
+==============================*/
+.about-project {
+overflow-x: hidden;
+position: relative;
+-webkit-transition: all 0.2s ease;
+-moz-transition: all 0.2s ease;
+-ms-transform: all 0.2s ease;
+-o-transition: all 0.2s ease;
+transition: all 0.2s ease;
+/*border-top: 1px solid #fff;
+border-right: 1px solid #fff;
+border-left: 1px solid #fff;
+border-bottom: 1px solid #fff;*/
+/*border-radius: 10px 10px 10px 10px;*/
+margin-bottom:20px;
+}
+
+.about-project .description {
+padding: 5px 20px 5px;
+text-align: center;
+/*border-bottom: 1px solid #fff;
+border-right: 1px solid #fff;
+border-left: 1px solid #fff;*/
+}
+
+.about-project .description .bio {
+padding: 5px 20px 20px;
+text-align: left;
+}
+
+.about-project .description h5 {
+color: rgb(40, 141, 203);
+}
 
 
 /*============================
