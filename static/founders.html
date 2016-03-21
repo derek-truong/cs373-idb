@@ -227,11 +227,57 @@ This line is fixed so you can write anything
 
 	</div> -->
 		<div class="row animate-in" data-anim-type="fade-in-up">
-
-			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-				<div id="table_div"></div>
-			</div>
-
+			<!-- <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> -->
+				<!-- <div id="table_div" src="assets/js/custom.js"></div> -->
+			<!-- </div> -->
+			<table id="example" class="display" cellspacing="0" width="100%">
+				<thead>
+		            <tr>
+		                <th>Name</th>
+		                <th>Position</th>
+		                <th>Office</th>
+		                <th>Age</th>
+		                <th>Start date</th>
+		                <th>Salary</th>
+		            </tr>
+		        </thead>
+		        <tfoot>
+		            <tr>
+		                <th>Name</th>
+		                <th>Position</th>
+		                <th>Office</th>
+		                <th>Age</th>
+		                <th>Start date</th>
+		                <th>Salary</th>
+		            </tr>
+		        </tfoot>
+		        <tbody>
+		            <tr>
+		                <td data-search="Tiger Nixon">T. Nixon</td>
+		                <td>System Architect</td>
+		                <td>Edinburgh</td>
+		                <td>61</td>
+		                <td data-order="1303686000">Mon 25th Apr 11</td>
+		                <td data-order="320800">$320,800/y</td>
+		            </tr>
+		            <tr>
+		                <td data-search="Garrett Winters">G. Winters</td>
+		                <td>Accountant</td>
+		                <td>Tokyo</td>
+		                <td>63</td>
+		                <td data-order="1311548400">Mon 25th Jul 11</td>
+		                <td data-order="170750">$170,750/y</td>
+		            </tr>
+		            <tr>
+		                <td data-search="Ashton Cox">A. Cox</td>
+		                <td>Junior Technical Author</td>
+		                <td>San Francisco</td>
+		                <td>66</td>
+		                <td data-order="1231718400">Mon 12th Jan 09</td>
+		                <td data-order="86000">$86,000/y</td>
+		            </tr>
+		        </tbody>
+		    </table>
 		</div>
 	</div>
 </section>
@@ -295,9 +341,8 @@ consectetur tellus nec, porttitor nulla.
 <!--CONTACT SECTION END-->
 
 <!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME -->
-<!-- CORE JQUERY -->
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
+<!-- <script type="text/javascript" src="assets/js/googlecharts.js"></script> -->
+    <!-- <script type="text/javascript">
       google.charts.load('current', {'packages':['table']});
       google.charts.setOnLoadCallback(drawTable);
 
@@ -317,9 +362,12 @@ consectetur tellus nec, porttitor nulla.
 
         table.draw(data, {showRowNumber: true, width: '100%', height: '100%'});
       }
-    </script>
-
+    </script> -->
+<!-- CORE JQUERY -->
 <script src="assets/js/jquery-1.11.1.js"></script>
+<script src="assets/js/jquery-1.12.0.min.js"></script>
+<!-- DATA TABLE SCRIPT -->
+<script src="assets/js/jquery.dataTables.min.js"></script>
 <!-- BOOTSTRAP SCRIPTS -->
 <script src="assets/js/bootstrap.js"></script>
 <!-- EASING SCROLL SCRIPTS PLUGIN -->
