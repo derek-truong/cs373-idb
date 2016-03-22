@@ -21,22 +21,22 @@ def home_page():
 #Park detail page
 @app.route('/parks/<int:park_id>')
 def park_detail(park_id):
-	return render_template('startups.html')
+	return render_template('cities.html')
 
 #Restaurant detail page
 @app.route('/restaurants/<int:r_id>')
 def restaurant_detail(r_id):
-	return render_template('founders.html')
+	return render_template('attractions.html')
 
 # Parks Table
 @app.route('/parks')
 def parks():
-	return render_template('startups.html')
+	return render_template('cities.html')
 
 # Restaurants Table
 @app.route('/restaurants')
 def restaurants():
-	return render_template('founders.html')
+	return render_template('attractions.html')
 
 @app.route('/about')
 def about():

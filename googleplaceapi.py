@@ -42,7 +42,7 @@ while True:
     count = 0
     while count < len(js['results'] or count < 50) :
         name = js['results'][count]['name']
-        result = count
+        result = count+1
         try: 
             rating = js['results'][count]['rating']
         except:
