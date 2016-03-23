@@ -1,80 +1,112 @@
 FORMAT: 1A
-HOST: http://polls.apiblueprint.org/
 
-# SWEetStartup
+# SWEetSpots
 
-Polls is a simple API allowing consumers to view polls and vote in them.
+SWEetSpots is an API for receiving information on US cities, popular attractions in those cities, and popular restaurants.
 
-## Questions Collection [/questions]
-
-### List All Questions [GET]
+## Cities Collection [/scrape/cities]
+All cities data in our API
+### List All Cities [GET]
 
 + Response 200 (application/json)
 
-        [
-            {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 2048
-                    }, {
-                        "choice": "Python",
-                        "votes": 1024
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 512
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 256
-                    }
-                ]
-            }
-        ]
-
-### Create a New Question [POST]
-
-You may create your own question using this action. It takes a JSON
-object containing a question and a collection of answers in the
-form of choices.
-
-+ Request (application/json)
-
         {
-            "question": "Favourite programming language?",
-            "choices": [
-                "Swift",
-                "Python",
-                "Objective-C",
-                "Ruby"
+            "cities": [
+               {
+                    "city_id": City_ID_as_int,
+                    "name": City_Name_as_String,
+                    "population": Population_as_int,
+                    "country": Country_as_String,
+                    "demonym": Demonym_as_String,
+                    "elevation": Elevation_as_int,
+                    "description": Description_as_string
+                }
+               
             ]
         }
 
-+ Response 201 (application/json)
+## City Data [/scrape/cities/{name}]
+Specific city data in our API
+### Specific City Data [GET]
 
-    + Headers
++ Response 200 (application/json)
 
-            Location: /questions/2
+        {
+            "city_id": City_ID_as_int,
+            "name": City_Name_as_String,
+            "population": Population_as_int,
+            "country": Country_as_String,
+            "demonym": Demonym_as_String,
+            "elevation": Elevation_as_int,
+            "description": Description_as_string
+        }
 
-    + Body
+## Attractions Collection [/scrape/attractions]
+All attractions data in our API
+### List All Attractions [GET]
 
-            {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 0
-                    }, {
-                        "choice": "Python",
-                        "votes": 0
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 0
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 0
-                    }
-                ]
-            }
++ Response 200 (application/json)
+
+        {
+            "attractions": [
+                {
+                    "attraction_id": Attraction_ID_as_int,
+                    "name": Name_as_String,
+                    "rating": Rating_as_double,
+                    "location": Location_as_String,
+                    "num_reviews": Reviews_as_int,
+                    "category": Category_as_String,
+                    "description": Description_as_String
+                }
+            ]
+        }
+        
+## Attraction Data [/scrape/attractions/{name}]
+Specific attraction data in our API
+### Specific Attraction Data [GET]
+
++ Response 200 (application/json)
+
+        {
+            "attraction_id": Attraction_ID_as_int,
+            "name": Name_as_String,
+            "rating": Rating_as_double,
+            "location": Location_as_String,
+            "num_reviews": Reviews_as_int,
+            "category": Category_as_String,
+            "description": Description_as_String
+        }
+        
+## Restaurants Collection [/scrape/restaurants]
+All restaurants data in our API
+### List All Restaurants [GET]
+
++ Response 200 (application/json)
+
+        {
+            "restaurants":[
+                {
+                    "restaurant_id": Restaurant_ID_as_int,
+                    "name": Name_as_String,
+                    "rating": Rating_as_double,
+                    "location": Location_as_String,
+                    "Category": Category_as_String,
+                    "Address": Address_as_string
+                }
+            ]
+        }
+        
+## Resaurant Data [/scrape/restaurants/{name}]
+All restaurants data in our API
+### Specific Restaurant Data [GET]
+
++ Response 200 (application/json)
+
+        {
+            "restaurant_id": Restaurant_ID_as_int,
+            "name": Name_as_String,
+            "rating": Rating_as_double,
+            "location": Location_as_String,
+            "Category": Category_as_String,
+            "Address": Address_as_string
+        }
