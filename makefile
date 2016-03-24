@@ -1,4 +1,4 @@
-FILES :=							
+FILES :=							\
 	.gitignore						\
     .travis.yml						\
     apiary.apib						\
@@ -52,7 +52,7 @@ status:
 test: tests.tmp
 
 models.html: models.py
-	pydoc3 -w models
+	pydoc -w models
 
 IDB1.log:
 	git log > IDB1.log
