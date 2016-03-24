@@ -425,25 +425,55 @@ position: relative;
 -ms-transform: all 0.2s ease;
 -o-transition: all 0.2s ease;
 transition: all 0.2s ease;
+
 /*border-top: 1px solid #fff;
 border-right: 1px solid #fff;
-border-left: 1px solid #fff;
-border-bottom: 1px solid #fff;*/
-/*border-radius: 10px 10px 10px 10px;*/
-margin-bottom:20px;
+border-left: 1px solid #fff;*/
+}
+
+.about-project > a {
+color: rgb(40, 141, 203);
+width: 80px;
+height: 80px;
+border-radius: 50%;
+-moz-border-radius: 50%;
+-webkit-border-radius: 50%;
+margin: 0 auto -50px;
+display: block;
+color: rgb(40, 141, 203);
+z-index: 999;
+font-size: 40px;
+padding: 0px 15px 22px;
+background-color: #fff;
+-webkit-transition: all 0.8s ease-in-out;
+-moz-transition: all 0.8s ease-in-out;
+-o-transition: all 0.8s ease-in-out;
+transition: all 0.8s ease-in-out;
+}
+
+.about-project > a:hover {
+color: #fff;
+text-decoration: none;
+background-color: rgb(40, 141, 203);
 }
 
 .about-project .description {
-padding: 5px 20px 5px;
+padding: 0px 20px 5px;
 text-align: center;
 /*border-bottom: 1px solid #fff;
 border-right: 1px solid #fff;
 border-left: 1px solid #fff;*/
+/*border-radius: 0px 0px 10px 10px;*/
 }
 
 .about-project .description .bio {
 padding: 5px 20px 20px;
 text-align: left;
+}
+
+.about-project .description h3 {
+    padding: -10px 20px 5px 20px;
+    margin: -4px auto;   
 }
 
 .about-project .description h5 {
