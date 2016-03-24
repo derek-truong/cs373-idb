@@ -26,7 +26,7 @@ def cities():
 #city detail page
 @app.route('/cities/<int:city_id>')
 def city_detail(city_id):
-	city_pages = ['Houston', 'LA', 'NYC']
+	city_pages = ['LA', 'barcelona', 'prague']
 	return render_template(city_pages[city_id] + '.html')
 
 
@@ -38,7 +38,7 @@ def restaurants():
 #Restaurant detail page
 @app.route('/restaurants/<int:r_id>')
 def restaurant_detail(r_id):
-	r_pages = ['Chick-fil-a','OCafe', 'Kismet']
+	r_pages = ['eggslut', 'cera-23','den-noc']
 	return render_template(r_pages[r_id] + '.html')
 
 # Attractions Table
@@ -48,9 +48,9 @@ def attractions():
 
 
 
-@app.route('/attractions<int:a_id>')
+@app.route('/attractions/<int:a_id>')
 def attraction_detail(a_id):
-	a_pages = ['GuggenheimB','Menil', 'FW']
+	a_pages = ['urban-light','basilica', 'charles-bridge']
 	return render_template(a_pages[a_id] + '.html')
 
 
