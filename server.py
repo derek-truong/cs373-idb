@@ -18,32 +18,51 @@ port = int(os.getenv('VCAP_APP_PORT', 8080))
 def home_page():
 	return render_template('index.html')
 
-#Park detail page
-@app.route('/parks/<int:park_id>')
-def park_detail(park_id):
+#city detail page
+@app.route('/cities')
+def cities():
 	return render_template('cities.html')
 
-#Restaurant detail page
-@app.route('/restaurants/<int:r_id>')
-def restaurant_detail(r_id):
-	return render_template('attractions.html')
+#city detail page
+@app.route('/cities/<int:city_id>')
+def city_detail(city_id):
+	city_pages = ['Houston', 'LA', 'NYC']
+	return render_template(city_pages[city_id] + '.html')
 
-# Parks Table
-@app.route('/parks')
-def parks():
-	return render_template('cities.html')
 
 # Restaurants Table
 @app.route('/restaurants')
 def restaurants():
+	return render_template('restaurants.html')
+
+#Restaurant detail page
+@app.route('/restaurants/<int:r_id>')
+def restaurant_detail(r_id):
+	r_pages = ['Chick-fil-a','OCafe', 'Kismet']
+	return render_template(r_pages[r_id] + '.html')
+
+# Attractions Table
+@app.route('/attractions')
+def attractions():
 	return render_template('attractions.html')
+
+
+
+@app.route('/attractions<int:a_id>')
+def attraction_detail(a_id):
+	a_pages = ['GuggenheimB','Menil', 'FW']
+	return render_template(a_pages[a_id] + '.html')
+
+
 
 @app.route('/about')
 def about():
 	return render_template('about.html')
 
-
-
+# #Static html routes
+# @app.route('/<path:path>')
+# def static_html_route(path):
+# 	return app.serve_from_directory(path)
 
 
 
