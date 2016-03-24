@@ -32,7 +32,7 @@ class FunctionalTestCase(TestCase):
         query = session.query(city).all()
         startSize = len(query)
 
-        session.add(legislator(name = "TESTWRITE", country="TEST"))
+        session.add(city(name = "Austin", country="USA"))
         session.commit()
         query = session.query(city).all()
 
@@ -41,6 +41,116 @@ class FunctionalTestCase(TestCase):
         self.assertEqual(startSize + 1, endSize) 
 
     # s.query(Cities).filter(City.name == 'Barcelona').one()
+
+    def test_write_city2(self):
+        query = session.query(city).all()
+        startSize = len(query)
+
+        session.add(city(name = "Dallas", country="USA"))
+        session.add(city(name = "Seattle", country="USA"))
+        session.commit()
+        query = session.query(city).all()
+
+        endSize = len(query)
+
+        self.assertEqual(startSize + 2, endSize)
+
+    def test_write_city2(self):
+        query = session.query(city).all()
+        startSize = len(query)
+
+        session.add(city(name = "Las Vegas", country="USA"))
+        session.add(city(name = "Florida City", country="USA"))
+        session.add(city(name = "New York City", country="USA"))
+        session.commit()
+        query = session.query(city).all()
+
+        endSize = len(query)
+
+        self.assertEqual(startSize + 3, endSize)
+
+    def test_write_attraction(self):
+        query = session.query(attractions).all()
+        startSize = len(query)
+
+        session.add(attractions(name = "Six Flags", Location="San Antonio"))
+        session.commit()
+        query = session.query(city).all()
+
+        endSize = len(query)
+
+        self.assertEqual(startSize + 1, endSize)
+
+    def test_write_attraction2(self):
+        query = session.query(attractions).all()
+        startSize = len(query)
+
+        session.add(attractions(name = "Sea World", Location="San Antonio"))
+        session.add(attractions(name = "Miller Outdoor Theater", Location="Houston"))
+
+        session.commit()
+        query = session.query(city).all()
+
+        endSize = len(query)
+
+        self.assertEqual(startSize + 2, endSize)
+
+    def test_write_attraction3(self):
+        query = session.query(attractions).all()
+        startSize = len(query)
+
+        session.add(attractions(name = "University of Texas", Location="Austin"))
+        session.add(attractions(name = "River Walk", Location="San Antonio"))
+        session.add(attractions(name = "Statue of Liberty", Location="New York City"))
+
+        session.commit()
+        query = session.query(city).all()
+
+        endSize = len(query)
+
+        self.assertEqual(startSize + 3, endSize)
+
+    def test_write_restaurant(self):
+        query = session.query(attractions).all()
+        startSize = len(query)
+
+        session.add(restaurants(name = "Goode Company Seafood", Location="Houston"))
+
+        session.commit()
+        query = session.query(city).all()
+
+        endSize = len(query)
+
+        self.assertEqual(startSize + 1, endSize)
+
+    def test_write_restaurant2(self):
+        query = session.query(attractions).all()
+        startSize = len(query)
+
+        session.add(restaurants(name = "Cheesecake Factory", Location="Austin"))
+        session.add(restaurants(name = "Gueros Taco Bar", Location="Austin"))
+
+        session.commit()
+        query = session.query(city).all()
+
+        endSize = len(query)
+
+        self.assertEqual(startSize + 2, endSize)
+
+    def test_write_restaurant3(self):
+        query = session.query(attractions).all()
+        startSize = len(query)
+
+        session.add(restaurants(name = "Don", Location="Austin"))
+        session.add(restaurants(name = "Torchy's Tacos", Location="Austin"))
+        session.add(restaurants(name = "Le Turtle", Location="New York City"))
+
+        session.commit()
+        query = session.query(city).all()
+
+        endSize = len(query)
+
+        self.assertEqual(startSize + 3, endSize)
 
 	# ----------
     # API Routes
