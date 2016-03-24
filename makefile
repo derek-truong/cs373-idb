@@ -31,18 +31,16 @@ check:
 clean:
 	rm -f  .coverage
 	rm -f  *.pyc
-	rm -f  RunCollatz.tmp
-	rm -f  TestCollatz.tmp
 	rm -rf __pycache__
+	rm -f tests.tmp
 
 config:
 	git config -l
 
 scrub:
 	make clean
-	rm -f  Collatz.html
-	rm -f  Collatz.log
-	rm -rf collatz-tests
+	rm -f  models.html
+	rm -f  IDB1.log
 
 status:
 	make clean
@@ -51,22 +49,15 @@ status:
 	git remote -v
 	git status
 
-test: RunCollatz.tmp TestCollatz.tmp
+test: tests.tmp
 
-collatz-tests:
-	git clone https://github.com/cs373-spring-2016/collatz-tests.git
+models.html: models.py
+	pydoc3 -w models
 
-Collatz.html: Collatz.py
-	pydoc3 -w Collatz
+IDB1.log:
+	git log > IDB1.log
 
-Collatz.log:
-	git log > Collatz.log
-
-RunCollatz.tmp: RunCollatz.in RunCollatz.out RunCollatz.py
-	./RunCollatz.py < RunCollatz.in > RunCollatz.tmp
-	diff RunCollatz.tmp RunCollatz.out
-
-TestCollatz.tmp: TestCollatz.py
-	coverage3 run    --branch TestCollatz.py >  TestCollatz.tmp 2>&1
-	coverage3 report -m                      >> TestCollatz.tmp
-	cat TestCollatz.tmp
+tests.tmp: tests.py
+	coverage3 run    --branch tests.py >  tests.tmp 2>&1
+	coverage3 report -m                      >> tests.tmp
+	cat tests.tmp
