@@ -1,2 +1,2 @@
 # cs373-idb
-see blue.html for original template look
+Our website is http://sweetspots.me/
