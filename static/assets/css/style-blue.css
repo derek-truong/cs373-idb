@@ -482,10 +482,10 @@ color: rgb(40, 141, 203);
 
 
 /*============================
-CONTACT SECTION STYLES
+FOOTER SECTION STYLES
 ==============================*/
 
-#contact .contact-wrapper {
+/*#contact .contact-wrapper {
 background-color:rgba(255, 255, 255, 0.1);
 padding: 20px;
 border-radius: 5px;
@@ -509,11 +509,30 @@ font-size:10px;
 
 color:#fff;
 text-decoration:none;
+}*/
+
+/*============================
+FOOTER SECTION STYLES
+==============================*/
+#footer {
+    margin-top: 0;
+    padding-top: 0;
+    color: #999999;
 }
 
-/*
+.footer-div {
+    padding-top:25px;
+    color: #999;
+}
+.footer-div a,.footer-div a:hover {
+    font-size:10px;
+    color:#999;
+    text-decoration:none;
+}
+
+/*============================
 DATA TABLE STYLE
-*/
+==============================*/
 table.dataTable {
     width: 100%;
     margin: 0 auto;
