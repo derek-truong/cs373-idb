@@ -60,6 +60,6 @@ class Restaurant(Base):
 
 
 # engine = create_engine('mysql+mysqldb://swespt:@localhost/swespt?charset=utf8')
-# session = sessionmaker()
-# session.configure(bind=engine)
-# Base.metadata.create_all(engine)
+engine = create_engine('sqlite:///swespt.db')
+
+Base.metadata.create_all(engine)
