@@ -21,48 +21,58 @@ GOOGLE FONT
 ============================================================ */
 
 @import url(http://fonts.googleapis.com/css?family=Ubuntu); /* FREE GOOGLE FONT */
-@import url(http://fonts.googleapis.com/css?family=Oswald); /* FREE GOOGLE FONT */
+@import url(http://fonts.googleapis.com/css?family=Roboto); /* FREE GOOGLE FONT */
 
 
 
 /* =============================================================
 GENERAL STYLES
 ============================================================ */
-body {
-font-family: 'Ubuntu', sans-serif;
-color: #fff;
+html,body {
+    /*font-family: 'Ubuntu', sans-serif;
+    color: #fff;*/
+    margin: 0;
+    padding: 0;
+    height: 100%; /* needed for container min-height */
 }
 
 section {
-padding-top: 80px;
-padding-bottom: 40px;
+    padding-top: 80px;
+    padding-bottom: 40px;
 }
 
 .pad-bottom {
-padding-bottom: 60px;
+    padding-bottom: 30px;
 }
 
-.header {
-font-family: 'Oswald', sans-serif;
+/*.header {
+font-family: 'Roboto', sans-serif;
 padding-bottom: 30px;
 text-transform: uppercase;
-}
+}*/
+/*.set-radius-zero {
+    border-radius: 0px;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+}*/
 
 .header hr {
-width: 50px;
-border-top: 2px solid rgb(40, 141, 203);
+    width: 50px;
+    border-top: 2px solid rgb(102, 204, 204);
 }
 
 .content-wrapper {
-    margin-top: 75px;
+    /*margin-top: 75px;*/
+    position: relative;
     /*affects footer*/
-    min-height: 600px;
+    height: auto !important;
+    min-height: 100%;
     padding-bottom: 60px;
-    height: auto !importanta;
-    height: 100%;
 }
 .page-head-line {
     font-weight: 900;
+    /*padding-bottom: 20px;*/
+    /*border-bottom: 2px solid #F0677C;*/    
     text-transform: uppercase;
     color: #333;
     font-size: 20px;
@@ -101,40 +111,50 @@ margin: 5px;
 .btn-custom-one {
 background-color: transparent;
 color: #fff;
-border: 2px solid rgb(40, 141, 203);
+border: 2px solid rgb(204, 0, 102);
 }
 
 .btn-custom-one:hover {
-background-color: rgb(40, 141, 203);
+background-color: rgb(204, 0, 102);
 text-decoration: none;
 color: #fff;
 }
 
 .btn-custom-two {
 color: #fff;
-background-color: rgb(40, 141, 203);
-border: 2px solid rgb(40, 141, 203);
+background-color: rgb(204, 0, 102);
+border: 2px solid rgb(204, 0, 102);
+/*margin-bottom: 40px;*/
 }
 
 .btn-custom-two:hover {
-border: 2px solid rgb(40, 141, 203);
+border: 2px solid rgba(204, 0, 102, 0.5);
 text-decoration: none;
 color: #fff;
-background-color: transparent;
+background-color: rgba(204, 0, 102, 0.5);;
 }
 
 
 /* =============================================================
-MENU SECTION STYLES
+MENU SECTION STYLES - TODO match with html
 ============================================================ */
-.navbar-inverse {
-background-color: rgba(0, 0, 0, 0.4);
-border-color: transparent;
+/* TODO delete below?*/
+.navbar-brand {
+    width: 250px;
+    /*padding-top: 20px;*/
 }
 
+.navbar-inverse {
+    /*background-color: #C36464;*/
+    background-color: rgba(141, 204, 204, 0.95);
+    border-color: transparent;
+}
+.nav .navbar-nav .navbar-right li:hover {
+    border-bottom: 1px solid rgb(255,255,255);
+}
 .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
 background-color: transparent;
-border-bottom: 1px solid rgb(40, 141, 203);
+border-bottom: 1px solid rgb(255,255,255);
 }
 
 .navbar-inverse .navbar-nav > li > a {
@@ -145,56 +165,80 @@ letter-spacing: 2px;
 margin: 10px 20px 10px 20px;
 color: #FFF;
 }
+.navbar-inverse .navbar-nav > li > a:hover {
+    border-bottom: 1px solid rgb(255,255,255);
+}
 
 .navbar-inverse .navbar-brand, .navbar-inverse .navbar-brand:hover {
 color: #fff;
-font-weight: 900;
-font-family: 'Oswald', sans-serif;
+/*font-weight: 900;*/
+/*font-family: 'Roboto', sans-serif;*/
 }
 
 .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
 border-color: transparent;
 }
-.navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
+/*.navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
 background-color: rgb(40, 141, 203);
-}
-.navbar-inverse .navbar-toggle {
+}*/
+/*.navbar-inverse .navbar-toggle {
 border-color: rgb(40, 141, 203);
+}*/
+
+/* MENU LINKS SECTION*/
+.menu-section {
+    color: #fff;
+    background-color: rgba(141, 204, 204, 0.9);
 }
 
+#menu-top a {
+    color: #FFF;
+    text-decoration: none;
+    font-weight: 500;
+    /*padding: 10px 10px 10px 10px;*/
+    text-transform: uppercase;    
+}
+
+#menu-top li:hover, #menu-top li:focus{
+    background-color: rgba(141, 150, 150, 0.2);
+}
+
+#menu-top li > a {
+    border-bottom: none;
+}
+
+.menu-top-active {
+    /*background-color: #C36464;*/
+    background-color: rgba(141, 150, 150, 0.2);
+}
+
+/*.menu-section .nav li > a:hover, .menu-section .nav li > a:focus {
+    background-color: #A5D760!important;
+}
+
+.menu-section .dropdown-menu > li > a:hover,.menu-section .dropdown-menu > li > a:focus {
+    background-color: #A5D760!important;
+}*/
+
+.navbar-toggle {
+    color: #fff;
+    /*background-color: #F0677C;*/
+    border: 1px solid #fff;
+}
+
+/*.navbar {
+    color: #fff;
+    margin-bottom: 0px;
+}*/
 
 /* =============================================================
-HOME SECTION STYLES
+HOME SECTION STYLES - CAROUSEL
 ============================================================ */
-
-#home {
-text-align: center;
-padding-top: 120px;
-padding-bottom: 60px;
-}
-
-#home .social {
-display: block;
-margin: 50px 20px;
-}
-
-/*Carousel Slider*/
-
-#carousel-slider {
-padding: 50px 20px 5px 50px;
-}
-
-#carousel-slider h3 {
-line-height: 50px;
-font-family: 'Oswald', sans-serif;
-}
-
-#carousel-slider p {
-color: rgb(40, 141, 203);
-font-size: 16px;
-line-height: 25px;
-margin: 25px 20px;
-}
+.full-screen {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}   
 
 /* =============================================================
 SERVICES SECTION STYLES
@@ -219,12 +263,12 @@ background-color: rgba(255, 255, 255, 0.20);
 }
 
 #services h3 {
-font-family: 'Oswald', sans-serif;
+font-family: 'Roboto', sans-serif;
 }
 
 #services .services-wrapper i {
 margin: 5px;
-color: rgb(40, 141, 203);
+color: rgb(102,204,204);
 font-size: 60px;
 }
 
@@ -289,7 +333,7 @@ padding: 30px 20px;
 font-weight: 900;
 text-transform: uppercase;
 font-size: 30px;
-color: rgb(40, 141, 203);
+color: rgb(102,204,204);
 }
 
 .light-pricing .pricing-footer {
@@ -342,12 +386,12 @@ cursor: pointer;
 -moz-transition: all 0.5s ease-in-out;
 -o-transition: all 0.5s ease-in-out;
 transition: all 0.5s ease-in-out;
-border: 1px solid rgb(40, 141, 203);
+border: 1px solid rgb(102,204,204);
 }
 
 #work .work-wrapper:hover {
 background-color: transparent;
-border: 1px solid rgb(40, 141, 203);
+border: 1px solid rgb(102,204,204);
 
 opacity: .80; /* standard: ff gt 1.5, opera, safari */
 -ms-filter: "alpha(opacity=80)"; /* ie 8 */
@@ -378,13 +422,13 @@ position: relative;
 transition: all 0.2s ease;
 margin-bottom:20px;
 }
-.team-wrapper:hover {
+/*.team-wrapper:hover {
 -webkit-transform: scale(1.1);
 -moz-transform: scale(1.1);
 -ms-transform: scale(1.1);
 -o-transform: scale(1.1);
 transform: scale(1.1);
-}
+}*/
 .team-wrapper .team-inner {
 background-size: cover;
 background-position: center;
@@ -398,7 +442,7 @@ border-left: 1px solid #fff;
 border-radius: 10px 10px 0px 0px;
 }
 .team-wrapper > .team-inner > a {
-color: rgb(40, 141, 203);
+color: rgb(102,204,204);
 width: 80px;
 height: 80px;
 border-radius: 50%;
@@ -406,7 +450,7 @@ border-radius: 50%;
 -webkit-border-radius: 50%;
 margin: 0 auto -50px;
 display: block;
-color: rgb(40, 141, 203);
+color: rgb(102,204,204);
 z-index: 999;
 font-size: 40px;
 padding: 15px 22px;
@@ -420,7 +464,7 @@ transition: all 0.8s ease-in-out;
 .team-wrapper > .team-inner > a:hover {
 color: #fff;
 text-decoration: none;
-background-color: rgb(40, 141, 203);
+background-color: rgb(102,204,204);
 }
 
 .team-wrapper .description {
@@ -433,7 +477,7 @@ border-radius: 0px 0px 10px 10px;
 }
 
 .team-wrapper .description h5 {
-color: rgb(40, 141, 203);
+color: rgb(102,204,204);
 }
 .team-wrapper .description a {
 color: white;
@@ -461,7 +505,7 @@ border-left: 1px solid #fff;*/
 }
 
 .about-project > a {
-color: rgb(40, 141, 203);
+color: rgb(102,204,204);
 width: 80px;
 height: 80px;
 border-radius: 50%;
@@ -469,7 +513,7 @@ border-radius: 50%;
 -webkit-border-radius: 50%;
 margin: 0 auto -50px;
 display: block;
-color: rgb(40, 141, 203);
+color: rgb(102,204,204);
 z-index: 999;
 font-size: 40px;
 padding: 0px 15px 22px;
@@ -483,7 +527,7 @@ transition: all 0.8s ease-in-out;
 .about-project > a:hover {
 color: #fff;
 text-decoration: none;
-background-color: rgb(40, 141, 203);
+background-color: rgb(102,204,204);
 }
 
 .about-project .description {
@@ -506,7 +550,7 @@ text-align: left;
 }
 
 .about-project .description h5 {
-color: rgb(40, 141, 203);
+color: rgb(102,204,204);
 }
 
 /*============================
@@ -533,13 +577,16 @@ footer {
     color: #fff;
     font-size: 12px;
     text-align: right;
-    /*background-color: #C36464;*/
+    /*background-color: rgba(204, 0, 102, 0.9);*/
+    width: 100%;
+    bottom: 0; /* stick to bottom */
 }
 
 footer > a, footer > a:hover {
     color: #fff;
     text-decoration: underline;
 }
+
 /*============================
 DATA TABLE STYLE
 ==============================*/
@@ -557,7 +604,7 @@ table.dataTable tfoot th {
 table.dataTable thead th,
 table.dataTable thead td {
     padding: 10px 18px;
-    border-bottom: 1px solid #111
+    border-bottom: 1px solid #999
 }
 table.dataTable thead th:active,
 table.dataTable thead td:active {
@@ -566,7 +613,7 @@ table.dataTable thead td:active {
 table.dataTable tfoot th,
 table.dataTable tfoot td {
     padding: 10px 18px 6px 18px;
-    border-top: 1px solid #111
+    border-top: 1px solid #999
 }
 table.dataTable thead .sorting,
 table.dataTable thead .sorting_asc,
@@ -601,7 +648,7 @@ table.dataTable tbody tr {
     background-color: #ffffff
 }
 table.dataTable tbody tr.selected {
-    background-color: #B0BED9
+    background-color: #A5D760
 }
 table.dataTable tbody th,
 table.dataTable tbody td {
@@ -611,7 +658,7 @@ table.dataTable.row-border tbody th,
 table.dataTable.row-border tbody td,
 table.dataTable.display tbody th,
 table.dataTable.display tbody td {
-    border-top: 1px solid #ddd
+    /*border-top: 1px solid #ddd*/
 }
 table.dataTable.row-border tbody tr:first-child th,
 table.dataTable.row-border tbody tr:first-child td,
@@ -621,7 +668,7 @@ table.dataTable.display tbody tr:first-child td {
 }
 table.dataTable.cell-border tbody th,
 table.dataTable.cell-border tbody td {
-    border-top: 1px solid #ddd;
+    border-top: 1px solid #ff0000;
     border-right: 1px solid #ddd
 }
 table.dataTable.cell-border tbody tr th:first-child,
@@ -638,15 +685,18 @@ table.dataTable.display tbody tr.odd {
 }
 table.dataTable.stripe tbody tr.odd.selected,
 table.dataTable.display tbody tr.odd.selected {
-    background-color: #acbad4
+    /*background-color: #acbad4*/
+    background-color: #ff0000
 }
+/* highlights row on hover minus id/first col */
 table.dataTable.hover tbody tr:hover,
 table.dataTable.display tbody tr:hover {
     background-color: #f6f6f6
 }
 table.dataTable.hover tbody tr:hover.selected,
 table.dataTable.display tbody tr:hover.selected {
-    background-color: #aab7d1
+    /*background-color: #aab7d1*/
+    background-color: #ff0000;
 }
 table.dataTable.order-column tbody tr>.sorting_1,
 table.dataTable.order-column tbody tr>.sorting_2,
@@ -654,7 +704,7 @@ table.dataTable.order-column tbody tr>.sorting_3,
 table.dataTable.display tbody tr>.sorting_1,
 table.dataTable.display tbody tr>.sorting_2,
 table.dataTable.display tbody tr>.sorting_3 {
-    background-color: #fafafa
+    /*background-color: #fff;*/
 }
 table.dataTable.order-column tbody tr.selected>.sorting_1,
 table.dataTable.order-column tbody tr.selected>.sorting_2,
@@ -662,82 +712,104 @@ table.dataTable.order-column tbody tr.selected>.sorting_3,
 table.dataTable.display tbody tr.selected>.sorting_1,
 table.dataTable.display tbody tr.selected>.sorting_2,
 table.dataTable.display tbody tr.selected>.sorting_3 {
-    background-color: #acbad5
+    /*background-color: #acbad5*/
+    background-color: #ff0000
 }
 table.dataTable.display tbody tr.odd>.sorting_1,
 table.dataTable.order-column.stripe tbody tr.odd>.sorting_1 {
-    background-color: #f1f1f1
+    /*background-color: #f1f1f1*/
+    background-color: #f9f9f9
 }
 table.dataTable.display tbody tr.odd>.sorting_2,
 table.dataTable.order-column.stripe tbody tr.odd>.sorting_2 {
-    background-color: #f3f3f3
+    /*background-color: #f3f3f3*/
+    background-color: #f9f9f9
 }
 table.dataTable.display tbody tr.odd>.sorting_3,
 table.dataTable.order-column.stripe tbody tr.odd>.sorting_3 {
-    background-color: whitesmoke
+    background-color: #f9f9f9;
+    /*background-color: whitesmoke*/
 }
 table.dataTable.display tbody tr.odd.selected>.sorting_1,
 table.dataTable.order-column.stripe tbody tr.odd.selected>.sorting_1 {
-    background-color: #a6b4cd
+    /*background-color: #a6b4cd*/
+    background-color: #f9f9f9
+
 }
 table.dataTable.display tbody tr.odd.selected>.sorting_2,
 table.dataTable.order-column.stripe tbody tr.odd.selected>.sorting_2 {
-    background-color: #a8b5cf
+    /*background-color: #a8b5cf*/
+    background-color: #f9f9f9
 }
 table.dataTable.display tbody tr.odd.selected>.sorting_3,
 table.dataTable.order-column.stripe tbody tr.odd.selected>.sorting_3 {
-    background-color: #a9b7d1
+    /*background-color: #a9b7d1*/
+    background-color: #f9f9f9
 }
 table.dataTable.display tbody tr.even>.sorting_1,
 table.dataTable.order-column.stripe tbody tr.even>.sorting_1 {
-    background-color: #fafafa
+    background-color: none
 }
 table.dataTable.display tbody tr.even>.sorting_2,
 table.dataTable.order-column.stripe tbody tr.even>.sorting_2 {
-    background-color: #fcfcfc
+    /*background-color: #fcfcfc*/
+    background-color: #fafafa    
 }
 table.dataTable.display tbody tr.even>.sorting_3,
 table.dataTable.order-column.stripe tbody tr.even>.sorting_3 {
-    background-color: #fefefe
+    /*background-color: #fefefe*/
+    background-color: #fafafa    
 }
 table.dataTable.display tbody tr.even.selected>.sorting_1,
 table.dataTable.order-column.stripe tbody tr.even.selected>.sorting_1 {
-    background-color: #acbad5
+    background-color: #fafafa;
+    /*background-color: #acbad5*/
 }
 table.dataTable.display tbody tr.even.selected>.sorting_2,
 table.dataTable.order-column.stripe tbody tr.even.selected>.sorting_2 {
-    background-color: #aebcd6
+    /*background-color: #aebcd6*/
+    background-color: #fafafa    
 }
 table.dataTable.display tbody tr.even.selected>.sorting_3,
 table.dataTable.order-column.stripe tbody tr.even.selected>.sorting_3 {
-    background-color: #afbdd8
+    /*background-color: #afbdd8*/
+    background-color: #fafafa    
 }
 table.dataTable.display tbody tr:hover>.sorting_1,
 table.dataTable.order-column.hover tbody tr:hover>.sorting_1 {
-    background-color: #eaeaea
+    /*background-color: #eaeaea*/
 }
 table.dataTable.display tbody tr:hover>.sorting_2,
 table.dataTable.order-column.hover tbody tr:hover>.sorting_2 {
-    background-color: #ececec
+    /*background-color: #ececec*/
+    /*background-color: #eaeaea*/
+
 }
 table.dataTable.display tbody tr:hover>.sorting_3,
 table.dataTable.order-column.hover tbody tr:hover>.sorting_3 {
-    background-color: #efefef
+    /*background-color: #efefef*/
+    /*background-color: #eaeaea*/
+
 }
 table.dataTable.display tbody tr:hover.selected>.sorting_1,
 table.dataTable.order-column.hover tbody tr:hover.selected>.sorting_1 {
-    background-color: #a2aec7
+    /*background-color: #a2aec7*/
+    /*background-color: #eaeaea*/
+
 }
 table.dataTable.display tbody tr:hover.selected>.sorting_2,
 table.dataTable.order-column.hover tbody tr:hover.selected>.sorting_2 {
-    background-color: #a3b0c9
+    /*background-color: #a3b0c9*/
+    /*background-color: #eaeaea*/
+
 }
 table.dataTable.display tbody tr:hover.selected>.sorting_3,
 table.dataTable.order-column.hover tbody tr:hover.selected>.sorting_3 {
-    background-color: #a5b2cb
+    /*background-color: #a5b2cb*/
+    /*background-color: #eaeaea    */
 }
 table.dataTable.no-footer {
-    border-bottom: 1px solid #111
+    /*border-bottom: 1px solid #111*/
 }
 table.dataTable.nowrap th,
 table.dataTable.nowrap td {
@@ -904,7 +976,8 @@ table.dataTable td {
 .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
     color: white !important;
     border: 1px solid #111;
-    background-color: #585858;
+    /*background-color: #585858;*/
+    background-color: #ff0000;
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #585858), color-stop(100%, #111));
     background: -webkit-linear-gradient(top, #585858 0%, #111 100%);
     background: -moz-linear-gradient(top, #585858 0%, #111 100%);
@@ -950,7 +1023,7 @@ table.dataTable td {
 .dataTables_wrapper .dataTables_info,
 .dataTables_wrapper .dataTables_processing,
 .dataTables_wrapper .dataTables_paginate {
-    color: #fff
+    color: #aaaaaa
 }
 .dataTables_wrapper .dataTables_scroll {
     clear: both

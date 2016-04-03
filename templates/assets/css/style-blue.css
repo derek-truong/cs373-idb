@@ -21,7 +21,7 @@ GOOGLE FONT
 ============================================================ */
 
 @import url(http://fonts.googleapis.com/css?family=Ubuntu); /* FREE GOOGLE FONT */
-@import url(http://fonts.googleapis.com/css?family=Oswald); /* FREE GOOGLE FONT */
+@import url(http://fonts.googleapis.com/css?family=Roboto); /* FREE GOOGLE FONT */
 
 
 
@@ -43,7 +43,7 @@ padding-bottom: 60px;
 }
 
 .header {
-font-family: 'Oswald', sans-serif;
+font-family: 'Roboto', sans-serif;
 padding-bottom: 40px;
 text-transform: uppercase;
 }
@@ -120,7 +120,7 @@ color: #FFF;
 .navbar-inverse .navbar-brand, .navbar-inverse .navbar-brand:hover {
 color: #fff;
 font-weight: 900;
-font-family: 'Oswald', sans-serif;
+font-family: 'Roboto', sans-serif;
 }
 
 .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
@@ -157,7 +157,7 @@ padding: 50px 20px 5px 50px;
 
 #carousel-slider h3 {
 line-height: 50px;
-font-family: 'Oswald', sans-serif;
+font-family: 'Roboto', sans-serif;
 }
 
 #carousel-slider p {
@@ -190,7 +190,7 @@ background-color: rgba(255, 255, 255, 0.20);
 }
 
 #services h3 {
-font-family: 'Oswald', sans-serif;
+font-family: 'Roboto', sans-serif;
 }
 
 #services .services-wrapper i {

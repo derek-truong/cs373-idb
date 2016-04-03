@@ -10,6 +10,8 @@
     100% Free To use For Personal And Commercial Use.
 
     IN EXCHANGE JUST TELL PEOPLE ABOUT THIS WEBSITE
+    TODO: fix caegories -> categories
+    #work-div -> #sweetspots-div
    
 ========================================================  */
 
@@ -33,9 +35,9 @@ SLIDER SCRIPTS
 ======================================*/
 
 
-$('#carousel-slider').carousel({
-interval: 2000 //TIME IN MILLI SECONDS
-});
+// $('#carousel-slider').carousel({
+// 	interval: 3000 //TIME IN MILLI SECONDS
+// });
 
 
 /*====================================
@@ -44,12 +46,12 @@ VAGAS SLIDESHOW SCRIPTS
 // img/1.jpg
 $.vegas('slideshow', {
 backgrounds: [
-{ src: '../static/assets/img/darkgrey.jpg', fade: 1000, delay: 9000 },
-{ src: '../static/assets/img/darkgrey.jpg', fade: 1000, delay: 9000 },
+{ src: '../static/assets/img/white.jpg', fade: 1000, delay: 9000 },
+// { src: '../static/assets/img/darkgrey.jpg', fade: 1000, delay: 9000 },
 ]
 })('overlay', {
 /** SLIDESHOW OVERLAY IMAGE **/
-src: '../static/assets/js/vegas/overlays/06.png' // THERE ARE TOTAL 01 TO 15 .png IMAGES AT THE PATH GIVEN, WHICH YOU CAN USE HERE
+// src: '../static/assets/js/vegas/overlays/06.png' // THERE ARE TOTAL 01 TO 15 .png IMAGES AT THE PATH GIVEN, WHICH YOU CAN USE HERE
 });
 
 
@@ -71,7 +73,8 @@ type: 'inside'
 FILTER FUNCTIONALITY SCRIPTS
 ======================================*/
 $(window).load(function () {
-var $container = $('#work-div');
+// var $container = $('#work-div');
+var $container = $('#sweetspots-div');
 $container.isotope({
 filter: '*',
 animationOptions: {
@@ -102,11 +105,37 @@ return false;
 /*====================================
 WRITE YOUR CUSTOM SCRIPTS BELOW
 ======================================*/
+var $item = $('.carousel .item'); 
+var $wHeight = $(window).height();
+$item.eq(0).addClass('active');
+$item.height($wHeight); 
+$item.addClass('full-screen');
+
+$('.carousel img').each(function() {
+  var $src = $(this).attr('src');
+  var $color = $(this).attr('data-color');
+  $(this).parent().css({
+    'background-image' : 'url(' + $src + ')',
+    'background-color' : $color
+  });
+  $(this).remove();
+});
+
+$(window).on('resize', function (){
+  $wHeight = $(window).height();
+  $item.height($wHeight);
+});
+
+$('.carousel').carousel({
+  interval: 5000,
+  pause: "true"
+});
+
 /*====================================
 DATA TABLE FROM https://datatables.net/examples/advanced_init/html5-data-attributes.html
 ======================================*/
-$(document).ready(function() {
-    $('#example').DataTable();
-} );
+	$(document).ready(function() {
+	    $('#example').DataTable();
+	} );
 
 });
