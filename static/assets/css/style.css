@@ -34,6 +34,23 @@ html,body {
     margin: 0;
     padding: 0;
     height: 100%; /* needed for container min-height */
+
+}
+
+/*or try html inline: <div class="container" style="background-image: url('cs.jpg');">*/
+#restaurants .container {
+    position: absolute;
+    height: 100%;
+    background-image: url('../img/bgs/restaurant_sketchbw.jpg');
+    opacity: 0.1;
+    filter: alpha(opacity=10); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0% 50%;
+    -ms-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
 }
 
 section {
@@ -580,6 +597,7 @@ footer {
     /*background-color: rgba(204, 0, 102, 0.9);*/
     width: 100%;
     bottom: 0; /* stick to bottom */
+    background-image: inherit;
 }
 
 footer > a, footer > a:hover {
