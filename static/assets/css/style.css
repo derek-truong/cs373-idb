@@ -37,16 +37,26 @@ html,body {
 
 }
 
+a {
+  color: #66cccc;
+}
+
+a:hover, a:focus {
+  color: #E6BE42;
+  text-decoration: underline;
+}
+
 /*or try html inline: <div class="container" style="background-image: url('cs.jpg');">*/
 #restaurants .container {
     position: absolute;
     height: 100%;
-    background-image: url('../img/bgs/restaurant_sketchbw.jpg');
-    opacity: 0.1;
-    filter: alpha(opacity=10); 
+    background-image: url('../img/bgs/restaurant_sketchc.jpg');
+    opacity: 0.2;
+    filter: alpha(opacity=20); 
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 0% 50%;
+    background-attachment: fixed;
     -ms-background-size: cover;
     -o-background-size: cover;
     -moz-background-size: cover;
@@ -158,60 +168,89 @@ MENU SECTION STYLES - TODO match with html
 /* TODO delete below?*/
 .navbar-brand {
     width: 250px;
-    /*padding-top: 20px;*/
 }
 
 .navbar-inverse {
-    /*background-color: #C36464;*/
-    background-color: rgba(141, 204, 204, 0.95);
+    background-color: rgba(255,255,255, 0.8);
     border-color: transparent;
+    color: rgb(141, 204, 204); 
 }
+
 .nav .navbar-nav .navbar-right li:hover {
-    border-bottom: 1px solid rgb(255,255,255);
+    /*border-bottom: 1px solid rgb(255,255,255);*/
+    /*border-bottom: 1px solid rgb(141, 204, 204);*/
+    /*color: rgb(141, 204, 204);    */
+    color: white;
 }
 .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
-background-color: transparent;
-border-bottom: 1px solid rgb(255,255,255);
-}
-
-.navbar-inverse .navbar-nav > li > a {
-font-size: 12px;
-font-weight: 800;
-padding: 5px 0px;
-letter-spacing: 2px;
-margin: 10px 20px 10px 20px;
-color: #FFF;
+    background-color: transparent;
+    border-bottom: 1px solid rgb(141, 204, 204); 
+    color: rgb(141, 204, 204);
 }
 .navbar-inverse .navbar-nav > li > a:hover {
-    border-bottom: 1px solid rgb(255,255,255);
+    /*border-bottom: 1px solid rgb(255,255,255);*/
+    border-bottom: 1px solid rgb(141, 204, 204);
+    color: rgb(141, 204, 204);        
 }
-
+.navbar-inverse .navbar-nav > li > a {
+    font-size: 13px;
+    font-weight: 1200;
+    padding: 3px 0px;
+    letter-spacing: 2px;
+    margin: 10px 20px 10px 20px;
+    color: rgb(141, 204, 204);
+}
+/* navbar-brand text */
 .navbar-inverse .navbar-brand, .navbar-inverse .navbar-brand:hover {
-color: #fff;
-/*font-weight: 900;*/
-/*font-family: 'Roboto', sans-serif;*/
+    color:  rgb(141, 204, 204);
+    text-transform: bold;
+    font-size: 30px;
+    /*font-weight: 900;*/
+    /*font-family: 'Roboto', sans-serif;*/
 }
 
-.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
-border-color: transparent;
-}
+/*.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+    border-color: transparent;
+}*/
 /*.navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
 background-color: rgb(40, 141, 203);
-}*/
-/*.navbar-inverse .navbar-toggle {
+}
+.navbar-inverse .navbar-toggle {
 border-color: rgb(40, 141, 203);
 }*/
 
 /* MENU LINKS SECTION*/
-.menu-section {
+#home-menu-section {
+    position:absolute;
+}
+#home-menu-section .navbar-nav > li > a:hover {
+    border-bottom: 1px solid rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
+}
+#home-menu-section .navbar-nav > li > a {
+    font-size: 13px;
+    font-weight: 1200;
+    padding: 3px 0px;
+    letter-spacing: 2px;
+    margin: 10px 20px 10px 20px;
+    color: rgb(255, 255, 255);
+}
+
+#home-menu-section .navbar-brand {
+    color: white;
+    background-color: transparent;
+}
+
+#home-menu-section {
     color: #fff;
-    background-color: rgba(141, 204, 204, 0.9);
+    background-color: transparent;
 }
 
 #menu-top a {
-    color: #FFF;
+    /*color: #FFF;*/
+    color: rgb(141, 204, 204);
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 1200;
     /*padding: 10px 10px 10px 10px;*/
     text-transform: uppercase;    
 }
@@ -238,9 +277,10 @@ border-color: rgb(40, 141, 203);
 }*/
 
 .navbar-toggle {
-    color: #fff;
+    /*color: #fff;*/
+    color: rgba(141, 204, 204, 1);
     /*background-color: #F0677C;*/
-    border: 1px solid #fff;
+    /*border: 1px solid #fff;*/
 }
 
 /*.navbar {
@@ -573,31 +613,15 @@ color: rgb(102,204,204);
 /*============================
 FOOTER SECTION STYLES
 ==============================*/
-/*#footer {
-    margin-top: 0;
-    padding-top: 0;
-    color: #999999;
-}
-
-.footer-div {
-    padding-top:25px;
-    color: #999;
-}
-.footer-div a,.footer-div a:hover {
-    font-size:10px;
-    color:#999;
-    text-decoration:none;
-}*/
-
 footer {
     padding: 10px;
-    color: #fff;
+    /*color: #fff;*/
+    color: transparent;
     font-size: 12px;
     text-align: right;
     /*background-color: rgba(204, 0, 102, 0.9);*/
     width: 100%;
     bottom: 0; /* stick to bottom */
-    background-image: inherit;
 }
 
 footer > a, footer > a:hover {
@@ -614,6 +638,15 @@ table.dataTable {
     clear: both;
     border-collapse: separate;
     border-spacing: 0
+}
+table.dataTable a {
+    width: 100%;
+    margin: 0 auto;
+    clear: both;
+    border-collapse: separate;
+    border-spacing: 0;
+    color: #333;
+
 }
 table.dataTable thead th,
 table.dataTable tfoot th {
