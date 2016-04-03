@@ -10,7 +10,7 @@
     100% Free To use For Personal And Commercial Use.
 
     IN EXCHANGE JUST TELL PEOPLE ABOUT THIS WEBSITE
-    TODO: fix caegories -> categories
+    TODO: fix categories -> categories
     #work-div -> #sweetspots-div
    
 ========================================================  */
@@ -83,8 +83,8 @@ easing: 'linear',
 queue: false
 }
 });
-$('.caegories a').click(function () {
-$('.caegories .active').removeClass('active');
+$('.categories a').click(function () {
+$('.categories .active').removeClass('active');
 $(this).addClass('active');
 var selector = $(this).attr('data-filter');
 $container.isotope({
