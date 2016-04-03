@@ -44,13 +44,42 @@ padding-bottom: 60px;
 
 .header {
 font-family: 'Oswald', sans-serif;
-padding-bottom: 40px;
+padding-bottom: 30px;
 text-transform: uppercase;
 }
 
 .header hr {
 width: 50px;
 border-top: 2px solid rgb(40, 141, 203);
+}
+
+.content-wrapper {
+    margin-top: 75px;
+    /*affects footer*/
+    min-height: 600px;
+    padding-bottom: 60px;
+    height: auto !importanta;
+    height: 100%;
+}
+.page-head-line {
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #333;
+    font-size: 20px;
+    /*margin-bottom: 40px;*/
+}
+
+.btn {
+    border-radius: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+}
+
+.progress {
+    height: 8px;
+    border-radius: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
 }
 
 
@@ -480,41 +509,10 @@ text-align: left;
 color: rgb(40, 141, 203);
 }
 
-
 /*============================
 FOOTER SECTION STYLES
 ==============================*/
-
-/*#contact .contact-wrapper {
-background-color:rgba(255, 255, 255, 0.1);
-padding: 20px;
-border-radius: 5px;
--moz-border-radius: 5px;
--webkit-border-radius: 5px;
-margin-bottom: 40px;
-min-height:200px;
-}
-#contact .contact-wrapper h3 {
-color:rgb(40, 141, 203);
-}
-#contact .social-below {
-display: block;
-margin-top: 5px;
-}
-.footer-div {
-padding-top:25px;
-}
-.footer-div a,.footer-div a:hover {
-font-size:10px;
-
-color:#fff;
-text-decoration:none;
-}*/
-
-/*============================
-FOOTER SECTION STYLES
-==============================*/
-#footer {
+/*#footer {
     margin-top: 0;
     padding-top: 0;
     color: #999999;
@@ -528,8 +526,20 @@ FOOTER SECTION STYLES
     font-size:10px;
     color:#999;
     text-decoration:none;
+}*/
+
+footer {
+    padding: 10px;
+    color: #fff;
+    font-size: 12px;
+    text-align: right;
+    /*background-color: #C36464;*/
 }
 
+footer > a, footer > a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
 /*============================
 DATA TABLE STYLE
 ==============================*/
