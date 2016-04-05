@@ -18,11 +18,11 @@ class City(Base):
 
     id = Column(Integer, primary_key=True)
     name = Column(String(80), nullable=False)
-    state = Column(String(80), nullable=False)
-    elev = Column(Integer, nullable=False)
-    lat = Column(Float, nullable=False)
-    lon = Column(Float, nullable=False)
-    desc = Column(String(255), nullable=False)   
+    population = Column(Integer, nullable=True)
+    country = Column(String(80), nullable=True)
+    demonym = Column(String(80), nullable=True)
+    elevation = Column(Integer, nullable=True)
+    description = Column(String(255), nullable=True)   
 
 """
 Model for attractions.
@@ -34,14 +34,10 @@ class Attraction(Base):
 
     id = Column(Integer, primary_key=True)
     name = Column(String(80), nullable=False)
-    city_id = Column(Integer, ForeignKey('city.id'), nullable=False)
     rating = Column(Float, nullable=False)
-    num_rating = Column(Integer, nullable=False)
-    categ = Column(String(80), nullable=False)
-    lat = Column(Float, nullable=False)
-    lon = Column(Float, nullable=False)
-    desc = Column(String(255), nullable=False)
-
+    city_id = Column(Integer, ForeignKey('city.id'), nullable=False)
+    num_reviews = Column(Integer, nullable=False)
+    category = Column(String(80), nullable=False)
 
 
 """
@@ -53,9 +49,9 @@ class Restaurant(Base):
 
     id = Column(Integer, primary_key=True)
     name = Column(String(80), nullable=False)
-    city_id = Column(Integer, ForeignKey('city.id'), nullable=False)
     rating = Column(Float, nullable=False)
-    categ = Column(String(30), nullable=False)
+    city_id = Column(Integer, ForeignKey('city.id'), nullable=False)
+    category = Column(String(30), nullable=False)
     address = Column(String(255), nullable=False) 
 
 

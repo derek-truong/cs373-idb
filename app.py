@@ -4,6 +4,9 @@ import os
 from flask import Flask, render_template, request, redirect, url_for
 from flask.ext.script import Manager
 from flask.ext.sqlalchemy import SQLAlchemy
+from models import Base, City, Attraction, Restaurant
+import dbops
+import json
 
 app = Flask(__name__)
 manager = Manager(app)
@@ -50,15 +53,52 @@ def attraction_detail(a_id):
 	a_pages = ['urban-light','basilica', 'charles-bridge']
 	return render_template(a_pages[a_id] + '.html')
 
-
-
 @app.route('/about')
 def about():
 	return render_template('about.html')
 
 
+######### API ROUTES ###########
+
+
+#City detail api page
+@app.route('/api/cities/<int:city_id>')
+def city_detail_api(city_id):
+	c = dbops.db_read(City, city_id)
+	return json.dumps(dbops.serialize(c))
+
+#Attraction detail api page
+@app.route('/api/attractions/<int:a_id>')
+def attraction_detail_api(a_id):
+	a = dbops.db_read(Attraction, a_id)
+	return json.dumps(dbops.serialize(a))
+
+#Restaurant detail api page
+@app.route('/api/restaurants/<int:r_id>')
+def restaurant_detail_api(r_id):
+	r = dbops.db_read(Restaurant, r_id)
+	return json.dumps(dbops.serialize(a))
+
+#Cities api page
+@app.route('/api/cities')
+def city_api():
+	cl = [dbops.serialize(c) for c in dbops.db_read_all(City)]
+	return json.dumps(cl)
+
+#Attractions api page
+@app.route('/api/attractions')
+def attraction_api():
+	al = [dbops.serialize(a) for a in dbops.db_read_all(Attraction)]
+	return json.dumps(al)
+
+#Restaurant api page
+@app.route('/api/restaurants')
+def restaurant_api():
+	rl = [dbops.serialize(r) for r in dbops.db_read_all(Restaurant)]
+	return json.dumps(rl)
 
 
 
 if __name__ == '__main__':
-    manager.run()
+    # manager.run()
+    app.run()
