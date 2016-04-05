@@ -1,0 +1,402 @@
+[
+    {
+        "country": "Netherlands",
+        "demonym": "Amsterdammer",
+        "id": 1,
+        "population": 826659,
+        "elevation": 2,
+        "name": "Amsterdam"
+    },
+    {
+        "country": "United States",
+        "demonym": "Austinite",
+        "id": 2,
+        "population": 912791,
+        "elevation": 149.0472,
+        "name": "Austin"
+    },
+    {
+        "country": "United States",
+        "demonym": "Baltimorean",
+        "id": 3,
+        "population": 620961,
+        "elevation": 10,
+        "name": "Baltimore"
+    },
+    {
+        "country": "Spain",
+        "demonym": "Barcelonan, Barcelonian",
+        "id": 4,
+        "population": 1620943,
+        "elevation": 12,
+        "name": "Barcelona"
+    },
+    {
+        "country": "Norway",
+        "demonym": "Bergensar",
+        "id": 5,
+        "population": 272520,
+        "elevation": 987,
+        "name": "Bergen"
+    },
+    {
+        "country": "Germany",
+        "demonym": "Berliner",
+        "id": 6,
+        "population": 3562166,
+        "elevation": 34,
+        "name": "Berlin"
+    },
+    {
+        "country": "United States",
+        "demonym": "Bostonian",
+        "id": 7,
+        "population": 655884,
+        "elevation": 42.9768,
+        "name": "Boston"
+    },
+    {
+        "country": "Argentina",
+        "demonym": "porteño , porteña",
+        "id": 8,
+        "population": 2890151,
+        "elevation": 25,
+        "name": "Buenos Aires"
+    },
+    {
+        "country": "United Kingdom",
+        "demonym": "Cantabrigian",
+        "id": 9,
+        "population": 4,
+        "elevation": 6,
+        "name": "Cambridge"
+    },
+    {
+        "country": "United States",
+        "demonym": "NULL",
+        "id": 10,
+        "population": 120083,
+        "elevation": 6.096,
+        "name": "Charleston"
+    },
+    {
+        "country": "United States",
+        "demonym": "Chicagoan",
+        "id": 11,
+        "population": 2695598,
+        "elevation": 181.0512,
+        "name": "Chicago"
+    },
+    {
+        "country": "Germany",
+        "demonym": "NULL",
+        "id": 12,
+        "population": 1057327,
+        "elevation": 37,
+        "name": "Cologne"
+    },
+    {
+        "country": "United States",
+        "demonym": "Denverite",
+        "id": 13,
+        "population": 600158,
+        "elevation": 1563.624,
+        "name": "Denver"
+    },
+    {
+        "country": "United Kingdom",
+        "demonym": "Scots language",
+        "id": 14,
+        "population": 492680,
+        "elevation": 47,
+        "name": "Edinburgh"
+    },
+    {
+        "country": "Italy",
+        "demonym": "Florentine, fiorentino",
+        "id": 15,
+        "population": 381037,
+        "elevation": 50,
+        "name": "Florence"
+    },
+    {
+        "country": "Spain",
+        "demonym": "granadino , granadina",
+        "id": 16,
+        "population": 237540,
+        "elevation": 738,
+        "name": "Granada"
+    },
+    {
+        "country": "China",
+        "demonym": "Hongkongese",
+        "id": 17,
+        "population": 7234800,
+        "elevation": "429",
+        "name": "Hong Kong"
+    },
+    {
+        "country": "United States",
+        "demonym": "Honolulan",
+        "id": 18,
+        "population": 390738,
+        "elevation": 6,
+        "name": "Honolulu"
+    },
+    {
+        "country": "United States",
+        "demonym": "Houstonian",
+        "id": 19,
+        "population": 2099451,
+        "elevation": 13,
+        "name": "Houston"
+    },
+    {
+        "country": "Turkey",
+        "demonym": "Istanbulite",
+        "id": 20,
+        "population": 14025646,
+        "elevation": 39,
+        "name": "Istanbul"
+    },
+    {
+        "country": "United States",
+        "demonym": "Las Vegan",
+        "id": 21,
+        "population": 583756,
+        "elevation": 609.9048,
+        "name": "Las Vegas"
+    },
+    {
+        "country": "Portugal",
+        "demonym": "Lisboeta or Alfacinha",
+        "id": 22,
+        "population": 545245,
+        "elevation": 2,
+        "name": "Lisbon"
+    },
+    {
+        "country": "United Kingdom",
+        "demonym": "Londoner",
+        "id": 23,
+        "population": 8630000,
+        "elevation": 35,
+        "name": "London"
+    },
+    {
+        "country": "United States",
+        "demonym": "Angeleno",
+        "id": 24,
+        "population": 3928864,
+        "elevation": 93,
+        "name": "Los Angeles"
+    },
+    {
+        "country": "France",
+        "demonym": "Lyonese, Lyonnais",
+        "id": 25,
+        "population": 496343,
+        "elevation": 349,
+        "name": "Lyon"
+    },
+    {
+        "country": "Spain",
+        "demonym": "Madrilenian, Madrilene",
+        "id": 26,
+        "population": 3165235,
+        "elevation": 667,
+        "name": "Madrid"
+    },
+    {
+        "country": "United States",
+        "demonym": "NULL",
+        "id": 27,
+        "population": 144444,
+        "elevation": 3055.0105,
+        "name": "Maui"
+    },
+    {
+        "country": "Mexico",
+        "demonym": "Mexiqueño",
+        "id": 28,
+        "population": 8851080,
+        "elevation": 2250,
+        "name": "Mexico City"
+    },
+    {
+        "country": "Italy",
+        "demonym": "Milanese",
+        "id": 29,
+        "population": 1341667,
+        "elevation": 120,
+        "name": "Milan"
+    },
+    {
+        "country": "France",
+        "demonym": "Montois",
+        "id": 30,
+        "population": 44,
+        "elevation": 80,
+        "name": "Mont Saint Michel"
+    },
+    {
+        "country": "United States",
+        "demonym": "New Orleanian",
+        "id": 31,
+        "population": 384320,
+        "elevation": -1.9812,
+        "name": "New Orleans"
+    },
+    {
+        "country": "United States",
+        "demonym": "New Yorker",
+        "id": 32,
+        "population": 8491079,
+        "elevation": 10,
+        "name": "New York City"
+    },
+    {
+        "country": "United States",
+        "demonym": "Orlandoan",
+        "id": 33,
+        "population": 238300,
+        "elevation": 24.9936,
+        "name": "Orlando"
+    },
+    {
+        "country": "France",
+        "demonym": "parisien",
+        "id": 34,
+        "population": 2241346,
+        "elevation": "35",
+        "name": "Paris"
+    },
+    {
+        "country": "United States",
+        "demonym": "Philadelphian",
+        "id": 35,
+        "population": 1560297,
+        "elevation": 12,
+        "name": "Philadelphia"
+    },
+    {
+        "country": "Czech Republic",
+        "demonym": "Praguer",
+        "id": 36,
+        "population": 1259079,
+        "elevation": 399,
+        "name": "Prague"
+    },
+    {
+        "country": "United States",
+        "demonym": "Puerto Ricans",
+        "id": 37,
+        "population": 3548397,
+        "elevation": "1338",
+        "name": "Puerto Rico"
+    },
+    {
+        "country": "New Zealand",
+        "demonym": "NULL",
+        "id": 38,
+        "population": 28224,
+        "elevation": 310,
+        "name": "Queenstown"
+    },
+    {
+        "country": "Brazil",
+        "demonym": "Carioca",
+        "id": 39,
+        "population": 6453682,
+        "elevation": 0,
+        "name": "Rio de Janeiro"
+    },
+    {
+        "country": "Italy",
+        "demonym": "Roman",
+        "id": 40,
+        "population": 2869461,
+        "elevation": 21,
+        "name": "Rome"
+    },
+    {
+        "country": "United States",
+        "demonym": "San Franciscan",
+        "id": 41,
+        "population": 852469,
+        "elevation": 15.8496,
+        "name": "San Francisco"
+    },
+    {
+        "country": "United States",
+        "demonym": "Seattleite",
+        "id": 42,
+        "population": 608660,
+        "elevation": 0,
+        "name": "Seattle"
+    },
+    {
+        "country": "Spain",
+        "demonym": "sevillano , sevillana",
+        "id": 43,
+        "population": 703021,
+        "elevation": 7,
+        "name": "Seville"
+    },
+    {
+        "country": "Australia",
+        "demonym": "Sydneysider",
+        "id": 44,
+        "population": 4840600,
+        "elevation": "19",
+        "name": "Sydney"
+    },
+    {
+        "country": "Japan",
+        "demonym": "Tokyoite",
+        "id": 45,
+        "population": 13185502,
+        "elevation": 23,
+        "name": "Tokyo"
+    },
+    {
+        "country": "Canada",
+        "demonym": "Vancouverite",
+        "id": 46,
+        "population": 603502,
+        "elevation": 0,
+        "name": "Vancouver"
+    },
+    {
+        "country": "Italy",
+        "demonym": "Venetian",
+        "id": 47,
+        "population": 264579,
+        "elevation": 1,
+        "name": "Venice"
+    },
+    {
+        "country": "Austria",
+        "demonym": "Viennese, Wiener",
+        "id": 48,
+        "population": 2,
+        "elevation": 150.876,
+        "name": "Vienna"
+    },
+    {
+        "country": "United States",
+        "demonym": "Washingtonian",
+        "id": 49,
+        "population": 658893,
+        "elevation": 124.6632,
+        "name": "Washington D.C."
+    },
+    {
+        "country": "Japan",
+        "demonym": "NULL",
+        "id": 50,
+        "population": 3697894,
+        "elevation": 43,
+        "name": "Yokohama"
+    }
+]
