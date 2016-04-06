@@ -34,7 +34,16 @@ html,body {
     margin: 0;
     padding: 0;
     height: 100%; /* needed for container min-height */
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 24px;
+    line-height: 1.42857143;
+    color: #333;
+    background-color: #fff;
 
+}
+
+p{
+    margin: 0 125px 250px 200px;
 }
 
 a {
@@ -119,6 +128,10 @@ text-transform: uppercase;
     -moz-border-radius: 0px;
 }
 
+.carousel-caption > h3 {
+    font-size:40px;
+    letter-spacing: 3px;
+} 
 
 /* =============================================================
 CUSTOM BUTTON STYLES
@@ -230,7 +243,7 @@ border-color: rgb(40, 141, 203);
 }
 #home-menu-section .navbar-nav > li > a {
     font-size: 13px;
-    font-weight: 1200;
+    font-weight: bold;
     padding: 3px 0px;
     letter-spacing: 2px;
     margin: 10px 20px 10px 20px;
