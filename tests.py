@@ -141,6 +141,6 @@ class FunctionalTestCase(TestCase):
 
     
 
-# if __name__ == "__main__" :
-#     main()  
+if __name__ == "__main__" :
+    main()  
 

@@ -49,7 +49,7 @@ status:
 	git remote -v
 	git status
 
-test: tests.tmp
+test: tests.out
 
 models.html: models.py
 	pydoc -w models
@@ -57,7 +57,6 @@ models.html: models.py
 IDB1.log:
 	git log > IDB1.log
 
-tests.tmp: tests.py
-	coverage3 run    --branch tests.py >  tests.tmp 2>&1
-	coverage3 report -m                      >> tests.tmp
-	cat tests.tmp
+tests.out: tests.py
+	coverage run tests.py
+	coverage report --include=models.py
