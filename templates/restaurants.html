@@ -10,6 +10,13 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <![endif]-->
     <title>SWEetSpots</title>
+    <!-- REACT -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.8/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.8/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.5/marked.min.js"></script>
+
     <!-- BOOTSTRAP CORE CSS -->
     <link href="../static/assets/css/bootstrap.css" rel="stylesheet" />
     <!-- ION ICONS STYLES -->
@@ -37,15 +44,11 @@
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-    			<span class="icon-bar"></span>
-    			<span class="icon-bar"></span>
-    			<span class="icon-bar"></span>
-    			</button>
-                    <a class="navbar-brand" href="/home">
-
-    			SWEetSpots
-
-    			</a>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                </button>
+                    <a class="navbar-brand" href="/home">SWEetSpots</a>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
@@ -53,8 +56,6 @@
                         <li><a href="/attractions">ATTRACTIONS</a></li>
                         <li class="active"><a href="/restaurants">RESTAURANTS</a></li>
                         <li><a href="/about">ABOUT</a></li>
-                        <!-- <li><a href="#grid">GRID</a></li>
-    			 -->
                     </ul>
                 </div>
             </div>
@@ -63,209 +64,74 @@
         <div id="restaurants">
             <div class="container">
             </div>
-        </div>        
-        <!--GRID SECTION START-->
+        </div>
+        <!--TABLE SECTION START-->
         <section id="grid">
-
             <div class="container">
                 <div class="row text-center header animate-in" data-anim-type="fade-in-up">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-
                         <h3>Restaurants</h3>
                         <hr />
                     </div>
                 </div>
-                <!-- <div class="row pad-bottom animate-in" data-anim-type="fade-in-up">
-
-                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-                    <h2>1/4 Section</h2>
-                    <p>
-                    Morbi mollis lectus et ipsum sollicitudin varius.
-                    Aliquam tempus ante placerat,
-                    consectetur tellus nec, porttitor nulla.
-                    </p>
-
-                    </div>
-                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-                    <h2>1/4 Section</h2>
-                    <p>
-                    Morbi mollis lectus et ipsum sollicitudin varius.
-                    Aliquam tempus ante placerat,
-                    consectetur tellus nec, porttitor nulla.
-                    </p>
-
-                    </div>
-                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-                    <h2>1/4 Section</h2>
-                    <p>
-                    Morbi mollis lectus et ipsum sollicitudin varius.
-                    Aliquam tempus ante placerat,
-                    consectetur tellus nec, porttitor nulla.
-                    </p>
-
-                    </div>
-                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-                    <h2>1/4 Section</h2>
-                    <p>
-                    Morbi mollis lectus et ipsum sollicitudin varius.
-                    Aliquam tempus ante placerat,
-                    consectetur tellus nec, porttitor nulla.
-                    </p>
-
-                    </div>
-                    </div>
-                    <div class="row pad-bottom animate-in" data-anim-type="fade-in-up">
-
-                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                    <h2>1/3 Section</h2>
-                    <p>
-                    Morbi mollis lectus et ipsum sollicitudin varius.
-                    Aliquam tempus ante placerat,
-                    consectetur tellus nec, porttitor nulla.
-                    </p>
-
-                    </div>
-                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                    <h2>1/3 Section</h2>
-                    <p>
-                    Morbi mollis lectus et ipsum sollicitudin varius.
-                    Aliquam tempus ante placerat,
-                    consectetur tellus nec, porttitor nulla.
-                    </p>
-
-                    </div>
-                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                    <h2>1/3 Section</h2>
-                    <p>
-                    Morbi mollis lectus et ipsum sollicitudin varius.
-                    Aliquam tempus ante placerat,
-                    consectetur tellus nec, porttitor nulla.
-                    </p>
-
-                    </div>
-
-                    </div>
-                    <div class="row pad-bottom animate-in" data-anim-type="fade-in-up">
-
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                    <h2>1/2 Section</h2>
-                    <p>
-                    Morbi mollis lectus et ipsum sollicitudin varius.
-                    Aliquam tempus ante placerat,
-                    consectetur tellus nec, porttitor nulla.
-                    </p>
-
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                    <h2>1/2 Section</h2>
-                    <p>
-                    Morbi mollis lectus et ipsum sollicitudin varius.
-                    Aliquam tempus ante placerat,
-                    consectetur tellus nec, porttitor nulla.
-                    </p>
-
-                    </div>
-
-
-                    </div> -->
                 <div class="row animate-in" data-anim-type="fade-in-up">
-                                    <!-- 
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <h2>Full Section</h2>
-                    <p>
-                    Morbi mollis lectus et ipsum sollicitudin varius.
-                    Aliquam tempus ante placerat,
-                    consectetur tellus nec, porttitor nulla.
-                    </p>
-
-                    </div> -->
+                    <!-- REACT SECTION -->
                     <table id="example" class="display" cellspacing="0" width="100%">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Name</th>
-                                <th>Location</th>
-                                <th>Rating</th>
-                                <th>Category</th>
-                                <th>Address</th>
-                            </tr>
-                        </thead>
-<!--                         <tfoot>
-                            <tr>
-                                <th>ID</th>
-                                <th>Name</th>
-                                <th>Location</th>
-                                <th>Rating</th>
-                                <th>Category</th>
-                                <th>Address</th>
-                            </tr>
-                        </tfoot> -->
                         <tbody>
-                            <tr>
-                                <td data-search="0">0</td>
-                                <td><a href="/restaurants/0">Eggslut</a></td>
-                                <td>Los Angeles</td>
-                                <td>4.2</td>
-                                <td>Breakfast &amp; Brunch</td>
-                                <td>317 S BroadwayLos Angeles, CA 90013</td>
-                            </tr>
-                            <tr>
-                                <td data-search="1">1</td>
-                                <td><a href="/restaurants/1">Cera 23</a></td>
-                                <td>Barcelona</td>
-                                <td>4.6</td>
-                                <td>Spanish</td>
-                                <td>Carrer de la Cera, 2308001 Barcelona, Spain</td>
-                            </tr>
-                            <tr>
-                                <td data-search="2">2</td>
-                                <td><a href="restaurants/2">Den Noc</a></td>
-                                <td>Prague</td>
-                                <td>4.4</td>
-                                <td>Breakfast &amp; Brunch</td>
-                                <td>110 00 Prague, Czech Republic</td>
-                            </tr>
+                            <div id="content">
+
+<!--                                 <tr>
+                                    <td data-search="0">0</td>
+                                    <td><a href="/restaurants/0">Eggslut</a></td>
+                                    <td>Los Angeles</td>
+                                    <td>4.2</td>
+                                    <td>Breakfast &amp; Brunch</td>
+                                    <td>317 S BroadwayLos Angeles, CA 90013</td>
+                                </tr> -->
+                            </div>
+                            <script type="text/babel" src="../static/assets/js/scripts/restaurants.js"></script>
                         </tbody>
                     </table>
+
                 </div>
             </div>
         </section>
-        <!--GRID SECTION END-->
+        <!-- TABLE SECTION END -->
     </div>
-    <!--FOOTER SECTION START-->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <p class="text-muted">&copy; 2016 SWEetSpots | By : <a href="http://www.designbootstrap.com/" target="_blank">DesignBootstrap</a></p>
+        <!--FOOTER SECTION START-->
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="text-muted">&copy; 2016 SWEetSpots | By : <a href="http://www.designbootstrap.com/" target="_blank">DesignBootstrap</a></p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </footer>
-    <!--FOOTER SECTION END-->
+        </footer>
+        <!-- // FOOTER SECTION END -->
 
 
-            <!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME -->
-            <!-- CORE JQUERY -->
-            <script src="../static/assets/js/jquery-1.11.1.js"></script>
-            <script src="../static/assets/js/jquery-1.12.0.min.js"></script>
-            <!-- DATA TABLE SCRIPT -->
-            <script src="../static/assets/js/jquery.dataTables.min.js"></script>
-            <!-- BOOTSTRAP SCRIPTS -->
-            <script src="../static/assets/js/bootstrap.js"></script>
-            <!-- EASING SCROLL SCRIPTS PLUGIN -->
-            <script src="../static/assets/js/vegas/jquery.vegas.min.js"></script>
-            <!-- VEGAS SLIDESHOW SCRIPTS -->
-            <script src="../static/assets/js/jquery.easing.min.js"></script>
-            <!-- FANCYBOX PLUGIN -->
-            <script src="../static/assets/js/source/jquery.fancybox.js"></script>
-            <!-- ISOTOPE SCRIPTS -->
-            <script src="../static/assets/js/jquery.isotope.js"></script>
-            <!-- VIEWPORT ANIMATION SCRIPTS   -->
-            <script src="../static/assets/js/appear.min.js"></script>
-            <script src="../static/assets/js/animations.min.js"></script>
-            <!-- CUSTOM SCRIPTS -->
-            <script src="../static/assets/js/custom.js"></script>
-</body>
+    <!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME -->
+    <!-- CORE JQUERY -->
+    <script src="../static/assets/js/jquery-1.11.1.js"></script>
+    <script src="../static/assets/js/jquery-1.12.0.min.js"></script>
+    <!-- DATA TABLE SCRIPT -->
+    <script src="../static/assets/js/jquery.dataTables.min.js"></script>
+    <!-- BOOTSTRAP SCRIPTS -->
+    <script src="../static/assets/js/bootstrap.js"></script>
+    <!-- EASING SCROLL SCRIPTS PLUGIN -->
+    <script src="../static/assets/js/vegas/jquery.vegas.min.js"></script>
+    <!-- VEGAS SLIDESHOW SCRIPTS -->
+    <script src="../static/assets/js/jquery.easing.min.js"></script>
+    <!-- FANCYBOX PLUGIN -->
+    <script src="../static/assets/js/source/jquery.fancybox.js"></script>
+    <!-- ISOTOPE SCRIPTS -->
+    <script src="../static/assets/js/jquery.isotope.js"></script>
+    <!-- VIEWPORT ANIMATION SCRIPTS   -->
+    <script src="../static/assets/js/appear.min.js"></script>
+    <script src="../static/assets/js/animations.min.js"></script>
+    <!-- CUSTOM SCRIPTS -->
+    <script src="../static/assets/js/custom.js"></script>
+ </body>
 
 </html>
