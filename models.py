@@ -18,11 +18,11 @@ class City(Base):
 
     id = Column(Integer, primary_key=True)
     name = Column(String(80), nullable=False)
-    population = Column(Integer, nullable=True)
-    country = Column(String(80), nullable=True)
-    demonym = Column(String(80), nullable=True)
-    elevation = Column(Integer, nullable=True)
-    description = Column(String(255), nullable=True)   
+    population = Column(Integer, nullable=False)
+    country = Column(String(80), nullable=False)
+    demonym = Column(String(80), nullable=False)
+    elevation = Column(Float, nullable=False)
+    description = Column(String(255), nullable=False)   
 
 """
 Model for attractions.

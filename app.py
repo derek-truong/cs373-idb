@@ -11,7 +11,6 @@ import json
 app = Flask(__name__)
 manager = Manager(app)
 
-
 #Splash/Home page
 @app.route('/')
 @app.route('/home')
@@ -29,7 +28,6 @@ def city_detail(city_id):
 	city_pages = ['LA', 'barcelona', 'prague']
 	return render_template(city_pages[city_id] + '.html')
 
-
 # Restaurants Table
 @app.route('/restaurants')
 def restaurants():
@@ -45,8 +43,6 @@ def restaurant_detail(r_id):
 @app.route('/attractions')
 def attractions():
 	return render_template('attractions.html')
-
-
 
 @app.route('/attractions/<int:a_id>')
 def attraction_detail(a_id):
@@ -101,4 +97,10 @@ def restaurant_api():
 
 if __name__ == '__main__':
     # manager.run()
+    # dbops.drop_table(City)
+    # dbops.drop_table(Attraction)
+    # dbops.drop_table(Restaurant)
+    dbops.reload_data(City,"Cities.json")
+    dbops.reload_data(Attraction, "Attractions.json")
+    dbops.reload_data(Restaurant, "Restaurants.json")
     app.run()

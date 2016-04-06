@@ -2,7 +2,7 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, class_mapper
 from models import Base, City, Attraction, Restaurant
-
+import json
 engine = create_engine('sqlite:///swespt.db')
 Base.metadata.bind = engine
 
@@ -41,6 +41,13 @@ def serialize(model):
   # then we return their values in a dict
   return dict((c, getattr(model, c)) for c in columns)
 
+def reload_data(type, file_path):
+	with open(file_path) as json_file:
+		# print(json_file.read())
+		json_data = json.load(json_file)
+	for x in json_data:
+		db_create(type(**x))
+	# print(json_data)
 # db_create(City(name="Cool City1", population = 500, country = "US", demonym="idk", elevation= 1, description = "coolest place in Texas"))
 # db_create(Attraction(name="Attraction1", city_id=1, rating = 3, num_reviews=50, category="Landmark"))
 
