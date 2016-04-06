@@ -77,19 +77,18 @@
                 <div class="row animate-in" data-anim-type="fade-in-up">
                     <!-- REACT SECTION -->
                     <table id="example" class="display" cellspacing="0" width="100%">
-                        <tbody>
-                            <div id="content">
-
-<!--                                 <tr>
-                                    <td data-search="0">0</td>
-                                    <td><a href="/restaurants/0">Eggslut</a></td>
-                                    <td>Los Angeles</td>
-                                    <td>4.2</td>
-                                    <td>Breakfast &amp; Brunch</td>
-                                    <td>317 S BroadwayLos Angeles, CA 90013</td>
-                                </tr> -->
-                            </div>
-                            <script type="text/babel" src="../static/assets/js/scripts/restaurants.js"></script>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Location</th>
+                                <th>Rating</th>
+                                <th>Category</th>
+                                <th>Address</th>
+                            </tr>
+                        </thead>
+                        <tbody id = "content">
+                            
                         </tbody>
                     </table>
 
@@ -115,8 +114,7 @@
     <!-- CORE JQUERY -->
     <script src="../static/assets/js/jquery-1.11.1.js"></script>
     <script src="../static/assets/js/jquery-1.12.0.min.js"></script>
-    <!-- DATA TABLE SCRIPT -->
-    <script src="../static/assets/js/jquery.dataTables.min.js"></script>
+    
     <!-- BOOTSTRAP SCRIPTS -->
     <script src="../static/assets/js/bootstrap.js"></script>
     <!-- EASING SCROLL SCRIPTS PLUGIN -->
@@ -132,6 +130,25 @@
     <script src="../static/assets/js/animations.min.js"></script>
     <!-- CUSTOM SCRIPTS -->
     <script src="../static/assets/js/custom.js"></script>
+    <script type="text/babel" src="../static/assets/js/scripts/restaurants.js"></script>
+    <!-- DATA TABLE SCRIPT -->
+    <script src="../static/assets/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript">
+    
+       $(document).ready(function() {
+         $('#example').dataTable();
+       } );
+       
+       function fnClickAddRow() {
+         $('#example').dataTable().fnAddData( [
+           giCount+".1",
+           giCount+".2",
+           giCount+".3",
+           giCount+".4" ]
+         );
+           
+       }
+    </script>
  </body>
 
 </html>

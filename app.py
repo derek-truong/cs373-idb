@@ -97,9 +97,9 @@ def restaurant_api():
 
 if __name__ == '__main__':
     # manager.run()
-    # dbops.drop_table(City)
-    # dbops.drop_table(Attraction)
-    # dbops.drop_table(Restaurant)
+    dbops.drop_table(City)
+    dbops.drop_table(Attraction)
+    dbops.drop_table(Restaurant)
     dbops.reload_data(City,"Cities.json")
     dbops.reload_data(Attraction, "Attractions.json")
     dbops.reload_data(Restaurant, "Restaurants.json")
