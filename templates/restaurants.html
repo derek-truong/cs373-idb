@@ -11,11 +11,6 @@
 <![endif]-->
     <title>SWEetSpots</title>
     <!-- REACT -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.8/react.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.8/react-dom.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.5/marked.min.js"></script>
 
     <!-- BOOTSTRAP CORE CSS -->
     <link href="../static/assets/css/bootstrap.css" rel="stylesheet" />
@@ -87,8 +82,10 @@
                                 <th>Address</th>
                             </tr>
                         </thead>
-                        <tbody id = "content">
+<!--                         <tbody id = "content">
                             
+                        </tbody> -->
+                        <tbody>
                         </tbody>
                     </table>
 
@@ -117,6 +114,8 @@
     
     <!-- BOOTSTRAP SCRIPTS -->
     <script src="../static/assets/js/bootstrap.js"></script>
+    <!-- DATA TABLE SCRIPT -->
+    <script src="../static/assets/js/jquery.dataTables.min.js"></script>
     <!-- EASING SCROLL SCRIPTS PLUGIN -->
     <script src="../static/assets/js/vegas/jquery.vegas.min.js"></script>
     <!-- VEGAS SLIDESHOW SCRIPTS -->
@@ -130,25 +129,7 @@
     <script src="../static/assets/js/animations.min.js"></script>
     <!-- CUSTOM SCRIPTS -->
     <script src="../static/assets/js/custom.js"></script>
-    <script type="text/babel" src="../static/assets/js/scripts/restaurants.js"></script>
-    <!-- DATA TABLE SCRIPT -->
-    <script src="../static/assets/js/jquery.dataTables.min.js"></script>
-    <script type="text/javascript">
-    
-       $(document).ready(function() {
-         $('#example').dataTable();
-       } );
-       
-       function fnClickAddRow() {
-         $('#example').dataTable().fnAddData( [
-           giCount+".1",
-           giCount+".2",
-           giCount+".3",
-           giCount+".4" ]
-         );
-           
-       }
-    </script>
+
  </body>
 
 </html>
