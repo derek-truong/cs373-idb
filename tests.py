@@ -1,18 +1,3 @@
-# from unittest import main, TestCase
-# from flask import Flask, json
-# # import app
-
-# from sqlalchemy.orm import Session
-
-# # import serve
-# import models
-
-# from flask.ext.sqlalchemy import SQLAlchemy
-# # from models import Place, Type, Review, Photo, db
-# # from server import app
-# # from urllib.request import urlopen
-# # from solr import keyword_search
-
 from unittest import main, TestCase
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker 
@@ -25,194 +10,137 @@ import threading
 from flask import Flask, render_template, url_for, g, request, session, redirect, abort, flash
 
 from models import *
+from dbops import *
 
 class FunctionalTestCase(TestCase):
 
-    def test_write_city(self):
-        query = session.query(city).all()
+    def test_db_create1(self):
+        drop_table(City)
+        query = session.query(City).all()
         startSize = len(query)
 
-        session.add(city(name = "Austin", country="USA"))
-        session.commit()
-        query = session.query(city).all()
+        temp_city = {"id": 55,"name": "Dallas","population": 5000, "country": "USA", "demonym": "American", "elevation": 100000.0, "description": "Dallas is Great"}
+        
+        db_create(City(**temp_city))
+        query = session.query(City).all()
 
         endSize = len(query)
 
         self.assertEqual(startSize + 1, endSize) 
 
-    # s.query(Cities).filter(City.name == 'Barcelona').one()
-
-    def test_write_city2(self):
-        query = session.query(city).all()
+    def test_db_create2(self):
+        drop_table(Restaurant)
+        query = session.query(Restaurant).all()
         startSize = len(query)
 
-        session.add(city(name = "Dallas", country="USA"))
-        session.add(city(name = "Seattle", country="USA"))
-        session.commit()
-        query = session.query(city).all()
+        restaurant = {"id": 200, "name": "Don", "rating": 5, "category": "Japanese",
+               "address": "Guadalupe", "city_id": 1
+          }
+        db_create(Restaurant(**restaurant))
+        query = session.query(Restaurant).all()
 
         endSize = len(query)
 
-        self.assertEqual(startSize + 2, endSize)
+        self.assertEqual(startSize + 1, endSize) 
 
-    def test_write_city2(self):
-        query = session.query(city).all()
+    def test_db_create3(self):
+        drop_table(Attraction)
+        query = session.query(Attraction).all()
         startSize = len(query)
 
-        session.add(city(name = "Las Vegas", country="USA"))
-        session.add(city(name = "Florida City", country="USA"))
-        session.add(city(name = "New York City", country="USA"))
-        session.commit()
-        query = session.query(city).all()
+        attraction = {"id": 200, "name": "Six Flags", "rating": 5, "category": "Amusement Park",
+                 "num_reviews": 50, "city_id": 2
+            }
+        db_create(Attraction(**attraction))
+        query = session.query(Attraction).all()
 
         endSize = len(query)
 
-        self.assertEqual(startSize + 3, endSize)
+        self.assertEqual(startSize + 1, endSize) 
 
-    def test_write_attraction(self):
-        query = session.query(attractions).all()
-        startSize = len(query)
+    def test_db_read1(self):
+        temp_city = db_read(City, 55)
+        self.assertEqual(temp_city.name, "Dallas")
 
-        session.add(attractions(name = "Six Flags", Location="San Antonio"))
-        session.commit()
-        query = session.query(city).all()
+    def test_db_read2(self):
+        temp_restaurant = db_read(Restaurant, 200)
+        self.assertEqual(temp_restaurant.name, "Don")
 
+    def test_db_read3(self):
+        temp_attraction = db_read(Attraction, 200)
+        self.assertEqual(temp_attraction.name, "Six Flags")
+
+    def test_db_read_all1(self):
+        city_list = db_read_all(City)
+        self.assertEqual(city_list[0].name, "Dallas")
+
+    def test_db_read_all2(self):
+        restaurant_list = db_read_all(Restaurant)
+        self.assertEqual(restaurant_list[0].name, "Don")
+
+    def test_db_read_all3(self):
+        attraction_list = db_read_all(Attraction)
+        self.assertEqual(attraction_list[0].name, "Six Flags")
+
+    def test_serialize1(self):
+        city = session.query(City).filter_by(id=1).one()
+        city_dict = serialize(city)
+
+        self.assertEqual(city_dict['name'], "Amsterdam")
+
+    def test_serialize2(self):
+        restaurant = session.query(Restaurant).filter_by(id=5).one()
+        restaurant_dict = serialize(restaurant)
+
+        self.assertEqual(restaurant_dict['name'], "Moonshine")
+
+    def test_serialize3(self):
+        attraction = session.query(Attraction).filter_by(id=5).one()
+        attraction_dict = serialize(attraction)
+
+        self.assertEqual(attraction_dict['name'], "House of Torment")
+
+    def test_drop_table1(self):
+        drop_table(City)
+        query = session.query(City).all()
         endSize = len(query)
 
-        self.assertEqual(startSize + 1, endSize)
+        self.assertTrue(endSize == 0)
 
-    def test_write_attraction2(self):
-        query = session.query(attractions).all()
-        startSize = len(query)
-
-        session.add(attractions(name = "Sea World", Location="San Antonio"))
-        session.add(attractions(name = "Miller Outdoor Theater", Location="Houston"))
-
-        session.commit()
-        query = session.query(city).all()
-
+    def test_drop_table2(self):
+        drop_table(Restaurant)
+        query = session.query(Restaurant).all()
         endSize = len(query)
 
-        self.assertEqual(startSize + 2, endSize)
+        self.assertTrue(endSize == 0)
 
-    def test_write_attraction3(self):
-        query = session.query(attractions).all()
-        startSize = len(query)
-
-        session.add(attractions(name = "University of Texas", Location="Austin"))
-        session.add(attractions(name = "River Walk", Location="San Antonio"))
-        session.add(attractions(name = "Statue of Liberty", Location="New York City"))
-
-        session.commit()
-        query = session.query(city).all()
-
+    def test_drop_table3(self):
+        drop_table(Attraction)
+        query = session.query(Attraction).all()
         endSize = len(query)
 
-        self.assertEqual(startSize + 3, endSize)
+        self.assertTrue(endSize == 0)
 
-    def test_write_restaurant(self):
-        query = session.query(attractions).all()
-        startSize = len(query)
+    def test_reload_data1(self):
+        reload_data(City,"Cities.json")
+        city = session.query(City).filter_by(id=1).one()
+        self.assertEqual(city.name, "Amsterdam")
 
-        session.add(restaurants(name = "Goode Company Seafood", Location="Houston"))
+    def test_reload_data2(self):
+        reload_data(Restaurant, "Restaurants.json")
+        restaurant = session.query(Restaurant).filter_by(id=5).one()
+        self.assertEqual(restaurant.name, "Moonshine")
 
-        session.commit()
-        query = session.query(city).all()
+    def test_reload_data3(self):
+        reload_data(Attraction, "Attractions.json")
+        attraction = session.query(Attraction).filter_by(id=5).one()
+        self.assertEqual(attraction.name, "House of Torment")
 
-        endSize = len(query)
 
-        self.assertEqual(startSize + 1, endSize)
 
-    def test_write_restaurant2(self):
-        query = session.query(attractions).all()
-        startSize = len(query)
 
-        session.add(restaurants(name = "Cheesecake Factory", Location="Austin"))
-        session.add(restaurants(name = "Gueros Taco Bar", Location="Austin"))
-
-        session.commit()
-        query = session.query(city).all()
-
-        endSize = len(query)
-
-        self.assertEqual(startSize + 2, endSize)
-
-    def test_write_restaurant3(self):
-        query = session.query(attractions).all()
-        startSize = len(query)
-
-        session.add(restaurants(name = "Don", Location="Austin"))
-        session.add(restaurants(name = "Torchy's Tacos", Location="Austin"))
-        session.add(restaurants(name = "Le Turtle", Location="New York City"))
-
-        session.commit()
-        query = session.query(city).all()
-
-        endSize = len(query)
-
-        self.assertEqual(startSize + 3, endSize)
-
-	# ----------
-    # API Routes
-    # ----------
-    def test_google_api(self):
-        query = 'museums in austin, tx'
-        self.assertEqual(r.)
-    # --------------
-    # Website Routes
-    # --------------
-
-	# Home Page
-    def test_index_1(self):
-		r = self.app.get('/')
-		self.assertEqual(r.status, '200 OK')
     
-    # def test_index_2(self):
-    # 	r = app.app.test_client().get('')
-    # 	c = r.headers['content-type']
-    # 	t = r.data.decode("utf-8")
-    # 	self.assertEqual(c, 'text/html; charset=utf-8')
-    # 	self.assertTrue('Redirecting' in t)
-    	
-    # def test_html_index_3 (self) :
-    #	r = app.app.test_client().get('/')
-    #	c = r.headers['content-type']
-    #	t = r.data.decode("utf-8")
-    #	self.assertEqual(c, 'text/html; charset=utf-8')
-    #	self.assertTrue('Cities' in t)
-    #	self.assertTrue('Attractions' in t)
-    #	self.assertTrue('Restaurants' in t)
 
-    # About Page
- #    def test_about_1(self):
-	# 	r = self.app.get('/about')
-	# 	self.assertEqual(r.status, '200 OK')
-
- #    # Cities Page
- #    def test_cities(self):
-	# 	r = self.app.get('/cities')
-	# 	self.assertEqual(r.status, '200 OK')
-
-	# def test_cities_table(self):
-
-	# # Attractions Page
- #    def test_attractions_1(self):
-	# 	r = self.app.get('/attractions')
-	# 	self.assertEqual(r.status, '200 OK')
-
-	# def test_attractions_table(self):
-
-	# # Restaurants Page
- #    def test_restaurants_1(self):
-	# 	r = self.app.get('/restaurants')
-	# 	self.assertEqual(r.status, '200 OK')
-
-
-    # def test_about_2 (self) :
-    #     r = app.app.test_client().get('/about.html')
-    #     c = r.headers['content-type']
-    #     t = r.data.decode("utf-8")
-    #     self.assertEqual(c, 'text/html; charset=utf-8')
-    #     self.assertTrue('Derek Truong' in t)
-    #     self.assertTrue('Jonathan Chu' in t)
+# if __name__ == "__main__" :
+#     main()  
 
