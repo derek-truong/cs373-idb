@@ -13,12 +13,12 @@ All cities data in our API
         {
             "cities": [
                {
-                    "city_id": City_ID_as_int,
+                    "id": City_ID_as_int,
                     "name": City_Name_as_String,
                     "population": Population_as_int,
                     "country": Country_as_String,
                     "demonym": Demonym_as_String,
-                    "elevation": Elevation_as_int,
+                    "elevation": Elevation_as_float,
                     "description": Description_as_string
                 }
                
@@ -32,12 +32,12 @@ Specific city data in our API
 + Response 200 (application/json)
 
         {
-            "city_id": City_ID_as_int,
+            "id": City_ID_as_int,
             "name": City_Name_as_String,
             "population": Population_as_int,
             "country": Country_as_String,
             "demonym": Demonym_as_String,
-            "elevation": Elevation_as_int,
+            "elevation": Elevation_as_float,
             "description": Description_as_string
         }
 
@@ -50,13 +50,12 @@ All attractions data in our API
         {
             "attractions": [
                 {
-                    "attraction_id": Attraction_ID_as_int,
+                    "id": Attraction_ID_as_int,
                     "name": Name_as_String,
-                    "rating": Rating_as_double,
+                    "rating": Rating_as_float,
                     "location": Location_as_String,
                     "num_reviews": Reviews_as_int,
                     "category": Category_as_String,
-                    "description": Description_as_String
                 }
             ]
         }
@@ -68,13 +67,12 @@ Specific attraction data in our API
 + Response 200 (application/json)
 
         {
-            "attraction_id": Attraction_ID_as_int,
+            "id": Attraction_ID_as_int,
             "name": Name_as_String,
-            "rating": Rating_as_double,
-            "location": Location_as_String,
-            "num_reviews": Reviews_as_int,
+            "rating": Rating_as_float,
+            "city_id": City__ID_as_int,
+            "num_reviews": Reviews_as_float,
             "category": Category_as_String,
-            "description": Description_as_String
         }
         
 ## Restaurants Collection [/scrape/restaurants]
@@ -86,10 +84,10 @@ All restaurants data in our API
         {
             "restaurants":[
                 {
-                    "restaurant_id": Restaurant_ID_as_int,
+                    "id": Restaurant_ID_as_int,
                     "name": Name_as_String,
-                    "rating": Rating_as_double,
-                    "location": Location_as_String,
+                    "rating": Rating_as_float,
+                    "city_id": City_ID_as_int,
                     "category": Category_as_String,
                     "address": Address_as_string
                 }
@@ -103,10 +101,10 @@ All restaurants data in our API
 + Response 200 (application/json)
 
         {
-            "restaurant_id": Restaurant_ID_as_int,
+            "id": Restaurant_ID_as_int,
             "name": Name_as_String,
-            "rating": Rating_as_double,
-            "location": Location_as_String,
+            "rating": Rating_as_float,
+            "city_id": City_ID_as_int,
             "category": Category_as_String,
             "address": Address_as_string
         }
