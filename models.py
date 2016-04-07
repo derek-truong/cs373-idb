@@ -22,7 +22,8 @@ class City(Base):
     country = Column(String(80), nullable=False)
     demonym = Column(String(80), nullable=False)
     elevation = Column(Float, nullable=False)
-    description = Column(String(255), nullable=False)   
+    description = Column(String(255), nullable=False)
+    image = Column(String(255), nullable=False)     
 
 """
 Model for attractions.
@@ -38,6 +39,7 @@ class Attraction(Base):
     city_id = Column(Integer, ForeignKey('city.id'), nullable=False)
     num_reviews = Column(Integer, nullable=False)
     category = Column(String(80), nullable=False)
+    image = Column(String(255), nullable=False) 
 
 
 """
@@ -52,7 +54,8 @@ class Restaurant(Base):
     rating = Column(Float, nullable=False)
     city_id = Column(Integer, ForeignKey('city.id'), nullable=False)
     category = Column(String(30), nullable=False)
-    address = Column(String(255), nullable=False) 
+    address = Column(String(255), nullable=False)
+    image = Column(String(255), nullable=False)  
 
 
 # engine = create_engine('mysql+mysqldb://swespt:@localhost/swespt?charset=utf8')
