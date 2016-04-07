@@ -1,113 +1,70 @@
-# -----------
-# Can use this to parse Google Places data
-# -----------
-# https://github.com/Yelp/yelp-python/blob/4a8bea62cd337085f86dcc75d3f58f7f92a09234/README.md
-# https://github.com/Yelp/yelp-python/blob/4a8bea62cd337085f86dcc75d3f58f7f92a09234/yelp/endpoint/search.py
-
-import urllib.request, urllib.parse, urllib.error
-import json, io
-import calendar, time
 from yelp.client import Client
 from yelp.oauth1_authenticator import Oauth1Authenticator
+# from models import Restaurant, Attraction
+# from dbops import db_create, db_read, db_read_all, db_delete
 
-auth = Oauth1Authenticator(
-    consumer_key= "8e59B-StCRN4EjpxmNF6FQ",
-    consumer_secret= "rSWcfqXl66yYIgkPioh0PlCqHjM",
-    token= "RJMSPeTXZxjQ49f94xpx-QhtLIJN9ITv",
-    token_secret="X96YifgDJFZxEOReeUh1_m0PqXU"
-)
+url = 'https://api.twitter.com/1.1/account/verify_credentials.json'
+auth = Oauth1Authenticator('ITlCwpUMdoFDjqHA5EX5xw', 'VSRV728X6MmtLMxnoGTczyyriBo',
+                  'RrKIS5Ot5wUm1oCFd_VX-m9iFy63Gay9', 'vd8tg7pNO8dY5AMwTDgqSQ5cq08')
 
 client = Client(auth)
 
-with io.open('config_secret.json') as cred:
-    creds = json.load(cred)
-    auth = Oauth1Authenticator(**creds)
-    client = Client(auth)
+f = open("Cities.txt",'r')
+f = f.read()
+cities = f.split('\n')
+
+# cities = {0: "London", 1: "Austin", 2: "Barcelona", 3: "Paris", 4: "Sydeny", 5: "New York City", 6: "Maui", 7: "Rio de Janeiro", 8: "Houston", 9: "San Francisco", 10: "Dallas", 11: "Prague", 12: "Yellowstone", 13: "Los Angeles", 14: "Vancouver", 15: "Washington D.C", 16: "U.S. Virgin Islands", 17: "Zurich", 18: "Orlando", 19: "Las Vegas", 20: "Berlin", 21: "Crete", 22: "Playa del Carmen", 23: "Puerto Rico", 24: "Rome" }
+
+# def get_restaurants():
+# 	params = {
+# 	    'term': 'restaurants',
+# 	    'lang': 'en',
+# 	    'limit': 3
+# 	}
+
+# 	id_num = 0
+# 	restaurants = {}
+# 	for i in range(0, 50):
+# 		response = client.search(cities[i], **params)
+# 		print(cities[i])
+
+# 		for x in response.businesses:
+# 			#dictionary of name, rating, num of ratings, address, and categories
+# 			restaurant = {"id": id_num, "name": x.name, "rating": x.rating, "categ": x.categories[0][0],
+# 			  	 "address": x.location.display_address[0], "city_id": id_num
+# 			}
+
+# 			restaurants[id_num] = restaurant
+# 			#db_create(Restaurant(**restaurant))
+# 			print(restaurants[id_num]['name'])
+# 			id_num += 1
+
+def get_attractions():
+	params = {
+	    'term': 'attractions',
+	    'lang': 'en',
+	    'limit': 3
+	}
+
+	id_num = 1
+	attractions = []
+	for w in range(1,len(cities)+1) :
+		response = client.search(cities[w-1], **params)
+
+		for x in response.businesses:
+			#dictionary of name, rating, num of ratings, address, and categories
+			attraction = {"attraction_id": id_num, "name": x.name, "rating": x.rating, "categeory": x.categories[0][0],
+			  	 "num_rating": x.review_count, "city_id": w
+			}
+
+			attractions.append(attraction)
+			#db_create(Attraction(**attraction))
+			# print(attractions[id_num])
+			id_num += 1
+	print(attractions)
+get_attractions()
 
 
-# wikiserviceurl = 'https://en.wikipedia.org/w/api.php?action=query&titles=Main%20Page&prop=revisions&rvprop=content&format=json?'
-yelpserviceurl = 'https://api.yelp.com/v2/search/?'
-# key = 'AIzaSyCBObTwMQAkUD5av7E_oUDAZpe-OUkmqfU' # for googleapi
-
-cities = ['Hong Kong', 'London', 'Singapore', 'Bangkok', 'Paris', 'Macao', 'Shenzhen', 'New York City', 'Istanbul', 'Kuala Lumpur']
-results = []
-
-for c in cities: 
-    city = c
-
-    # values = {'query' : query, 'key' : key}
-    values = {'term': 'restaurant', 'location' : city}
-
-    # client.search(city, **values)
-
-    url = yelpserviceurl + urllib.parse.urlencode(values)
-
-    try:
-        data = urllib.request.urlopen(url)
-        data = data.read().decode('utf-8')
-        saveFile = open('citiesdata.txt','w')
-        saveFile.write(str(data))
-        saveFile.close()
-    except urllib.error.HTTPError as e:
-        print(e.code)
-        print(e.read())
-        continue
 
 
-    try: 
-        js = json.loads(str(data))
-    except: 
-        js = None
-    if 'status' not in js or js['status'] != 'OK':
-        print ('==== Failure To Retrieve ====')
-        print (data)
-        continue
 
-    count = 0
-    while count < len(js['businesses'] or count < 50) :
-        result = count
-        name = js['businesses'][count]['name']
-        try:
-            location = js['businesses'][count]['location']['city']
-        except:
-            location = 'Not found'
-        try: 
-            rating = js['businesses'][count]['rating']
-        except:
-            rating = 'None'
-        try :
-            category = js['businesses'][count]['categories'][0]
-        except :
-            category = 'Unknown'
-        try :
-            address = js['businesses'][count]['address']
-        except :
-            address = 'Unknown'
-        # try: 
-        #     hours = js['results'][count]['opening_hours']['open_now']
-        #     if hours == True :
-        #         opennow = 'yes'
-        #     else : 
-        #         opennow = 'no'
-        # except:
-        #     opennow = 'Unknown'
-        # try: 
-        #     price = js['results'][count]['price_level']
-        # except:
-        #     price = None
-
-        print ('result: ', result, '\n' 'name: ', name, '\n' 'location: ', location, '\n', 'rating: ', rating)
-        # , '\n' 'open now: ', opennow)
-        print ('category: ', category, '\n' 'address: ', address)
-        # print ('type: ',  placetype, '\n' 'price level: ', price, '\n' 'address: ', address)
-        
-        # info = {
-        #     "name":    name,
-        #     "location": location,
-        #     "rating":  rating,
-        #     "category": category,
-        #     "address": address
-        # }
-        # results.append(info)
-
-        count += 1 

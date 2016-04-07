@@ -37,10 +37,6 @@ html,body {
     width: 100%;
 }
 
-p{
-    margin: 0 125px 250px 200px;
-}
-
 a {
   color: #66cccc;
 }
@@ -51,6 +47,38 @@ a:hover, a:focus {
 }
 
 /*or try html inline: <div class="container" style="background-image: url('cs.jpg');">*/
+#cities .container {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: url('../img/bgs/cities.jpg');
+    opacity: 0.2;
+    filter: alpha(opacity=20); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0% 50%;
+    background-attachment: fixed;
+    -ms-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+}
+#attractions .container {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: url('../img/bgs/attractions.jpg');
+    opacity: 0.2;
+    filter: alpha(opacity=20); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0% 50%;
+    background-attachment: fixed;
+    -ms-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+}
 #restaurants .container {
     position: absolute;
     height: 100%;
@@ -67,7 +95,6 @@ a:hover, a:focus {
     -moz-background-size: cover;
     -webkit-background-size: cover;
 }
-
 section {
     padding-top: 80px;
     padding-bottom: 40px;
@@ -181,7 +208,6 @@ MENU SECTION STYLES - TODO match with html
     color: rgb(141, 204, 204); 
     width: 100%;
 }
-
 .nav .navbar-nav .navbar-right li:hover {
     /*border-bottom: 1px solid rgb(255,255,255);*/
     /*border-bottom: 1px solid rgb(141, 204, 204);*/
@@ -200,16 +226,15 @@ MENU SECTION STYLES - TODO match with html
 }
 .navbar-inverse .navbar-nav > li > a {
     font-size: 13px;
-    font-weight: 1200;
+    font-weight: bold;
+    color: rgb(141, 204, 204);
     padding: 3px 0px;
     letter-spacing: 2px;
-    margin: 10px 20px 10px 20px;
-    color: rgb(141, 204, 204);
+    margin: 10px 20px 10px 20px
 }
 /* navbar-brand text */
 .navbar-inverse .navbar-brand, .navbar-inverse .navbar-brand:hover {
     color:  rgb(141, 204, 204);
-    text-transform: bold;
     font-size: 30px;
     /*font-weight: 900;*/
     /*font-family: 'Roboto', sans-serif;*/
@@ -305,7 +330,9 @@ HOME SECTION STYLES - CAROUSEL
 }
 .carousel-caption > p {
     font-size: 24px;
+    margin: 0 125px 250px 200px;
 }
+
 .carousel-caption > h3 {
     font-size:40px;
     letter-spacing: 3px;
@@ -550,8 +577,9 @@ border-radius: 0px 0px 10px 10px;
 .team-wrapper .description h5 {
 color: rgb(102,204,204);
 }
-.team-wrapper .description a {
-color: white;
+.team-wrapper .description h3, .team-wrapper .description h3 > a {
+/*color: rgb(102, 204, 204);*/
+color: #333;
 }
 .team-wrapper .description .bio {
 padding: 5px 20px 20px;
