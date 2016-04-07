@@ -52,6 +52,13 @@ Reads a specific object from the database of a specific type and id
 def db_read_all(type):
 	return session.query(type).all()
 
+"""
+Ask wes
+"""
+def db_read_city_spots(type, city_id):
+	return session.query(type).filter_by(city_id = city_id)
+
+
 
 """
 Drops a table of a certain type

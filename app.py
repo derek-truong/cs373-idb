@@ -16,7 +16,11 @@ manager = Manager(app)
 @app.route('/')
 @app.route('/home')
 def home_page():
-	return render_template('index.html')
+	city= dbops.db_read_all(City)
+	attractions =dbops.db_read_all(Attraction)
+	restaurants = dbops.db_read_all(Restaurant)
+	print("reading correctly")
+	return render_template('index.html', cities= city, attractions =attractions, restaurants = restaurants)
 
 #city detail page
 @app.route('/cities')
@@ -26,8 +30,12 @@ def cities():
 #city detail page
 @app.route('/cities/<int:city_id>')
 def city_detail(city_id):
-	city_pages = ['LA', 'barcelona', 'prague']
-	return render_template(city_pages[city_id] + '.html')
+	city = dbops.db_read(City, city_id)
+	print("reading city id in  correctly")
+	Attractions =dbops.db_read_city_spots(Attraction, city_id)
+	Restaurants =dbops.db_read_city_spots(Restaurant, city_id)
+	print("reading other shit in  correctly")
+	return render_template( 'city.html',city =city, Attractions =Attractions, Restaurants = Restaurants)
 
 # Restaurants Table
 @app.route('/restaurants')
@@ -37,8 +45,8 @@ def restaurants():
 #Restaurant detail page
 @app.route('/restaurants/<int:r_id>')
 def restaurant_detail(r_id):
-	r_pages = ['eggslut', 'cera-23','den-noc']
-	return render_template(r_pages[r_id] + '.html')
+	restaurant = dbops.db_read(Restaurant, r_id)
+	return render_template('restaurant.html',restaurant = restaurant)
 
 # Attractions Table
 @app.route('/attractions')
@@ -47,8 +55,8 @@ def attractions():
 
 @app.route('/attractions/<int:a_id>')
 def attraction_detail(a_id):
-	a_pages = ['urban-light','basilica', 'charles-bridge']
-	return render_template(a_pages[a_id] + '.html')
+	attraction = dbops.db_read(Attraction, a_id)
+	return render_template('attraction.html',attraction = attraction)
 
 @app.route('/about')
 def about():
