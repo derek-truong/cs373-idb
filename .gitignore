@@ -9,4 +9,4 @@ venv
 .DS_STORE
 env
 config_secret.json
-yelpapi.py
+swespt.db

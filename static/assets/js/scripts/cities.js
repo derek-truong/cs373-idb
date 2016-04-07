@@ -48,12 +48,31 @@ var CityTable = React.createClass({
     );
   }
 });
+// var City = React.createClass({
+//   render: function() {
+//     return (
+//           <tr>
+//               <td data-search="0">{this.props.ct.id}</td>
+//               <td data-search="1">{this.props.ct.name}</td>
+//               <td data-search="2">{this.props.ct.population}</td>
+//               <td data-search="3">{this.props.ct.country}</td>
+//               <td data-search="4">{this.props.ct.demonym}</td>
+//               <td data-search="5">{this.props.ct.elevation}</td>
+//           </tr>
+//     );
+//   }
+// });
+
+// <a href="https://facebook.github.io/react/">Hello!</a>
+
+// React.createElement('a', {href: 'https://facebook.github.io/react/'}, 'Hello!')
+
 var City = React.createClass({
   render: function() {
     return (
           <tr>
               <td data-search="0">{this.props.ct.id}</td>
-              <td data-search="1">{this.props.ct.name}</td>
+              <td data-search="1"><a href="https://facebook.github.io/react/">{this.props.ct.name}</a></td>
               <td data-search="2">{this.props.ct.population}</td>
               <td data-search="3">{this.props.ct.country}</td>
               <td data-search="4">{this.props.ct.demonym}</td>
