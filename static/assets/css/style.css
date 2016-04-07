@@ -193,7 +193,6 @@ color: #fff;
 background-color: rgba(204, 0, 102, 0.5);;
 }
 
-
 /* =============================================================
 MENU SECTION STYLES - TODO match with html
 ============================================================ */
@@ -507,14 +506,17 @@ padding-top: 80px;
 
 
 /*============================
-WORK SECTION STYLES
+SWEETSPOT SECTION STYLES
 ==============================*/
 
-#work .categories a.active {
+/*#work .categories a.active {
 background-color: transparent;
 color: #fff;
+}*/
+#work .categories a.active {
+    background-color: rgba(204, 0, 102, 0.5);;
+    color: white;    
 }
-
 .isotope .isotope-item {
 -webkit-transition-duration: 0.8s;
 -moz-transition-duration: 0.8s;
@@ -537,7 +539,8 @@ border: 1px solid rgb(102,204,204);
 }
 
 #work .work-wrapper:hover {
-background-color: transparent;
+/*background-color: transparent;*/
+background-color: rgba(128,128,128, 1.0)
 border: 1px solid rgb(102,204,204);
 
 opacity: .80; /* standard: ff gt 1.5, opera, safari */
@@ -551,8 +554,6 @@ filter: alpha(opacity=80); /* ie lt 7 */
 #work .work-wrapper h4 {
 padding-top: 10px;
 }
-
-
 
 /*============================
 TEAM SECTION STYLES
