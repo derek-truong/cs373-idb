@@ -10,12 +10,18 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <![endif]-->
     <title>SWEetSpots</title>
+    <!-- REACT -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.8/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.8/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.5/marked.min.js"></script>
+
     <!-- BOOTSTRAP CORE CSS -->
     <link href="../static/assets/css/bootstrap.css" rel="stylesheet" />
     <!-- ION ICONS STYLES -->
     <link href="../static/assets/css/ionicons.css" rel="stylesheet" />
     <!-- FONT AWESOME ICONS STYLES -->
-    <link href="../static/assets/css/font-awesome.css" rel="stylesheet" />
     <link href="../static/assets/css/font-awesome.css" rel="stylesheet" />
     <!-- FANCYBOX POPUP STYLES -->
     <link href="../static/assets/js/source/jquery.fancybox.css" rel="stylesheet" />
@@ -32,115 +38,86 @@
 </head>
 
 <body>
-    <div class="content-wrapper">    
+    <div class="content-wrapper">  
         <!--MENU SECTION START-->
-        <div class="navbar navbar-inverse navbar-fixed-top scroll-me" class="menu-section">       
+        <div class="navbar navbar-inverse navbar-fixed-top scroll-me" id="menu-section">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-    			<span class="icon-bar"></span>
-    			<span class="icon-bar"></span>
-    			<span class="icon-bar"></span>
-    			</button>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                </button>
                     <a class="navbar-brand" href="/home">SWEetSpots</a>
                 </div>
                 <div class="navbar-collapse collapse">
-                    <ul id="menu-top" class="nav navbar-nav navbar-right">
-                    <!-- <ul class="nav navbar-nav navbar-right"> -->
+                    <ul class="nav navbar-nav navbar-right">
                         <li><a href="/cities">CITIES</a></li>
-                        <!-- <li class="active"><a href="/attractions">ATTRACTIONS</a></li> -->
-                        <li class="menu-top-active"><a href="/attractions">ATTRACTIONS</a></li>
+                        <li class="active"><a href="/attractions">ATTRACTIONS</a></li>
                         <li><a href="/restaurants">RESTAURANTS</a></li>
                         <li><a href="/about">ABOUT</a></li>
-                        <!-- <li><a href="#grid">GRID</a></li>
-    			 -->
                     </ul>
                 </div>
             </div>
         </div>
         <!--MENU SECTION END-->
-        <!--GRID SECTION START-->
+        <div id="attractions">
+            <div class="container">
+            </div>
+        </div>
+        <!--TABLE SECTION START-->
         <section id="grid">
             <div class="container">
                 <div class="row text-center header animate-in" data-anim-type="fade-in-up">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <h3>ATTRACTIONS</h3>
+                        <h3>Attractions</h3>
                         <hr />
                     </div>
                 </div>
-                <div class="row animate-in" data-anim-type="fade-in-up">
-                    <table id="example" class="display" cellspacing="0" width="100%">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Name</th>
-                                <th>Rating</th>
-                                <th>Location</th>
-                                <th>Number of Ratings</th>
-                                <th>Category</th>
-                            </tr>
-                        </thead>
-                        <tfoot>
-                            <tr>
-                                <th>ID</th>
-                                <th>Name</th>
-                                <th>Rating</th>
-                                <th>Location</th>
-                                <th>Number of Ratings</th>
-                                <th>Category</th>
-                            </tr>
-                        </tfoot>
-                        <tbody>
-                            <tr>
-                                <td>0</td>
-                                <td><a href="/attractions/0">Urban Light at LACMA</a></td>
-                                <td>4.8</td>
-                                <td>Los Angeles</td>
-                                <td>225</td>
-                                <td>Landmarks &amp; Historical Buildings</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td><a href="/attractions/1">Basílica de la Sagrada Família</a></td>
-                                <td>4.9</td>
-                                <td>Barcelona</td>
-                                <td>687</td>
-                                <td>Landmark and Historical Buildings</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td><a href="/attractions/2">Charles Bridge</a></td>
-                                <td>4.5</td>
-                                <td>Prague</td>
-                                <td>174</td>
-                                <td>Landmark and Historical Buildings</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div id="content" class="row animate-in" data-anim-type="fade-in-up">
+                    <script type="text/babel" src="../static/assets/js/scripts/attractions.js"></script>
+                    <script type="text/javascript">
+
+                        $(document).ready(function() {
+                            $('#example').dataTable();
+                        } );
+                    
+                       function initMyDataTable() {
+                         $('#example').dataTable();
+                           
+                       }
+                       function addTableRow(a){
+                            $('#example').dataTable().fnAddData([a.id, a.name, a.rating, a.city_id, a.num_reviews, a.category]);
+                       }
+                    </script>
                 </div>
             </div>
         </section>
-        <!--GRID SECTION END-->
+        <!-- TABLE SECTION END -->
     </div>
-    <!--FOOTER SECTION START-->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <p class="text-muted">&copy; 2016 SWEetSpots | By : <a href="http://www.designbootstrap.com/" target="_blank">DesignBootstrap</a></p>
+        <!--FOOTER SECTION START-->
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="text-muted">&copy; 2016 SWEetSpots | By : <a href="http://www.designbootstrap.com/" target="_blank">DesignBootstrap</a></p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </footer>
-    <!--FOOTER SECTION END-->
+        </footer>
+        <!-- // FOOTER SECTION END -->
+
+
+    <!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME -->
+    <!-- CORE JQUERY -->
     <script src="../static/assets/js/jquery-1.11.1.js"></script>
-    <script src="../static/assets/js/jquery-1.12.0.min.js"></script>
-    <!-- DATA TABLE SCRIPT -->
-    <script src="../static/assets/js/jquery.dataTables.min.js"></script>
+    <script src="../static/assets/js/jquery-1.12.0.min.js"></script>    
     <!-- BOOTSTRAP SCRIPTS -->
     <script src="../static/assets/js/bootstrap.js"></script>
+    <!-- DATA TABLE SCRIPT -->
+    <script src="../static/assets/js/jquery.dataTables.min.js"></script>
     <!-- EASING SCROLL SCRIPTS PLUGIN -->
-    <script src="../static/../static/assets/js/vegas/jquery.vegas.min.js"></script>
+    <script src="../static/assets/js/vegas/jquery.vegas.min.js"></script>
     <!-- VEGAS SLIDESHOW SCRIPTS -->
     <script src="../static/assets/js/jquery.easing.min.js"></script>
     <!-- FANCYBOX PLUGIN -->
@@ -152,8 +129,6 @@
     <script src="../static/assets/js/animations.min.js"></script>
     <!-- CUSTOM SCRIPTS -->
     <script src="../static/assets/js/custom.js"></script>
-
-
-</body>
+ </body>
 
 </html>
