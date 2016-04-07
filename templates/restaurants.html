@@ -11,7 +11,11 @@
 <![endif]-->
     <title>SWEetSpots</title>
     <!-- REACT -->
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.8/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.8/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.5/marked.min.js"></script>
     <!-- BOOTSTRAP CORE CSS -->
     <link href="../static/assets/css/bootstrap.css" rel="stylesheet" />
     <!-- ION ICONS STYLES -->
@@ -69,8 +73,7 @@
                         <hr />
                     </div>
                 </div>
-                <div class="row animate-in" data-anim-type="fade-in-up">
-                    <!-- REACT SECTION -->
+<!--                 <div class="row animate-in" data-anim-type="fade-in-up">
                     <table id="example" class="display" cellspacing="0" width="100%">
                         <thead>
                             <tr>
@@ -82,14 +85,12 @@
                                 <th>Address</th>
                             </tr>
                         </thead>
-<!--                         <tbody id = "content">
-                            
-                        </tbody> -->
-                        <tbody>
-                        </tbody>
                     </table>
-
+                </div> -->
+                <!-- REACT SECTION -->
+                <div id = "content" class="row animate-in" data-anim-type="fade-in-up">
                 </div>
+
             </div>
         </section>
         <!-- TABLE SECTION END -->
@@ -108,10 +109,27 @@
 
 
     <!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME -->
+    <!-- DATA TABLE SCRIPT -->
+    <script type="text/babel" src="../static/assets/js/scripts/restaurants.js"></script>
+    <script type="text/javascript">
+    
+        $(document).ready(function() {
+            $('#example').dataTable();
+        } );
+                   
+        function fnClickAddRow(r) {
+            $('#example').dataTable().fnAddData( [
+                r.id, r.name, r.location, r.rating, r.category, r.address]
+            );    
+        }
+        function initMyDataTable() {   
+                console.log("IM CALLED");
+                $('#example').dataTable().fnDraw();
+        }
+    </script>
     <!-- CORE JQUERY -->
     <script src="../static/assets/js/jquery-1.11.1.js"></script>
     <script src="../static/assets/js/jquery-1.12.0.min.js"></script>
-    
     <!-- BOOTSTRAP SCRIPTS -->
     <script src="../static/assets/js/bootstrap.js"></script>
     <!-- DATA TABLE SCRIPT -->
