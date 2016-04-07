@@ -73,7 +73,7 @@ a:hover, a:focus {
     filter: alpha(opacity=20); 
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: 0% 50%;
+    background-position: 75% 100%;
     background-attachment: fixed;
     -ms-background-size: cover;
     -o-background-size: cover;
