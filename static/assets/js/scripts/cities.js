@@ -26,15 +26,11 @@ var CityTable = React.createClass({
   render: function() {
     var cityNodes = this.state.data.map(function(city) {
       addTableRow(city);
-      return (
-        <City ct = {city}/>
-      );
     });
     return (
       <table id="example" className="display" cellSpacing="0" width="100%">
         <thead>
           <tr>
-              <th>ID</th>
               <th>Name</th>
               <th>Population</th>
               <th>Country</th>
@@ -48,39 +44,7 @@ var CityTable = React.createClass({
     );
   }
 });
-// var City = React.createClass({
-//   render: function() {
-//     return (
-//           <tr>
-//               <td data-search="0">{this.props.ct.id}</td>
-//               <td data-search="1">{this.props.ct.name}</td>
-//               <td data-search="2">{this.props.ct.population}</td>
-//               <td data-search="3">{this.props.ct.country}</td>
-//               <td data-search="4">{this.props.ct.demonym}</td>
-//               <td data-search="5">{this.props.ct.elevation}</td>
-//           </tr>
-//     );
-//   }
-// });
 
-// <a href="https://facebook.github.io/react/">Hello!</a>
-
-// React.createElement('a', {href: 'https://facebook.github.io/react/'}, 'Hello!')
-
-var City = React.createClass({
-  render: function() {
-    return (
-          <tr>
-              <td data-search="0">{this.props.ct.id}</td>
-              <td data-search="1"><a href="https://facebook.github.io/react/">{this.props.ct.name}</a></td>
-              <td data-search="2">{this.props.ct.population}</td>
-              <td data-search="3">{this.props.ct.country}</td>
-              <td data-search="4">{this.props.ct.demonym}</td>
-              <td data-search="5">{this.props.ct.elevation}</td>
-          </tr>
-    );
-  }
-});
 ReactDOM.render(
   <CityTable url="/api/cities" />,
   document.getElementById('content')

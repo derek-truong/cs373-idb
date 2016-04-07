@@ -87,7 +87,7 @@
                            
                        }
                        function addTableRow(c){
-                            $('#example').dataTable().fnAddData([c.id, c.name, c.population, c.country, c.demonym, c.elevation]);
+                            $('#example').dataTable().fnAddData(["<a href=\"/cities/"+ c.id +"\">"+c.name+"</a>", c.population, c.country, c.demonym, c.elevation]);
                        }
                     </script>
                 </div>

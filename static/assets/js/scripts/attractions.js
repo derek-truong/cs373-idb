@@ -26,15 +26,11 @@ var AttractionTable = React.createClass({
   render: function() {
     var attractionNodes = this.state.data.map(function(attraction) {
       addTableRow(attraction);
-      return (
-        <Attraction attr = {attraction}/>
-      );
     });
     return (
       <table id="example" className="display" cellSpacing="0" width="100%">
         <thead>
           <tr>
-              <th>ID</th>
               <th>Name</th>
               <th>Rating</th>
               <th>City</th>
@@ -45,20 +41,6 @@ var AttractionTable = React.createClass({
         <tbody>
         </tbody>
       </table>
-    );
-  }
-});
-var Attraction = React.createClass({
-  render: function() {
-    return (
-          <tr>
-              <td data-search="0">{this.props.attr.id}</td>
-              <td data-search="1">{this.props.attr.name}</td>
-              <td data-search="2">{this.props.attr.rating}</td>
-              <td data-search="3">{this.props.attr.city_id}</td>
-              <td data-search="4">{this.props.attr.num_reviews}</td>
-              <td data-search="5">{this.props.attr.category}</td>
-          </tr>
     );
   }
 });

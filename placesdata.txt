@@ -1,0 +1,542 @@
+{
+   "html_attributions" : [],
+   "next_page_token" : "CuQB4AAAAIdKoXTQ6KWF92wHjo8nVSSJ1Nd6ZCZvHTqZa-aDsUIe3wdh95CEPVMn5xYAw9ooEJhUbVEYM19KnqUBfq9ppKKlKBPAAzWhkjHGOqnNE6tDYyeE_e-pHOt_jYkc8NoNeWF56MtMhr6bxc8owej1GnvzbplrcmoXn_p3QQUjgvnlIshb9ooN8DNFSRoC423jET6HSU3ZhdB_YgKyLZnaBPxEBf54YHLTlxigbjptzEI1QWijLyKmUD3IxZGeYVA5A6WQAMKXvlH9QveI9Lx5XLxrx0A-QbQ3g1z4sA6k9fXyEhA4ovw9V4hlJg76J0oz_BhKGhT1rRAlb0w5zk6wfKyhnNhnJL3yGg",
+   "results" : [
+      {
+         "formatted_address" : "Japan, 〒220-6001 Kanagawa Prefecture, Yokohama 西区みなとみらい2−3−1 クイーンズタワーA 1F",
+         "geometry" : {
+            "location" : {
+               "lat" : 35.4556633,
+               "lng" : 139.6328315
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+         "id" : "42f0cee8e1362e914f631c4fc86eb2bc31590a3d",
+         "name" : "Hard Rock Cafe",
+         "opening_hours" : {
+            "open_now" : false,
+            "weekday_text" : []
+         },
+         "photos" : [
+            {
+               "height" : 3024,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104209627890541183755/photos\"\u003eかみあぷ菊太郎\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRdAAAA83LL-2itUwo3ypTUvB4lhvL_Rz9669b-K-q8vunCN9703MMkH_nhpLeHGASVJhgLh6t5bsIRT3OEvCoA6zkqRTZRAjuqSFcSkqLPCPvdS626VtUrL1NSG-Zrn-khVwS7EhDqusneLnlSRD8l17_ydRdpGhTqhx1hPR_vYmUkAYujgdSzzulUyg",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJAyWH91xcGGARBEFJMwUV_co",
+         "price_level" : 2,
+         "rating" : 4,
+         "reference" : "CnRiAAAAHvbwirhAJ1SKDPx8a2qrSUCdQ_Z21Lazk3KUaUmg8AQ4RWrgleCpCFIP8CoA0TLI7l8i66vZPNki9ntLDvg5DiONarqiUovMzYPqVC486Co84oe21bJb-t22w6yj7HU3mjgymh-GhZUwPFfndvawShIQGC2xdVcFEqHwwpQwVXErrRoU8pj2e8wciRLSppzRwNti3hlep_A",
+         "types" : [
+            "restaurant",
+            "cafe",
+            "store",
+            "bar",
+            "food",
+            "point_of_interest",
+            "establishment"
+         ]
+      },
+      {
+         "formatted_address" : "Kanagawa, １丁目-３-２３ 北幸 西区 横浜市 神奈川県 220-0004, Japan",
+         "geometry" : {
+            "location" : {
+               "lat" : 35.466836,
+               "lng" : 139.620203
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+         "id" : "cb0983b7eecb5ae251380f2eb9b4f20e3109f8ae",
+         "name" : "Yokohama Bay Sheraton Hotel & Towers",
+         "photos" : [
+            {
+               "height" : 1000,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110126754666659570438/photos\"\u003eYokohama Bay Sheraton Hotel &amp; Towers\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRdAAAAQ2UShsZ70XYpybMIppXi85jNa6oQ28GmIWNSbXtQCcEDZovH-WMkf1RUvACC5WTe0Vzv7_RetXQTcE6zIg0uOJYiaBRlkZDXxWtkwIr7ZILL3mwFV-Zj3cUv8kFnaJOGEhDlEscZZ3SYWop35snejb0hGhRHgzAs9MlZ_hzugSHzFNTaJk2-7A",
+               "width" : 1000
+            }
+         ],
+         "place_id" : "ChIJU6ZK-hFcGGAROZrZ7Hp5x70",
+         "rating" : 4.3,
+         "reference" : "CoQBeAAAAA13_-mgwslmCQSzU7hUk80OmngYFe5ViBU5Ak0JdAuoyRJxIWJyKPSTtVPZB-YrmNAqOW8F45gaz6ddNZ6yQZlHTTbAJ8bXtsAhl1oSBsO0m2pFCdsfPBsF9HetT9KnCuWmgGhLCeVkX2VT2HUyQZ8rthJ2zyLZDOztfZaemiyaEhAf8xaUVVkYG_7hUHTWzXoUGhRMOTdR4C6vUU6oCCqTJ6t8jiJKeA",
+         "types" : [ "restaurant", "food", "lodging", "point_of_interest", "establishment" ]
+      },
+      {
+         "formatted_address" : "15 Yamashitacho, Naka Ward, Yokohama, Kanagawa Prefecture 231-0023, Japan",
+         "geometry" : {
+            "location" : {
+               "lat" : 35.4439869,
+               "lng" : 139.6509915
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+         "id" : "6c268874bdbe11f17103b8c527194b74dd71e9dc",
+         "name" : "THE TOWER RESTAURANT YOKOHAMA",
+         "opening_hours" : {
+            "open_now" : false,
+            "weekday_text" : []
+         },
+         "place_id" : "ChIJ_2RVhR1dGGARDF0FOZF87i8",
+         "rating" : 4.5,
+         "reference" : "CnRwAAAA9vR-hGE8vsrcoHjOmbfhXfW5KS2zzuS6vT0X2otqJ3aTwt7SQmCzK8eUWmsCDPq_vAxk5CsQbw-Mg_rIIxzZ9uc6n8EcPrBApldjxvpNp71NMm_o64INNhblJZ9LMEww_N6u2oi6Wu-8W-3X93xM8xIQVKurND5KoFMwta-f2jmahRoUQeYpOEylhGAt4Adhyty4APuD8YE",
+         "types" : [ "restaurant", "food", "point_of_interest", "establishment" ]
+      },
+      {
+         "formatted_address" : "2 Chome-2-1 Shinko, Naka Ward, Yokohama, Kanagawa Prefecture 231-0001, Japan",
+         "geometry" : {
+            "location" : {
+               "lat" : 35.4543369,
+               "lng" : 139.6380959
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+         "id" : "6f46857e8f862106a358b8e42bf2bc91b469f74e",
+         "name" : "Gara",
+         "place_id" : "ChIJTzG9vllcGGAR6yNyVJPRqoA",
+         "price_level" : 2,
+         "reference" : "CmRYAAAA0ngM5uVQWK0QJbVxpjZ62b03RccnzvITaYxBpq0PA1Tut_N-HOXYhBWJWcVSthgZ5foeAn3RovhFcox9rMT0NcZEh1HKU9-vsAcIBIgP5FOaAcKzCnHDK2wQ2WZgCaGwEhDgks3nnR_FuWij4bUkqqUWGhQMClNvxryJSES8UoqfKNGa27WopA",
+         "types" : [ "restaurant", "food", "point_of_interest", "establishment" ]
+      },
+      {
+         "formatted_address" : "Japan, 〒220-0005 Kanagawa Prefecture, Yokohama, 西区南幸2−12−6",
+         "geometry" : {
+            "location" : {
+               "lat" : 35.46340300000001,
+               "lng" : 139.616082
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+         "id" : "a52b2513546f74d57e6b978c65533c0ae4141de0",
+         "name" : "吉村家 (Yoshimura Yokohama)",
+         "opening_hours" : {
+            "open_now" : false,
+            "weekday_text" : []
+         },
+         "photos" : [
+            {
+               "height" : 2448,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108410335050295454004/photos\"\u003e吉川工事\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRdAAAAnLkbid8PuaWUakvYUGDZnpK6-yV5li5NrzWXeU-JYnRAswrVoGX2msRcpDYagAdrzjRQvSD0S4--Lhf-hFGwq7im7mAdsVhu8CzauNhw6tipWrbRvUTwSBXrgFOz-WyMEhAYKHLrDWP3fIW6GZMywa6mGhRNkdxc8JLbjx2T-kjpncrcWG992w",
+               "width" : 3264
+            }
+         ],
+         "place_id" : "ChIJL9MHQwxcGGARctbSzWCKzsk",
+         "price_level" : 1,
+         "rating" : 4,
+         "reference" : "CoQBcgAAACwgII6GM93Jexk8mEJmOMnnzBI9fSdQWx1hiqKfjScqwWKvIa4Hw47SRZQdyvn5TaGUEDeOW491fJYjqKHJltxaCeU9W9lP3zrpqAyLblk-Q0-3a4CH7v8nyEdmlJM0JREi2kMY8KXJQ8e75WSo9Mm0Lm_H4cyLjehuMUMlpuR0EhC4FQ6yGbRfuK7LhITKR05RGhSXn56xYj4HUqYgZsZ6L9C2SETx5g",
+         "types" : [ "restaurant", "food", "point_of_interest", "establishment" ]
+      },
+      {
+         "formatted_address" : "3 Chome-160-4 Nogecho, Yokohama-shi, Naka-ku,, Kanagawa Prefecture 231-0064, Japan",
+         "geometry" : {
+            "location" : {
+               "lat" : 35.448583,
+               "lng" : 139.628656
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+         "id" : "63a937288c71e86fc9a87a7febdb9901be1dfbdb",
+         "name" : "36 spices",
+         "opening_hours" : {
+            "open_now" : false,
+            "weekday_text" : []
+         },
+         "photos" : [
+            {
+               "height" : 1728,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104576537532072552110/photos\"\u003eKo Pan\u003c/a\u003e"
+               ],
+               "photo_reference" : "CoQBcwAAAIDZtOHVpuvjnxNWFzhczSuFO9QgAjHz3NxZTpTQYPkGurKWaL9Lzjxjw1JCoWnR97NFCRCZl72HCHP9HMn2-KJvEjuYkkf30AMBv-xGQ6DslY7TPFAQxKLF8aGgdKmDmTJV7qGBne1DT8GOV1UcTqnVhNl7WEs6Rdyzah_N5UJzEhBinQzlol15jxmIoAn6sWR9GhQOimggUdGQY0nQaChGFbtbQUBpXQ",
+               "width" : 2592
+            }
+         ],
+         "place_id" : "ChIJjUTrFYpbGGARDHF8Vxrpc9Q",
+         "price_level" : 2,
+         "reference" : "CmRdAAAAt4SG6WGG2hy9D5AD1W7l4ofslIpgl7Zc3kBoKfLm7IGcU5uA4GWXp8fcDUO-a6jHkEqR5pWZkROkgh71a8pv5hg4qpLdY2tMeUcnw3yPy0X-rqb33Mod1s07Zq-6QgXkEhBXAtX0RiLvYyvocXiMvYUuGhR6hcRjI7yzet9xZ8MT10_REzZF-A",
+         "types" : [ "restaurant", "food", "point_of_interest", "establishment" ]
+      },
+      {
+         "formatted_address" : "Japan, 〒231-0023 Kanagawa Prefecture, Yokohama, 中区山下町７４−６",
+         "geometry" : {
+            "location" : {
+               "lat" : 35.4448794,
+               "lng" : 139.6451884
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+         "id" : "32d406223960b6d1c3f204ab9c0490cdaa47a3ad",
+         "name" : "Sitar",
+         "opening_hours" : {
+            "open_now" : false,
+            "weekday_text" : []
+         },
+         "place_id" : "ChIJ8ygnVvtcGGARPanMLxMPQUw",
+         "price_level" : 2,
+         "rating" : 4.3,
+         "reference" : "CmRYAAAACMQDeSqLCdewNfyFvCkFXNRd-YjUdqRG18y7ao0YT82NQbCXQzwZUSpJPZymj5ycnOHRCiKR0MZiyLpMJr4MmLMQYrWsJa4f0DVR2K0j6QKZK2YIatRt6YzkhGjT7AI3EhBRyCjYzW2kGS-kiVf_FbtmGhR0SW-24bTc6q2Zo1v2QLDRFZQ5zg",
+         "types" : [ "restaurant", "food", "point_of_interest", "establishment" ]
+      },
+      {
+         "formatted_address" : "153 Yamashitacho, Naka Ward, Yokohama, Kanagawa Prefecture 231-0023, Japan",
+         "geometry" : {
+            "location" : {
+               "lat" : 35.4433967,
+               "lng" : 139.6444363
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+         "id" : "4f583d7ec8add975f52bf22c29fa150520399a60",
+         "name" : "Manchinro Honten",
+         "opening_hours" : {
+            "open_now" : false,
+            "weekday_text" : []
+         },
+         "photos" : [
+            {
+               "height" : 3648,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105806492098675244737/photos\"\u003e内藤渉\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRdAAAAo62PGPQPnj6dYtrMObApJdUX-sZi4u-Pq-nwtEII_iEQ8iSFpye0k_PTRHXskglaqeKPVdqBmH41vji3nrYbdci6WZVBLsFowUyaM5dSbQz7Rxi4CwqqeIDrTBga95ZAEhBhEwcsEaaXMXGzniY4MpdfGhSb9dHR_op_ifQQahT6IRiUtJtXcQ",
+               "width" : 2736
+            }
+         ],
+         "place_id" : "ChIJN5Rzu-RcGGARHASwo8SYs3w",
+         "price_level" : 3,
+         "rating" : 4.2,
+         "reference" : "CnRjAAAAiQH9nkIMXapMzZ1IhysARGRtP5UXOnTYhwKk8rLzhxNjT4SIVCgboEULLBIJYAGjuRI2KkD6HjazNld_kR_eJGt2e4PK82QBoo4fziyF9JLALd6IoFk0Qmae9ZkbDE39FE50NrPBjWrZxYhbEEKOrxIQY5v63bY1BBaU1EM16PNEcxoUONtVr6Zz6mgyI0Y74RB08_d8n9U",
+         "types" : [
+            "grocery_or_supermarket",
+            "store",
+            "restaurant",
+            "food",
+            "point_of_interest",
+            "establishment"
+         ]
+      },
+      {
+         "formatted_address" : "Japan, 〒225-0012 Kanagawa Prefecture, Yokohama, 青葉区あざみ野南２丁目１４−３",
+         "geometry" : {
+            "location" : {
+               "lat" : 35.5652096,
+               "lng" : 139.5523407
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+         "id" : "3aa51a3502a45d5b36de7bfde30ed5712d305a99",
+         "name" : "Azamino Ukai-tei",
+         "photos" : [
+            {
+               "height" : 480,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109413682175934227319/photos\"\u003e磯部夏代子\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRdAAAAQlY-Aa9W7tx_RoQQ4D2KSMdYsztiW7QrbXZ6iuQEDiV07MawFyOPMTWVJEf-95lqS4kV7EV4AaZulIEDZg3lqJbKgaqu2R0EKBWLzqA6x4SQqBfd7SrNRgVOuOxUxT2eEhCvJjpW8zldBONV19fuzYsKGhSbaoBLZfbKYPKBS53kVK9GVkz-wA",
+               "width" : 640
+            }
+         ],
+         "place_id" : "ChIJb2_wNgr3GGARTblTDxDevmw",
+         "price_level" : 3,
+         "rating" : 4.3,
+         "reference" : "CnRjAAAAOO228KseynMr_UrB4W_i4PoRkdBueSGAvWRmKJTKPDrIj3KZorKTNKwzxEuJ6-5GbqZrD7tn5BQeyKQVj67nbSY5UHrpgRMr57rmBmRtEj_K0iBXx7XJgBPmNRSCx_ED8Ir5c1EqhcG_mRb-MTGqwBIQPLIw6YoTEwLwYIy70rdTphoUnD7Rq4ba-P7stngrH5MHkLQbzEw",
+         "types" : [ "restaurant", "food", "point_of_interest", "establishment" ]
+      },
+      {
+         "formatted_address" : "2 Chome-17 Yayoicho, Naka Ward, Yokohama, Kanagawa Prefecture 231-0058, Japan",
+         "geometry" : {
+            "location" : {
+               "lat" : 35.44036200000001,
+               "lng" : 139.6301454
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+         "id" : "1c6f346556af63ec1696fdd85fc79c2718a55e65",
+         "name" : "Al Ain",
+         "photos" : [
+            {
+               "height" : 3936,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105929993980437231381/photos\"\u003eMasayuki Ishikawa\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRdAAAASZe7L9rhVlqjg7oC_1DHv1BZE5yP68GY03-tTMzPBWj-Z3OGYAtNksh2pze4iAs4SgEeM7JGZybUHSilr_-2TcH3V0MNkPqnZ5siWpG8wS2oUv_SUopTzDC7zr-MFmvXEhDrKQjAAD4kuk_rC0O41Mo0GhRnn2wXNdUaUIulIIGQG8xXAFQ_kA",
+               "width" : 5248
+            }
+         ],
+         "place_id" : "ChIJWyeY0_JcGGARhXqbPNk1k_0",
+         "price_level" : 2,
+         "rating" : 3.9,
+         "reference" : "CmRaAAAA4eOhlm35WOQ3J7X6vN6ZBlYHfj5YoefcSDDBNva42SVAc5rqxqZvoQDFtGzdjWCMoPdeRtWiEhmbCwd_CK9_Xk-UosW-WkEJd4T-9eeUvEw8nHD053QH8Ey7ngCFLy3UEhAeXPkKRPcu5iVTAsNWi63LGhRmYp9bQpuT-RNMvrCDHTYRlHALHw",
+         "types" : [ "restaurant", "food", "point_of_interest", "establishment" ]
+      },
+      {
+         "formatted_address" : "Japan, 〒220-8542 Kanagawa Prefecture, Yokohama, Nishi Ward, Minatomirai, 2 Chome−3−2, クイーンズイーストB1",
+         "geometry" : {
+            "location" : {
+               "lat" : 35.4566578,
+               "lng" : 139.6331945
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+         "id" : "33e62f4a398de9ff953d10d6f613f7a32e90007c",
+         "name" : "Hakata Ippudo",
+         "opening_hours" : {
+            "open_now" : false,
+            "weekday_text" : []
+         },
+         "photos" : [
+            {
+               "height" : 1536,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/107548040240699882749/photos\"\u003eAndo Yutaka\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRdAAAAbZT6dTxPwFxdk7T1SPELFoDscqMexJv72SwI5wyeuCczHamJC59UYCbNBG5IBms4T3daU4AHqokJmReG_pS47rBbLZ5ubXsKiR7AqW23yRf_K25fz9zUuilunM5kQ7jlEhAoTQ7GGs9P2orPDgEd0d3eGhSD9l_Rq3-1edegGnAToyW1CW_LkA",
+               "width" : 2048
+            }
+         ],
+         "place_id" : "ChIJG4bw41xcGGARD8-kpm-WZz8",
+         "price_level" : 1,
+         "rating" : 3.7,
+         "reference" : "CmRgAAAADlEMcF9Tl3pZ4C2C0bH8sl-eSd3cwPxAI5xepSBbnF5VL51AgpCDxBpy-Ds-OuDxzzjX_U4cfCiF7zoCaVJ3xUl-MTn2sQvAigaciE7NwrFe6Ma8nDKE9PGXgPG8S3p4EhCQcQLCnS2XFJsbeTUde6H6GhQvJoNyqnYMgB5OJ-8r6erLI8ENTg",
+         "types" : [ "restaurant", "food", "point_of_interest", "establishment" ]
+      },
+      {
+         "formatted_address" : "Japan, 〒220-0012 神奈川県横浜市西区みなとみらい２丁目３−４",
+         "geometry" : {
+            "location" : {
+               "lat" : 35.4568934,
+               "lng" : 139.6333251
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+         "id" : "9005a03d9e9adb1fc75fc9baa4b671f2670785c6",
+         "name" : "Khazana",
+         "photos" : [
+            {
+               "height" : 3264,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106894375733420818685/photos\"\u003eTsuyoshi Takemura\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRdAAAAxU4lP-xu7VlTcq6AQzHV4svE2BSmragHelfsWQHLvk2kf9EyoFenpThe81V8xmJ3HRlWSVKnNzqe5y-vU1SUKmAWZm29cZjXMRLlJzzOG2eiOA10uEezFUOaqmimfmkJEhDmn14E-oM3LzLK5niY7o_-GhSDjREKZ71zd3xDWFvMNWwjbP5w9Q",
+               "width" : 2448
+            }
+         ],
+         "place_id" : "ChIJW0Me61xcGGARGNjwiBSvDvw",
+         "price_level" : 2,
+         "rating" : 3.4,
+         "reference" : "CmRbAAAAMS64_dApdq4CXISfs0PgfVq15KVGQr7NCkN1oQrtgtGo7JTH9bKidUuC8MoHFM2GL3Pgm87A4SaYrY4E7RbY_A3OTXTdB33-C3WFA22uSrMgwCkhaJpvt300ApKXxplPEhArG-stwo1_MDwazJ7WKegaGhS7hpmAcSrm1mtxUvc-XiwTTMnQMQ",
+         "types" : [ "restaurant", "food", "point_of_interest", "establishment" ]
+      },
+      {
+         "formatted_address" : "1 Chome-3-1 Minamisaiwai, Nishi Ward, Yokohama, Kanagawa Prefecture 220-8533, Japan",
+         "geometry" : {
+            "location" : {
+               "lat" : 35.46714970000001,
+               "lng" : 139.6222925
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+         "id" : "0744d157fcada27454ab91b0a50bb6992b94475e",
+         "name" : "Hungry Tiger",
+         "opening_hours" : {
+            "open_now" : false,
+            "weekday_text" : []
+         },
+         "photos" : [
+            {
+               "height" : 2160,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/112359848343411035033/photos\"\u003efaker holic\u003c/a\u003e"
+               ],
+               "photo_reference" : "CoQBcwAAAKo20dNSGu3tXiK7Hn3Pi6-TUfBk46SeQgsU9RWHZ-oCu_4n9kCsv-bcAsr9xct6iXstFA63GDanjyxFkypMdqlU4cn-237gFoS3z9xogIOUiBx3_C-GeTgRDAqiLAmX8Mff3epP5JYwFOX-yuq05O4nzfP_h4qXH800TTexDUmOEhCfF7ZInRLmvM143AUN7LJEGhSQBaiVekerq8W87Q2iHerhJ0VvJg",
+               "width" : 3840
+            }
+         ],
+         "place_id" : "ChIJIy50KhJcGGAR59fAHRuyf98",
+         "price_level" : 2,
+         "rating" : 4.5,
+         "reference" : "CmRgAAAAQMjQiCjN5r6BSs1dEi7dXVqxuhtAG1CYCZC5vE-LDLBeoFbiIneYX94JeHTiKU51GdIJedazT5rNgOPzWB2KR5OCg2Yw2X7taVznTV0V1GRrUiEEm4azRH9WRHP6SGJEEhD0_YefSj80BHpn5hMeLYmAGhSP7DQfPoCN_9xzEI6t_SpvCmJrDA",
+         "types" : [ "restaurant", "food", "point_of_interest", "establishment" ]
+      },
+      {
+         "formatted_address" : "Japan, 〒220-8522 Kanagawa Prefecture, Yokohama, Nishi Ward, Minatomirai, 1 Chome−1−1, ヨコハマグランドインターコンチネンタルホテル31F",
+         "geometry" : {
+            "location" : {
+               "lat" : 35.45764860000001,
+               "lng" : 139.6374713
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+         "id" : "8502c499cc44dad388c882a3374fbc6b4580a6cd",
+         "name" : "Karyu",
+         "place_id" : "ChIJpf4-TltcGGAR3lhF8My5Qjk",
+         "reference" : "CmRYAAAAmmEmmxxB8AlVDkocsCXHp0sTAhYAHMMUJd3aUow6P4OVKg7k6NzCQJmlv0FZU8TVXODzpQKZYldYKrazIqlifFeiZInEHBSs_Tby6t5rrjOrsCXSGC3xx4Bra2jD1STrEhCfWSsnEGl0VB5gitDq2_lrGhTJSzfZVdyXbRUTD3OrsQgv3qps-A",
+         "types" : [ "restaurant", "food", "point_of_interest", "establishment" ]
+      },
+      {
+         "formatted_address" : "Japan, 〒220-0012 Kanagawa Prefecture, Yokohama, Nishi Ward, Minatomirai, 2 Chome−2−1−２",
+         "geometry" : {
+            "location" : {
+               "lat" : 35.4548406,
+               "lng" : 139.6304523
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+         "id" : "266b62659d723163625eceb41841f162bf098d32",
+         "name" : "Sizzler",
+         "opening_hours" : {
+            "open_now" : false,
+            "weekday_text" : []
+         },
+         "place_id" : "ChIJj9L3dF1cGGARqmJfLVIGzmM",
+         "price_level" : 2,
+         "rating" : 3.9,
+         "reference" : "CmRaAAAAhPium0Z7AM9egxbt_PXHqmPweezB0BlzkxBnUPaUtqCDVlVgByfDtinf3iFZDtXopS_2CXuQRpMnuGZ8JaTu6Gptck1TuDUgCUXH6ZjJEBIi8eFoKjMM585rcS1PV5j1EhCINcnLRmxm1LYLkUWx6F5kGhTm2PPJvGw56d5hXzOISmguBywUag",
+         "types" : [ "restaurant", "food", "point_of_interest", "establishment" ]
+      },
+      {
+         "formatted_address" : "Japan, 〒220-0012 Kanagawa Prefecture, Yokohama, 西区みなとみらい２丁目３−４",
+         "geometry" : {
+            "location" : {
+               "lat" : 35.456526,
+               "lng" : 139.6345432
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+         "id" : "8d9ed95b7e3ea9aa1ca379d7e11701a0595c84c1",
+         "name" : "American House",
+         "opening_hours" : {
+            "open_now" : false,
+            "weekday_text" : []
+         },
+         "photos" : [
+            {
+               "height" : 1536,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103948788486265739141/photos\"\u003eHiroyuki Sato\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRdAAAAabg-KYVG6xP8PBwW3-NibPQJTzeMcBnAw-Umhbp4MdmUtp7fbZx0o5LQqT30Jedc1sasx-1fjbxAYAMpeIuWgHty3_P-JSCsyE5CiyGgR1tGi3Q1FVSYvR3IT9NRsUNzEhAyaohexTUanwGXoJNrNjiCGhS91tZ23hnIM3j0BYAj8V-AQaW8_g",
+               "width" : 2048
+            }
+         ],
+         "place_id" : "ChIJ_ZR4j1xcGGAR6NzAVrWfEMA",
+         "price_level" : 2,
+         "rating" : 3.6,
+         "reference" : "CnRiAAAAl85cMHl0Jx96YD4d_Q8UZRjBu6qB358sO-U8xF4jFBubuZll7Q3OvYXGfxFSsje0tY51hnimTY1xVXhnEFjv5co_g0__Faa5Q9QRxt3n7uHXFL4_UEDHAsndi39YyLHHFBrx-2dFoSVnfPYlpOrVkRIQ-_6OV_9po4Ing_W9kUozVRoUSgdSdy_PoUjlDyQ5QPe9ttPzQdY",
+         "types" : [ "restaurant", "food", "point_of_interest", "establishment" ]
+      },
+      {
+         "formatted_address" : "1 Chome-2-1 Aioicho, Naka Ward, Yokohama, Kanagawa Prefecture 231-0012, Japan",
+         "geometry" : {
+            "location" : {
+               "lat" : 35.4458936,
+               "lng" : 139.6398448
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+         "id" : "08b561741c5ea9eb07614ef57c6e367b83fdb270",
+         "name" : "Ali Baba",
+         "place_id" : "ChIJJeeTofBcGGARUKvSGYkoFZU",
+         "price_level" : 2,
+         "reference" : "CmRcAAAA1xC2DoLZNIUirpuL6jZZFDlmlu2kFMdXciAHAWQj6OFLG2aoN4sm3QPXXuO7lFmIJpLWl2aqK1h4DqT4pmYEwIPnpm_v0QwaVKU-cH8cboAACqPnnxnpMxwly3wO23zmEhCB5NxRQLlXBgGkePEkIPcyGhTtG7C2oGqbKbQNMWw7UtpYppmqfA",
+         "types" : [
+            "night_club",
+            "restaurant",
+            "food",
+            "point_of_interest",
+            "establishment"
+         ]
+      },
+      {
+         "formatted_address" : "2-3-4 Minatomirai, Nishi Ward, Yokohama, Kanagawa Prefecture 220-0012, Japan",
+         "geometry" : {
+            "location" : {
+               "lat" : 35.4568337,
+               "lng" : 139.6331936
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+         "id" : "310fe5b1f97a49c0bd06a523182845888359b3a3",
+         "name" : "Garlic Jo's",
+         "opening_hours" : {
+            "open_now" : false,
+            "weekday_text" : []
+         },
+         "place_id" : "ChIJ_ZR4j1xcGGARqx6F9Du2Dpo",
+         "price_level" : 2,
+         "rating" : 3.6,
+         "reference" : "CmRfAAAA2eFa1FqyS_K1Daf6tysS8Q3Xek0HYYMzAA7JzrWHJH_WNde07Ny-YfJMQG5hMy64xsMyYOCBzMmZ2pVwd8W_vv2wgPq_YbsiLOHHEnlYhHnCM_7WVnxGgUYnWhMjCuS8EhDTM4GrUxYJ9AyJDxfNbmaxGhQefrmAiTE9i0uLrf9J4DWJZgnItQ",
+         "types" : [ "restaurant", "food", "point_of_interest", "establishment" ]
+      },
+      {
+         "formatted_address" : "Japan, 〒231-0013 Kanagawa Prefecture, Yokohama, 中区住吉町5−63−1",
+         "geometry" : {
+            "location" : {
+               "lat" : 35.4478794,
+               "lng" : 139.6350782
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+         "id" : "db0eafa972e099bb9da3a99920d29b0af26fe959",
+         "name" : "Bashamichi Taproom",
+         "opening_hours" : {
+            "open_now" : false,
+            "weekday_text" : []
+         },
+         "photos" : [
+            {
+               "height" : 2160,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104686801934870259649/photos\"\u003e今井道雄\u003c/a\u003e"
+               ],
+               "photo_reference" : "CoQBcwAAAPv1wfLGaBdBZr8evMf1QZT4mj0ToYIV-VlPniWPFHRpqAcf1xKNdZHgZaSIN912YQfsbgSuHWDPWIN2jmC9s3OZUHMzfSyw5w6l1zGjylmcfDqQt3x3N2gk1igNiAwYBHOJlAmR0K_ia2b7fz0K-K4jjeR6aVYcINpDKy62mOeWEhC1w9tO5L-aSGvRz7Tc7LWYGhSDw_ZsuOwNpE4uGJuKMxcwM2HgHQ",
+               "width" : 3840
+            }
+         ],
+         "place_id" : "ChIJtRvld_ZcGGARMBZPPOgP3QM",
+         "price_level" : 2,
+         "rating" : 4.3,
+         "reference" : "CnRlAAAAqQkxuNMTGrUPqG-zux1ihrZpQBf9KfbTkmBGQ7piT6XOaGCHnGJdYiGZ5h17j8MyOsreALmf7QerWT58fmGm1HmaKza-RpAKXbrnNtYDQ9d9vG_zl2_xA6CyTEk024edJNDdR1Pa9t39zZqtNMhDvxIQ6hmXSa1JLT2OsC-XbmcwmBoUr7gjzBreRrdVXbnF_OlTMq3ekG0",
+         "types" : [ "restaurant", "food", "point_of_interest", "establishment" ]
+      },
+      {
+         "formatted_address" : "Japan, 〒221-0835 Kanagawa Prefecture, Yokohama 神奈川区鶴屋町2丁目15 YOKOHAMA CRANEビル5F",
+         "geometry" : {
+            "location" : {
+               "lat" : 35.467918,
+               "lng" : 139.622999
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+         "id" : "583aae3f4e700fe95eaa5186182403afc9a674a3",
+         "name" : "横浜 個室 イタリアン BEONE",
+         "opening_hours" : {
+            "open_now" : false,
+            "weekday_text" : []
+         },
+         "photos" : [
+            {
+               "height" : 275,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110994804857911520285/photos\"\u003e横浜 個室 イタリアン BEONE\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRdAAAA4nnlCjmAj3etrzeimet2AZRIKS5oA4x08NUguhBLFcG1SFEo0NcIIHqtSlcPm5GAumyNUelSANet41ak6bZ73LmHRb8bxdcS_8Kbis0ak-lV_k9-xGI6oKPhAnCoxrqREhCIEQjPIC4Pg-_kQg9-G_qgGhRBwvjU00Sx0y2zCh9Jt0tweImbDg",
+               "width" : 275
+            }
+         ],
+         "place_id" : "ChIJP1b9YhFcGGARVRALbfXhLJo",
+         "price_level" : 2,
+         "reference" : "CoQBdwAAAOd82vq6aS-H-LdRnMLn9JKCyHojQV1JoJa9L9KBEsa8t8uRiDL7tFr6rkx6gQAa792810PzJjRmrFD7ch-BG59kASND7pQ3uhGk0CIIgssUXHiBc9l2h1j-DlBAIiA2NhCdS2_X5GpaByJmCA89PBqXyNvTcJpEX3trLpYcEqJWEhCWrxc0EVgtDRieTiqyq286GhTGJ5HQLOu2CYGlUOVDKFHnbXb8lA",
+         "types" : [ "restaurant", "food", "bar", "point_of_interest", "establishment" ]
+      }
+   ],
+   "status" : "OK"
+}

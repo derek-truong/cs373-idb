@@ -87,8 +87,7 @@
                            
                        }
                        function addTableRow(r){
-                            $('#example').dataTable().fnAddData([r.id, r.name, r.city_id, r.rating, r.category, r.address]);
-                            // $('#example').dataTable();
+                            $('#example').dataTable().fnAddData(["<a href=\"/restaurants/"+ r.id +"\">"+r.name+"</a>", "<a href=\"/cities/" + r.city_id + "\">" + r.city_name +"</a>", r.rating, r.category.charAt(0).toUpperCase() + r.category.slice(1), r.address]);
                        }
                     </script>
                 </div>
