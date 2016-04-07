@@ -1,15 +1,15 @@
-var data = [
-//   {id: 25, name: "Pete Hunt", rating: "1", location:1, num_reviews:5 , category: "This is one restaurant", address:"Coolio"},
-//   {id: 50, name: "McDonalds", rating: "2", location:3, num_reviews:8 , category: "Anoda One", address:"Coolioerrersfj"}
-];
 var RestaurantTable = React.createClass({
   loadDataFromServer: function() {
+    // $.get(this.props.url, function(result) {
+    //   if (this.isMounted()) {
+    //     this.setState({data: data})
+    //   }
+    // }.bind(this))
     $.ajax({
       url: this.props.url,
       dataType: 'json',
       cache: false,
       success: function(data) {
-
         this.setState({data: data});
       }.bind(this),
       error: function(xhr, status, err) {
@@ -18,22 +18,36 @@ var RestaurantTable = React.createClass({
     });
   },
   getInitialState: function() {
-    console.log("1");
     return {data: []};
   },
   componentWillMount: function() {
-    initMyDataTable();
-    console.log("2");
     this.loadDataFromServer();
   },
   componentDidMount: function() {
-    console.log("3");
-    initMyDataTable();
+    // initMyDataTable();
+    // $('#example').dataTable().fnDraw();
+    $('#example').dataTable().fnDraw();
+
+  },
+  componentDidUpdate: function(){
+    // $('#example').dataTable().fnDrawCallBack();
+    // $('#example').dataTable().ajax.reload( function ( json ) {
+    //   $('#sort').val( json.lastInput );
+    // })
+  },
+
+  // componentDidUpdate: function(){
+  //   $('#example').dataTable({
+  //     "sPaginationType": "bootstrap",
+  //     "bAutoWidth": false,
+  //     "bDestroy": true, 
+  //   });
+  // },
+  componentWillUnmount: function() {
+    $('#example').dataTable().clearInterval();
   },
   render: function() {
-    // var restaurantNodes = this.props.data.map(function(restaurant) {
     var restaurantNodes = this.state.data.map(function(restaurant) {
-      addTableRow(restaurant);
       return (
         <Restaurant rest = {restaurant}/>
       );
@@ -51,6 +65,7 @@ var RestaurantTable = React.createClass({
           </tr>
         </thead>
         <tbody>
+            {restaurantNodes}
         </tbody>
       </table>
     );
@@ -61,15 +76,16 @@ var Restaurant = React.createClass({
     return (
           <tr>
               <td data-search="0">{this.props.rest.id}</td>
-              <td data-search="1">{this.props.rest.name}</td>
-              <td data-search="2">{this.props.rest.location}</td>
-              <td data-search="3">{this.props.rest.rating}</td>
-              <td data-search="4">{this.props.rest.category}</td>
-              <td data-search="5">{this.props.rest.address}</td>
+              <td data-search="0">{this.props.rest.name}</td>
+              <td data-search="0">{this.props.rest.location}</td>
+              <td data-search="0">{this.props.rest.rating}</td>
+              <td data-search="0">{this.props.rest.category}</td>
+              <td data-search="0">{this.props.rest.address}</td>
           </tr>
     );
   }
 });
+
 ReactDOM.render(
   <RestaurantTable url="/api/restaurants" />,
   document.getElementById('content')
