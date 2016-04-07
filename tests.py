@@ -49,7 +49,7 @@ class FunctionalTestCase(TestCase):
         startSize = len(query)
 
         attraction = {"id": 200, "name": "Six Flags", "rating": 5, "category": "Amusement Park",
-                 "num_reviews": 50, "city_id": 2, "image": "url"
+                 "num_reviews": 50, "city_id": 1, "image": "url"
             }
         db_create(Attraction(**attraction))
         query = session.query(Attraction).all()
@@ -135,6 +135,34 @@ class FunctionalTestCase(TestCase):
         reload_data(Attraction, "Attractions.json")
         attraction = session.query(Attraction).filter_by(id=5).one()
         self.assertEqual(attraction.name, "House of Torment")
+
+    def test_db_city_join1(self):
+        restaurant_list = db_city_join(Restaurant)
+        self.assertEqual(restaurant_list[0][0].name, "Restaurant De Kas")
+        self.assertEqual(restaurant_list[0][1].name, "Amsterdam")
+
+    def test_db_city_join2(self):
+        attraction_list = db_city_join(Attraction)
+        self.assertEqual(attraction_list[0][0].name, "Anne Frank House")
+        self.assertEqual(attraction_list[0][1].name, "Amsterdam")
+
+    def test_db_city_join3(self):
+        attraction_list = db_city_join(Attraction)
+        self.assertEqual(attraction_list[4][0].name, "House of Torment")
+        self.assertEqual(attraction_list[4][1].name, "Austin")
+
+    def test_db_city_join4(self):
+        restaurant_list = db_city_join(Restaurant)
+        self.assertEqual(restaurant_list[20][0].name, "Neptune Oyster")
+        self.assertEqual(restaurant_list[20][1].name, "Boston")
+
+    def test_db_read_city_spots1(self):
+        restaurant_list = db_read_city_spots(Restaurant, 1)
+        self.assertEqual(restaurant_list[0].name, "Don")
+
+    def test_db_read_city_spots2(self):
+        attraction_list = db_read_city_spots(Attraction, 1)
+        self.assertEqual(attraction_list[0].name, "Six Flags")
 
 
 if __name__ == "__main__" :
