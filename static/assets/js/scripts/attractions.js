@@ -1,8 +1,4 @@
-var data = [
-//   {id: 25, name: "Pete Hunt", rating: "1", location:1, num_reviews:5 , category: "This is one restaurant", address:"Coolio"},
-//   {id: 50, name: "McDonalds", rating: "2", location:3, num_reviews:8 , category: "Anoda One", address:"Coolioerrersfj"}
-];
-var RestaurantTable = React.createClass({
+var AttractionTable = React.createClass({
   loadDataFromServer: function() {
     $.ajax({
       url: this.props.url,
@@ -28,11 +24,10 @@ var RestaurantTable = React.createClass({
     initMyDataTable();
   },
   render: function() {
-    // var restaurantNodes = this.props.data.map(function(restaurant) {
-    var restaurantNodes = this.state.data.map(function(restaurant) {
-      addTableRow(restaurant);
+    var attractionNodes = this.state.data.map(function(attraction) {
+      addTableRow(attraction);
       return (
-        <Restaurant rest = {restaurant}/>
+        <Attraction attr = {attraction}/>
       );
     });
     return (
@@ -41,10 +36,10 @@ var RestaurantTable = React.createClass({
           <tr>
               <th>ID</th>
               <th>Name</th>
-              <th>Location</th>
               <th>Rating</th>
+              <th>City</th>
+              <th>Number of Reviews</th>
               <th>Category</th>
-              <th>Address</th>
           </tr>
         </thead>
         <tbody>
@@ -53,21 +48,21 @@ var RestaurantTable = React.createClass({
     );
   }
 });
-var Restaurant = React.createClass({
+var Attraction = React.createClass({
   render: function() {
     return (
           <tr>
-              <td data-search="0">{this.props.rest.id}</td>
-              <td data-search="1">{this.props.rest.name}</td>
-              <td data-search="2">{this.props.rest.location}</td>
-              <td data-search="3">{this.props.rest.rating}</td>
-              <td data-search="4">{this.props.rest.category}</td>
-              <td data-search="5">{this.props.rest.address}</td>
+              <td data-search="0">{this.props.attr.id}</td>
+              <td data-search="1">{this.props.attr.name}</td>
+              <td data-search="2">{this.props.attr.rating}</td>
+              <td data-search="3">{this.props.attr.city_id}</td>
+              <td data-search="4">{this.props.attr.num_reviews}</td>
+              <td data-search="5">{this.props.attr.category}</td>
           </tr>
     );
   }
 });
 ReactDOM.render(
-  <RestaurantTable url="/api/restaurants" />,
+  <AttractionTable url="/api/attractions" />,
   document.getElementById('content')
 );

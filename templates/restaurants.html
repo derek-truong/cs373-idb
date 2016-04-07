@@ -75,8 +75,22 @@
                     </div>
                 </div>
                 <div id="content" class="row animate-in" data-anim-type="fade-in-up">
-                    
+                    <script type="text/babel" src="../static/assets/js/scripts/restaurants.js"></script>
+                    <script type="text/javascript">
 
+                        $(document).ready(function() {
+                            $('#example').dataTable();
+                        } );
+                    
+                       function initMyDataTable() {
+                         $('#example').dataTable();
+                           
+                       }
+                       function addTableRow(r){
+                            $('#example').dataTable().fnAddData([r.id, r.name, r.city_id, r.rating, r.category, r.address]);
+                            // $('#example').dataTable();
+                       }
+                    </script>
                 </div>
             </div>
         </section>
@@ -98,10 +112,11 @@
     <!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME -->
     <!-- CORE JQUERY -->
     <script src="../static/assets/js/jquery-1.11.1.js"></script>
-    <script src="../static/assets/js/jquery-1.12.0.min.js"></script>
-    
+    <script src="../static/assets/js/jquery-1.12.0.min.js"></script>    
     <!-- BOOTSTRAP SCRIPTS -->
     <script src="../static/assets/js/bootstrap.js"></script>
+    <!-- DATA TABLE SCRIPT -->
+    <script src="../static/assets/js/jquery.dataTables.min.js"></script>
     <!-- EASING SCROLL SCRIPTS PLUGIN -->
     <script src="../static/assets/js/vegas/jquery.vegas.min.js"></script>
     <!-- VEGAS SLIDESHOW SCRIPTS -->
@@ -115,25 +130,6 @@
     <script src="../static/assets/js/animations.min.js"></script>
     <!-- CUSTOM SCRIPTS -->
     <script src="../static/assets/js/custom.js"></script>
-    <script type="text/babel" src="../static/assets/js/scripts/restaurants.js"></script>
-    <!-- DATA TABLE SCRIPT -->
-    <script src="../static/assets/js/jquery.dataTables.min.js"></script>
-    <script type="text/javascript">
-
-        $(document).ready(function() {
-            $('#example').dataTable();
-        } );
-    
-       function initMyDataTable() {
-         $('#example').dataTable();
-           
-       }
-
-       function addTableRow(r){
-            $('#example').dataTable().fnAddData([r.id, r.name, r.city_id, r.rating, r.category, r.address]);
-            // $('#example').dataTable();
-       }
-    </script>
  </body>
 
 </html>

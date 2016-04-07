@@ -10,6 +10,13 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <![endif]-->
     <title>SWEetSpots</title>
+    <!-- REACT -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.8/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.8/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.5/marked.min.js"></script>
+
     <!-- BOOTSTRAP CORE CSS -->
     <link href="../static/assets/css/bootstrap.css" rel="stylesheet" />
     <!-- ION ICONS STYLES -->
@@ -31,143 +38,97 @@
 </head>
 
 <body>
-    <div class="content-wrapper">    
+    <div class="content-wrapper">  
         <!--MENU SECTION START-->
         <div class="navbar navbar-inverse navbar-fixed-top scroll-me" id="menu-section">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-    			<span class="icon-bar"></span>
-    			<span class="icon-bar"></span>
-    			<span class="icon-bar"></span>
-    			</button>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                </button>
                     <a class="navbar-brand" href="/home">SWEetSpots</a>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="active"><a href="/cities">CITIES</a></li>
+                        <li  class="active"><a href="/cities">CITIES</a></li>
                         <li><a href="/attractions">ATTRACTIONS</a></li>
                         <li><a href="/restaurants">RESTAURANTS</a></li>
                         <li><a href="/about">ABOUT</a></li>
-                        <!-- <li><a href="#grid">GRID</a></li>-->
                     </ul>
                 </div>
             </div>
         </div>
         <!--MENU SECTION END-->
-
-        <!--GRID SECTION START-->
+        <div id="cities">
+            <div class="container">
+            </div>
+        </div>
+        <!--TABLE SECTION START-->
         <section id="grid">
             <div class="container">
                 <div class="row text-center header animate-in" data-anim-type="fade-in-up">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-
-                        <h3>CITIES</h3>
+                        <h3>Cities</h3>
                         <hr />
-
                     </div>
                 </div>
+                <div id="content" class="row animate-in" data-anim-type="fade-in-up">
+                    <script type="text/babel" src="../static/assets/js/scripts/cities.js"></script>
+                    <script type="text/javascript">
 
-                <!--TABLE SECTION START-->
-                <div class="row animate-in" data-anim-type="fade-in-up">
-                    <table id="example" class="display" cellspacing="0" width="100%">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>NAME</th>
-                                <th>POPULATION</th>
-                                <th>COUNTRY</th>
-                                <th>ELEVATION (m)</th>
-                                <th>DEMONYM</th>
-                            </tr>
-                        </thead>
-                        <tfoot>
-                            <tr>
-                                <th>ID</th>
-                                <th>NAME</th>
-                                <th>POPULATION</th>
-                                <th>COUNTRY</th>
-                                <th>ELEVATION</th>
-                                <th>DEMONYM</th>
-                            </tr>
-                        </tfoot>
-                        <tbody>
-                            <tr>
-                                <td data-search="0">0</td>
-                                <td><a href="/cities/0">Los Angeles</a></td>
-                                <td>3,884,307</td>
-                                <td>USA</td>
-                                <td>93</td>
-                                <td>Angeleno</td>
-                                <!-- 		                <td data-order="1303686000">Mon 25th Apr 11</td>
-    		                <td data-order="320800">$320,800/y</td> -->
-                            </tr>
-                            <tr>
-                                <td data-search="1">1</td>
-                                <td><a href="/cities/1">Barcelona</a></td>
-                                <!-- 		                <td>1,604,555</td>
-    		                <td>Spain</td>
-    						<td>12</td>
-    		                <td>Barcelonan, Barcelonian</td> -->
-                                <td>1,604,555</td>
-                                <td>Spain</td>
-                                <td>12</td>
-                                <td>Barcelonan, Barcelonian</td>
-                            </tr>
-                            <tr>
-                                <td data-search="2">2</td>
-                                <td><a href="/cities/2">Prague</a></td>
-                                <td>1,259,079</td>
-                                <!-- 		                <td>Czech Republic</td>
-    						<td>399</td>
-    		                <td>Praguer</td> -->
-                                <td>Czech Republic</td>
-                                <td>399</td>
-                                <td>Praguer</td>
-                            </tr>
-                        </tbody>
-                    </table>
-
+                        $(document).ready(function() {
+                            $('#example').dataTable();
+                        } );
+                    
+                       function initMyDataTable() {
+                         $('#example').dataTable();
+                           
+                       }
+                       function addTableRow(c){
+                            $('#example').dataTable().fnAddData([c.id, c.name, c.population, c.country, c.demonym, c.elevation]);
+                       }
+                    </script>
                 </div>
             </div>
         </section>
-        <!--TABLE SECTION END-->
+        <!-- TABLE SECTION END -->
     </div>
-
-    <!--FOOTER SECTION START-->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <p class="text-muted">&copy; 2016 SWEetSpots | By : <a href="http://www.designbootstrap.com/" target="_blank">DesignBootstrap</a></p>
+        <!--FOOTER SECTION START-->
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="text-muted">&copy; 2016 SWEetSpots | By : <a href="http://www.designbootstrap.com/" target="_blank">DesignBootstrap</a></p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </footer>
-    <!--FOOTER SECTION END-->
+        </footer>
+        <!-- // FOOTER SECTION END -->
 
 
-            <!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME -->
-            <!-- CORE JQUERY -->
-            <script src="../static/assets/js/jquery-1.11.1.js"></script>
-            <script src="../static/assets/js/jquery-1.12.0.min.js"></script>
-            <!-- DATA TABLE SCRIPT -->
-            <script src="../static/assets/js/jquery.dataTables.min.js"></script>
-            <!-- BOOTSTRAP SCRIPTS -->
-            <script src="../static/assets/js/bootstrap.js"></script>
-            <!-- EASING SCROLL SCRIPTS PLUGIN -->
-            <script src="../static/assets/js/vegas/jquery.vegas.min.js"></script>
-            <!-- VEGAS SLIDESHOW SCRIPTS -->
-            <script src="../static/assets/js/jquery.easing.min.js"></script>
-            <!-- FANCYBOX PLUGIN -->
-            <script src="../static/assets/js/source/jquery.fancybox.js"></script>
-            <!-- ISOTOPE SCRIPTS -->
-            <script src="../static/assets/js/jquery.isotope.js"></script>
-            <!-- VIEWPORT ANIMATION SCRIPTS   -->
-            <script src="../static/assets/js/appear.min.js"></script>
-            <script src="../static/assets/js/animations.min.js"></script>
-            <!-- CUSTOM SCRIPTS -->
-            <script src="../static/assets/js/custom.js"></script>
-</body>
+    <!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME -->
+    <!-- CORE JQUERY -->
+    <script src="../static/assets/js/jquery-1.11.1.js"></script>
+    <script src="../static/assets/js/jquery-1.12.0.min.js"></script>    
+    <!-- BOOTSTRAP SCRIPTS -->
+    <script src="../static/assets/js/bootstrap.js"></script>
+    <!-- DATA TABLE SCRIPT -->
+    <script src="../static/assets/js/jquery.dataTables.min.js"></script>
+    <!-- EASING SCROLL SCRIPTS PLUGIN -->
+    <script src="../static/assets/js/vegas/jquery.vegas.min.js"></script>
+    <!-- VEGAS SLIDESHOW SCRIPTS -->
+    <script src="../static/assets/js/jquery.easing.min.js"></script>
+    <!-- FANCYBOX PLUGIN -->
+    <script src="../static/assets/js/source/jquery.fancybox.js"></script>
+    <!-- ISOTOPE SCRIPTS -->
+    <script src="../static/assets/js/jquery.isotope.js"></script>
+    <!-- VIEWPORT ANIMATION SCRIPTS   -->
+    <script src="../static/assets/js/appear.min.js"></script>
+    <script src="../static/assets/js/animations.min.js"></script>
+    <!-- CUSTOM SCRIPTS -->
+    <script src="../static/assets/js/custom.js"></script>
+ </body>
 
 </html>
