@@ -4,7 +4,7 @@ FORMAT: 1A
 
 SWEetSpots is an API for receiving information on US cities, popular attractions in those cities, and popular restaurants.
 
-## Cities Collection [/scrape/cities]
+## Cities Collection [/api/cities]
 All cities data in our API
 ### List All Cities [GET]
 
@@ -19,13 +19,14 @@ All cities data in our API
                     "country": Country_as_String,
                     "demonym": Demonym_as_String,
                     "elevation": Elevation_as_float,
-                    "description": Description_as_string
+                    "description": Description_as_string,
+                    "image": Image_URL_as_string
                 }
                
             ]
         }
 
-## City Data [/scrape/cities/{name}]
+## City Data [/api/cities/{id}]
 Specific city data in our API
 ### Specific City Data [GET]
 
@@ -38,10 +39,11 @@ Specific city data in our API
             "country": Country_as_String,
             "demonym": Demonym_as_String,
             "elevation": Elevation_as_float,
-            "description": Description_as_string
+            "description": Description_as_string,
+            "image": Image_URL_as_string
         }
 
-## Attractions Collection [/scrape/attractions]
+## Attractions Collection [/api/attractions]
 All attractions data in our API
 ### List All Attractions [GET]
 
@@ -56,11 +58,12 @@ All attractions data in our API
                     "city_id": Location_as_String,
                     "num_reviews": Reviews_as_int,
                     "category": Category_as_String,
+                    "image": Image_URL_as_string
                 }
             ]
         }
         
-## Attraction Data [/scrape/attractions/{name}]
+## Attraction Data [/api/attractions/{id}]
 Specific attraction data in our API
 ### Specific Attraction Data [GET]
 
@@ -73,9 +76,10 @@ Specific attraction data in our API
             "city_id": City__ID_as_int,
             "num_reviews": Reviews_as_float,
             "category": Category_as_String,
+            "image": Image_URL_as_string
         }
         
-## Restaurants Collection [/scrape/restaurants]
+## Restaurants Collection [/api/restaurants]
 All restaurants data in our API
 ### List All Restaurants [GET]
 
@@ -89,12 +93,13 @@ All restaurants data in our API
                     "rating": Rating_as_float,
                     "city_id": City_ID_as_int,
                     "category": Category_as_String,
-                    "address": Address_as_string
+                    "address": Address_as_string,
+                    "image": Image_URL_as_string
                 }
             ]
         }
         
-## Resaurant Data [/scrape/restaurants/{name}]
+## Resaurant Data [/api/restaurants/{id}]
 All restaurants data in our API
 ### Specific Restaurant Data [GET]
 
@@ -106,5 +111,6 @@ All restaurants data in our API
             "rating": Rating_as_float,
             "city_id": City_ID_as_int,
             "category": Category_as_String,
-            "address": Address_as_string
+            "address": Address_as_string,
+            "image": Image_URL_as_string
         }
