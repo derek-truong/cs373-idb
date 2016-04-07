@@ -7,6 +7,7 @@ from flask.ext.sqlalchemy import SQLAlchemy
 from models import Base, City, Attraction, Restaurant
 import dbops
 import json
+import subprocess
 
 app = Flask(__name__)
 manager = Manager(app)
@@ -53,6 +54,14 @@ def attraction_detail(a_id):
 def about():
 	return render_template('about.html')
 
+@app.route('/tests')
+def tests():
+	cmd = subprocess.Popen(['make', 'test'],stdout=subprocess.PIPE,stderr=subprocess.PIPE)
+	out, error = cmd.communicate()
+	memory = error.splitlines()
+	memory += out.splitlines()
+
+	return render_template('tests.html', memory = memory)
 
 ######### API ROUTES ###########
 
