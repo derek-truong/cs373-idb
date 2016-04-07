@@ -19,7 +19,7 @@ class FunctionalTestCase(TestCase):
         query = session.query(City).all()
         startSize = len(query)
 
-        temp_city = {"id": 55,"name": "Dallas","population": 5000, "country": "USA", "demonym": "American", "elevation": 100000.0, "description": "Dallas is Great"}
+        temp_city = {"id": 55,"name": "Dallas","population": 5000, "country": "USA", "demonym": "American", "elevation": 100000.0, "description": "Dallas is Great", "image": "url"}
         
         db_create(City(**temp_city))
         query = session.query(City).all()
@@ -34,7 +34,7 @@ class FunctionalTestCase(TestCase):
         startSize = len(query)
 
         restaurant = {"id": 200, "name": "Don", "rating": 5, "category": "Japanese",
-               "address": "Guadalupe", "city_id": 1
+               "address": "Guadalupe", "city_id": 1, "image": "url"
           }
         db_create(Restaurant(**restaurant))
         query = session.query(Restaurant).all()
@@ -49,7 +49,7 @@ class FunctionalTestCase(TestCase):
         startSize = len(query)
 
         attraction = {"id": 200, "name": "Six Flags", "rating": 5, "category": "Amusement Park",
-                 "num_reviews": 50, "city_id": 2
+                 "num_reviews": 50, "city_id": 2, "image": "url"
             }
         db_create(Attraction(**attraction))
         query = session.query(Attraction).all()
@@ -136,10 +136,6 @@ class FunctionalTestCase(TestCase):
         attraction = session.query(Attraction).filter_by(id=5).one()
         self.assertEqual(attraction.name, "House of Torment")
 
-
-
-
-    
 
 if __name__ == "__main__" :
     main()  
