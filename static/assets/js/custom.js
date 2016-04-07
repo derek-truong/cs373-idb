@@ -74,7 +74,7 @@ FILTER FUNCTIONALITY SCRIPTS
 ======================================*/
 $(window).load(function () {
 // var $container = $('#work-div');
-var $container = $('#work-div');
+var $container = $('#sweetspots-div');
 $container.isotope({
 filter: '*',
 animationOptions: {
