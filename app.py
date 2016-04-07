@@ -84,14 +84,24 @@ def city_api():
 #Attractions api page
 @app.route('/api/attractions')
 def attraction_api():
-	al = [dbops.serialize(a) for a in dbops.db_read_all(Attraction)]
-	return json.dumps(al)
+	l = []
+	for x in dbops.db_city_join(Attraction):
+		d = dbops.serialize(x[0])
+		print (x)
+		d["city_name"] = x[1].name
+		l.append(d)
+	return json.dumps(l)
 
 #Restaurant api page
 @app.route('/api/restaurants')
 def restaurant_api():
-	rl = [dbops.serialize(r) for r in dbops.db_read_all(Restaurant)]
-	return json.dumps(rl)
+	l = []
+	for x in dbops.db_city_join(Restaurant):
+		d = dbops.serialize(x[0])
+		print (x)
+		d["city_name"] = x[1].name
+		l.append(d)
+	return json.dumps(l)
 
 
 
@@ -100,7 +110,7 @@ if __name__ == '__main__':
     # dbops.drop_table(City)
     # dbops.drop_table(Attraction)
     # dbops.drop_table(Restaurant)
-    dbops.reload_data(City,"Cities.json")
-    dbops.reload_data(Attraction, "Attractions.json")
-    dbops.reload_data(Restaurant, "Restaurants.json")
+    # dbops.reload_data(City,"Cities.json")
+    # dbops.reload_data(Attraction, "Attractions.json")
+    # dbops.reload_data(Restaurant, "Restaurants.json")
     app.run()
