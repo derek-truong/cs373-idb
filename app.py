@@ -46,7 +46,8 @@ def restaurants():
 @app.route('/restaurants/<int:r_id>')
 def restaurant_detail(r_id):
 	restaurant = dbops.db_read(Restaurant, r_id)
-	return render_template('restaurant.html',restaurant = restaurant)
+	city = dbops.db_read(City, restaurant.city_id)
+	return render_template('restaurant.html',restaurant = restaurant, city = city)
 
 # Attractions Table
 @app.route('/attractions')
@@ -56,7 +57,8 @@ def attractions():
 @app.route('/attractions/<int:a_id>')
 def attraction_detail(a_id):
 	attraction = dbops.db_read(Attraction, a_id)
-	return render_template('attraction.html',attraction = attraction)
+	city = dbops.db_read(City, attraction.city_id)
+	return render_template('attraction.html',attraction = attraction, city = city)
 
 @app.route('/about')
 def about():

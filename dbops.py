@@ -34,6 +34,11 @@ Returns a list of Restaurants/Attractions for a specific city
 def db_read_city_spots(type, city_id):
 	return session.query(type).filter_by(city_id = city_id)
 
+# """
+# Returns the City of a specific Restaurant/Attraction
+# """
+# def db_read_spot_city(id):
+# 	return session.query(City).filter_by(id=id).one()
 
 
 """
