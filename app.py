@@ -123,4 +123,3 @@ if __name__ == '__main__':
     dbops.reload_data(Attraction, "Attractions.json")
     dbops.reload_data(Restaurant, "Restaurants.json")
     app.run()
-    app.run()
