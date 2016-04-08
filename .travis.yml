@@ -16,6 +16,7 @@ install:
     - pip install flask
     - pip install coverage
     - pip install sqlalchemy
+    - apt-get install libmysqlclient-dev python-dev
     - pip install mysql-python
 
 before_script:
