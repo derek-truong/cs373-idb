@@ -69,15 +69,15 @@ class FunctionalTestCase(TestCase):
 
     def test_db_read_all1(self):
         city_list = db_read_all(City)
-        self.assertEqual(city_list[0].name, "Dallas")
+        self.assertEqual(city_list[0].name, "Amsterdam")
 
     def test_db_read_all2(self):
         restaurant_list = db_read_all(Restaurant)
-        self.assertEqual(restaurant_list[0].name, "Don")
+        self.assertEqual(restaurant_list[0].name, "Restaurant De Kas")
 
     def test_db_read_all3(self):
         attraction_list = db_read_all(Attraction)
-        self.assertEqual(attraction_list[0].name, "Six Flags")
+        self.assertEqual(attraction_list[0].name, "Anne Frank House")
 
     def test_serialize1(self):
         city = session.query(City).filter_by(id=1).one()
