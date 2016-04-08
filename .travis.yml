@@ -23,7 +23,8 @@ install:
     - pip install gunicorn
     - pip install flask-cors
     - pip install Flask-Testing
-    - pip install MySQL-python
+    - pip install sqlalchemy
+    - pip install mysql-python
 
 before_script:
     - uname -a
