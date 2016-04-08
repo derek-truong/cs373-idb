@@ -57,7 +57,6 @@ models.html: models.py
 IDB1.log:
 	git log > IDB1.log
 
-tests.out: 
-	tests.py
+tests.out: tests.py
 	coverage run tests.py
 	coverage report --include=models.py
