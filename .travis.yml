@@ -13,13 +13,13 @@ sudo: false
 install:
     - pip install --upgrade pip
     - pip --version
-    - pip install -r Flask
-    - pip install -r Flask-Script
-    - pip install -r Flask-SQLAlchemy
-    - pip install -r PyMySQL
-    - pip install -r gunicorn
-    - pip install -r flask-cors
-    - pip install -r Flask-Testing
+    - pip install Flask
+    - pip install Flask-Script
+    - pip install Flask-SQLAlchemy
+    - pip install PyMySQL
+    - pip install gunicorn
+    - pip install flask-cors
+    - pip install Flask-Testing
 
 before_script:
     - uname -a
