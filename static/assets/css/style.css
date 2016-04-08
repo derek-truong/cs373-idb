@@ -150,7 +150,9 @@ text-transform: uppercase;
     -moz-border-radius: 0px;
 }
 
-
+.form-group {
+    margin-top: 50px;
+}
 /* =============================================================
 CUSTOM BUTTON STYLES
 ============================================================ */
@@ -255,9 +257,9 @@ MENU SECTION STYLES - TODO match with html
     /*font-family: 'Roboto', sans-serif;*/
 }
 
-/*.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
     border-color: transparent;
-}*/
+}
 /*.navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
 background-color: rgb(40, 141, 203);
 }
@@ -265,6 +267,17 @@ background-color: rgb(40, 141, 203);
 border-color: rgb(40, 141, 203);
 }*/
 
+.navbar-form {
+  padding: 0px 0px;
+  margin-top: 5px;
+  margin-right: 10px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+}
+.navbar-form .control-label {
+    margin-bottom: 30;
+    vertical-align: middle;
+}
 /* MENU LINKS SECTION*/
 #home-menu-section {
     position:absolute;
@@ -350,6 +363,9 @@ HOME SECTION STYLES - CAROUSEL
 }
 .carousel-caption > h1 {
     letter-spacing: 3px;
+}
+.carousel-overlay {
+    z-index: 100;
 }
 
 /* Declare heights because of positioning of img element */
