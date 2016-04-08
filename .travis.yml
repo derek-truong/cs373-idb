@@ -13,17 +13,18 @@ sudo: false
 install:
     - pip install --upgrade pip
     - pip --version
-    - pip install flask
-    - pip install coverage
-    - pip install sqlalchemy
-    - apt-get install libmysqlclient-dev python-dev
-    - pip install mysql-python
+    - pip install -r Flask~=0.10
+    - pip install -r Flask-Script~=2.0
+    - pip install -r Flask-SQLAlchemy~=2.1
+    - pip install -r PyMySQL~=0.6
+    - pip install -r gunicorn~=19.3
+    - pip install -r flask-cors~=2.1.2
+    - pip install -r Flask-Testing~=0.4.2
 
 before_script:
     - uname -a
     - printenv
     - pip list
-    - mysql -e 'create database test'
 
 script:
     - date
