@@ -133,6 +133,13 @@ def restaurant_api():
         l.append(d)
     return json.dumps(l)
 
+#search
+@app.route('/search',  methods=['GET'])
+def search():
+    query = request.args.get('q')
+    page = request.args.get('page')
+    searchType = request.args.get('searchType')
+    return render_template('search.html', query=query, page=page, searchType=searchType)
 
 
 if __name__ == '__main__':
