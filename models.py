@@ -59,6 +59,6 @@ class Restaurant(Base):
 
 
 engine = create_engine('mysql+pymysql://travis:@localhost/test?charset=utf8')
-# # engine = create_engine('sqlite:///swespt.db')
+# engine = create_engine('sqlite:///swespt.db')
 
 Base.metadata.create_all(engine)

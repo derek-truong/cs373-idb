@@ -15,7 +15,6 @@ from dbops import *
 class FunctionalTestCase(TestCase):
 
     def test_db_create1(self):
-        drop_table(City)
         query = session.query(City).all()
         startSize = len(query)
 
@@ -29,7 +28,6 @@ class FunctionalTestCase(TestCase):
         self.assertEqual(startSize + 1, endSize) 
 
     def test_db_create2(self):
-        drop_table(Restaurant)
         query = session.query(Restaurant).all()
         startSize = len(query)
 
@@ -44,7 +42,6 @@ class FunctionalTestCase(TestCase):
         self.assertEqual(startSize + 1, endSize) 
 
     def test_db_create3(self):
-        drop_table(Attraction)
         query = session.query(Attraction).all()
         startSize = len(query)
 
