@@ -12,6 +12,7 @@ from flask import Flask, render_template, url_for, g, request, session, redirect
 from models import *
 from dbops import *
 
+
 class FunctionalTestCase(TestCase):
 
     def test_db_create1(self):

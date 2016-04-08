@@ -59,6 +59,15 @@ class Restaurant(Base):
 
 
 # engine = create_engine('mysql+mysqldb://swespt:@localhost/swespt?charset=utf8')
-engine = create_engine('sqlite:///swespt.db')
+# engine = create_engine('sqlite:///swespt.db')
 
-Base.metadata.create_all(engine)
+
+SQLALCHEMY_DATABASE_URI = \
+    '{engine}://{username}:{password}@{hostname}/{database}'.format(
+        engine='mysql+pymysql',
+        username=os.getenv('MYSQL_USER'),
+        password=os.getenv('MYSQL_PASSWORD'),
+        hostname=os.getenv('MYSQL_HOST'),
+        database=os.getenv('MYSQL_DATABASE'))
+
+Base.metadata.create_all(SQLALCHEMY_DATABASE_URI)
