@@ -124,16 +124,19 @@ class FunctionalTestCase(TestCase):
         self.assertTrue(endSize == 0)
 
     def test_reload_data1(self):
+        drop_table(City)
         reload_data(City,"Cities.json")
         city = session.query(City).filter_by(id=1).one()
         self.assertEqual(city.name, "Amsterdam")
 
     def test_reload_data2(self):
+        drop_table(Restaurant)
         reload_data(Restaurant, "Restaurants.json")
         restaurant = session.query(Restaurant).filter_by(id=5).one()
         self.assertEqual(restaurant.name, "Moonshine")
 
     def test_reload_data3(self):
+        drop_table(Attraction)
         reload_data(Attraction, "Attractions.json")
         attraction = session.query(Attraction).filter_by(id=5).one()
         self.assertEqual(attraction.name, "House of Torment")
