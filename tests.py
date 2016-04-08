@@ -137,6 +137,8 @@ class FunctionalTestCase(TestCase):
         self.assertEqual(attraction.name, "House of Torment")
 
     def test_db_city_join1(self):
+        drop_table(Restaurant)
+        reload_data(Restaurant, "Restaurants.json")
         restaurant_list = db_city_join(Restaurant)
         self.assertEqual(restaurant_list[0][0].name, "Restaurant De Kas")
         self.assertEqual(restaurant_list[0][1].name, "Amsterdam")
