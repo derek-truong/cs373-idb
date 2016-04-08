@@ -17,10 +17,10 @@ install:
     - pip install Flask
     - pip install Flask-Script
     - pip install Flask-SQLAlchemy
-    - pip install PyMySQL
     - pip install gunicorn
     - pip install flask-cors
     - pip install Flask-Testing
+    - pip install MySQL-python
 
 before_script:
     - uname -a
