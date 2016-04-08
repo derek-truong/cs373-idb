@@ -100,13 +100,6 @@ class FunctionalTestCase(TestCase):
 
         self.assertEqual(attraction_dict['name'], "House of Torment")
 
-    def test_drop_table1(self):
-        drop_table(City)
-        query = session.query(City).all()
-        endSize = len(query)
-
-        self.assertTrue(endSize == 0)
-
     def test_drop_table2(self):
         drop_table(Restaurant)
         query = session.query(Restaurant).all()
@@ -117,6 +110,13 @@ class FunctionalTestCase(TestCase):
     def test_drop_table3(self):
         drop_table(Attraction)
         query = session.query(Attraction).all()
+        endSize = len(query)
+
+        self.assertTrue(endSize == 0)
+
+    def test_drop_table1(self):
+        drop_table(City)
+        query = session.query(City).all()
         endSize = len(query)
 
         self.assertTrue(endSize == 0)
@@ -157,11 +157,11 @@ class FunctionalTestCase(TestCase):
         self.assertEqual(restaurant_list[20][1].name, "Boston")
 
     def test_db_read_city_spots1(self):
-        restaurant_list = db_read_city_spots(Restaurant, 1)
+        restaurant_list = db_read_city_spots(Restaurant, 55)
         self.assertEqual(restaurant_list[0].name, "Don")
 
     def test_db_read_city_spots2(self):
-        attraction_list = db_read_city_spots(Attraction, 1)
+        attraction_list = db_read_city_spots(Attraction, 55)
         self.assertEqual(attraction_list[0].name, "Six Flags")
 
 
