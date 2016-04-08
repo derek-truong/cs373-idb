@@ -34,7 +34,7 @@ class FunctionalTestCase(TestCase):
         startSize = len(query)
 
         restaurant = {"id": 200, "name": "Don", "rating": 5, "category": "Japanese",
-               "address": "Guadalupe", "city_id": 1, "image": "url"
+               "address": "Guadalupe", "city_id": 55, "image": "url"
           }
         db_create(Restaurant(**restaurant))
         query = session.query(Restaurant).all()
@@ -49,7 +49,7 @@ class FunctionalTestCase(TestCase):
         startSize = len(query)
 
         attraction = {"id": 200, "name": "Six Flags", "rating": 5, "category": "Amusement Park",
-                 "num_reviews": 50, "city_id": 1, "image": "url"
+                 "num_reviews": 50, "city_id": 55, "image": "url"
             }
         db_create(Attraction(**attraction))
         query = session.query(Attraction).all()
