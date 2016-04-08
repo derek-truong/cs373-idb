@@ -55,8 +55,7 @@ models.html: models.py
 	pydoc -w models
 
 IDB1.log:
-	git log > IDB1.log
+	git log > IDB2.log
 
 tests.out: tests.py
-	coverage run tests.py
-	coverage report --include=models.py
+	python3 tests.py
