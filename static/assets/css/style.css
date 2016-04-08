@@ -192,6 +192,19 @@ color: #fff;
 background-color: rgba(204, 0, 102, 0.5);;
 }
 
+.btn-custom-three {
+    border: 2px solid rgba(102, 204, 204, 1);
+    background-color: rgba(102, 204, 204, 1);
+    margin-bottom: 40px;
+}
+
+.btn-custom-three:hover {
+border: 2px solid rgba(102, 204, 204, 0.5);
+text-decoration: none;
+color: #fff;
+background-color: rgba(102, 204, 204, 0.5);;
+}
+
 /* =============================================================
 MENU SECTION STYLES - TODO match with html
 ============================================================ */
