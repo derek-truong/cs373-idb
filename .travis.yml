@@ -10,9 +10,6 @@ servies:
 
 sudo: true
 
-before_install:
-    - sudo apt-get install python-dev libmysqlclient-dev
-
 install:
     - pip install --upgrade pip
     - pip --version
@@ -24,7 +21,7 @@ install:
     - pip install flask-cors
     - pip install Flask-Testing
     - pip install sqlalchemy
-    - pip install mysql-python
+    - pip install pymysql
 
 before_script:
     - uname -a
