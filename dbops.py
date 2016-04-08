@@ -3,7 +3,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, class_mapper
 from models import Base, City, Attraction, Restaurant
 import json
-engine = create_engine('sqlite:///swespt.db')
+engine = create_engine('mysql+pymysql://travis:@localhost/test?charset=utf8')
 Base.metadata.bind = engine
 
 DBSession = sessionmaker(bind=engine)
