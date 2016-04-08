@@ -58,7 +58,12 @@ class Restaurant(Base):
     image = Column(String(255), nullable=False)  
 
 
-engine = create_engine('mysql+pymysql://travis:@localhost/test?charset=utf8')
-# engine = create_engine('sqlite:///swespt.db')
+# engine = create_engine('mysql+pymysql://travis:@localhost/test?charset=utf8')
+# # engine = create_engine('sqlite:///swespt.db')
 
+# Base.metadata.create_all(engine)
+engine = create_engine('mysql+pymysql://travis:@localhost/test?charset=utf8')
+Session = sessionmaker(bind=engine)
+session = Session()
+Base.metadata.drop_all(engine)
 Base.metadata.create_all(engine)
