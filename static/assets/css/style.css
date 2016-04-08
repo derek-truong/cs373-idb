@@ -52,7 +52,7 @@ a:hover, a:focus {
     height: 100%;
     width: 100%;
     background-image: url('../img/bgs/cities.jpg');
-    opacity: 0.2;
+    opacity: 0.1;
     filter: alpha(opacity=20); 
     background-size: cover;
     background-repeat: no-repeat;
@@ -68,7 +68,7 @@ a:hover, a:focus {
     height: 100%;
     width: 100%;
     background-image: url('../img/bgs/attractions.jpg');
-    opacity: 0.2;
+    opacity: 0.1;
     filter: alpha(opacity=20); 
     background-size: cover;
     background-repeat: no-repeat;
@@ -84,7 +84,7 @@ a:hover, a:focus {
     height: 100%;
     width: 100%;
     background-image: url('../img/bgs/restaurant_sketchc.jpg');
-    opacity: 0.2;
+    opacity: 0.1;
     filter: alpha(opacity=20); 
     background-size: cover;
     background-repeat: no-repeat;
