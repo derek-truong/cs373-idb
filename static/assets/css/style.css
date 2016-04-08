@@ -47,7 +47,7 @@ a:hover, a:focus {
   text-decoration: underline;
 }
 
-#cities .container {
+/*#cities .container {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -78,8 +78,8 @@ a:hover, a:focus {
     -o-background-size: cover;
     -moz-background-size: cover;
     -webkit-background-size: cover;
-}
-#restaurants .container {
+}*/
+/*#restaurants .container {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -94,7 +94,7 @@ a:hover, a:focus {
     -o-background-size: cover;
     -moz-background-size: cover;
     -webkit-background-size: cover;
-}
+}*/
 section {
     padding-top: 80px;
     padding-bottom: 40px;
