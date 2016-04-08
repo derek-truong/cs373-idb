@@ -36,6 +36,9 @@
 </head>
 
 <body>
+
+
+
     <div class="content-wrapper">    
         <!--MENU SECTION START-->
         <div class="navbar navbar-inverse navbar-fixed-top" id={% block navbartype %} {% endblock %} >
@@ -50,6 +53,18 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <!-- <ul id="menu-top" class="nav navbar-nav navbar-right"> -->
+                    <div class="main clearfix navbar-right">
+                        <!-- Optional columns for small components -->
+                        <div class="navbar-form">
+                            <div id="sb-search" class="sb-search">
+                                <form>
+                                    <input class="sb-search-input" placeholder="Enter your search term..." type="text" value="" name="search" id="search">
+                                    <input class="sb-search-submit" type="submit" value="">
+                                    <span class="sb-icon-search"></span>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="/cities">CITIES</a></li>
                         <li><a href="/attractions">ATTRACTIONS</a></li>
@@ -66,18 +81,6 @@
                             </div>
                         </div>
                     </form>  --> 
-                    <div class="main clearfix">
-                        <!-- Optional columns for small components -->
-                        <div class="navbar-form">
-                            <div id="sb-search" class="sb-search">
-                                <form>
-                                    <input class="sb-search-input" placeholder="Enter your search term..." type="text" value="" name="search" id="search">
-                                    <input class="sb-search-submit" type="submit" value="">
-                                    <span class="sb-icon-search"></span>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
 
                     <script src="../static/assets/js/classie.js"></script>
                     <script src="../static/assets/js/uisearch.js"></script>
@@ -90,7 +93,7 @@
         <!--MENU SECTION END-->
     {% endblock %}
     {% block body %} {% endblock %}
-    </div>
+    </div> <!-- .content-wrapper -->
     {% block footer%}
     <!--FOOTER SECTION START-->
     <footer>
