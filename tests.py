@@ -139,6 +139,8 @@ class FunctionalTestCase(TestCase):
         self.assertEqual(attraction.name, "House of Torment")
 
     def test_db_city_join1(self):
+        drop_table(Restaurant)
+        drop_table(City)
         reload_data(City,"Cities.json")
         reload_data(Restaurant, "Restaurants.json")
         restaurant_list = db_city_join(Restaurant)
@@ -146,16 +148,28 @@ class FunctionalTestCase(TestCase):
         self.assertEqual(restaurant_list[0][1].name, "Amsterdam")
 
     def test_db_city_join2(self):
+        drop_table(Attraction)
+        drop_table(City)
+        reload_data(City,"Cities.json")
+        reload_data(Attraction, "Attractions.json")
         attraction_list = db_city_join(Attraction)
         self.assertEqual(attraction_list[0][0].name, "Anne Frank House")
         self.assertEqual(attraction_list[0][1].name, "Amsterdam")
 
     def test_db_city_join3(self):
+        drop_table(Attraction)
+        drop_table(City)
+        reload_data(City,"Cities.json")
+        reload_data(Attraction, "Attractions.json")
         attraction_list = db_city_join(Attraction)
         self.assertEqual(attraction_list[4][0].name, "House of Torment")
         self.assertEqual(attraction_list[4][1].name, "Austin")
 
     def test_db_city_join4(self):
+        drop_table(Restaurant)
+        drop_table(City)
+        reload_data(City,"Cities.json")
+        reload_data(Restaurant, "Restaurants.json")
         restaurant_list = db_city_join(Restaurant)
         self.assertEqual(restaurant_list[20][0].name, "Neptune Oyster")
         self.assertEqual(restaurant_list[20][1].name, "Boston")
