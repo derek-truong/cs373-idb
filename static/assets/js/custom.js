@@ -131,6 +131,14 @@ $('.carousel').carousel({
   pause: "true"
 });
 
+$(document).ready(function () {
+    $("#btn-id").button();
+    $("#btn-id").click(function () {
+        $(this).button('loading');
+        window.location.href='/tests';
+    });
+});
+
 /*====================================
 DATA TABLE FROM https://datatables.net/examples/advanced_init/html5-data-attributes.html
 ======================================*/
