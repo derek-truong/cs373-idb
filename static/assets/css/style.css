@@ -198,11 +198,11 @@ background-color: rgba(204, 0, 102, 0.5);;
     margin-bottom: 40px;
 }
 
-.btn-custom-three:hover {
+.btn-custom-three:hover, .btn-custom-three:active {
 border: 2px solid rgba(102, 204, 204, 0.5);
 text-decoration: none;
 color: #fff;
-background-color: rgba(102, 204, 204, 0.5);;
+background-color: rgba(102, 204, 204, 0.5);
 }
 
 /* =============================================================
@@ -214,7 +214,7 @@ MENU SECTION STYLES - TODO match with html
 }
 
 .navbar-inverse {
-    background-color: rgba(255,255,255, 0.8);
+    background-color: rgba(255,255,255, 0.95);
     border-color: transparent;
     color: rgb(141, 204, 204); 
     width: 100%;
@@ -755,7 +755,7 @@ table.dataTable {
     border-collapse: separate;
     border-spacing: 0
 }
-table.dataTable a {
+table.dataTable a, {
     width: 100%;
     margin: 0 auto;
     clear: both;
@@ -763,6 +763,9 @@ table.dataTable a {
     border-spacing: 0;
     color: #66CCCC;
     text-decoration: underline;
+}
+table.dataTable a:hover {
+    color: #E6BE42;
 }
 table.dataTable thead th,
 table.dataTable tfoot th {
