@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!--[if IE]>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<![endif]-->
+    <title>SWEetSpots</title>
+    <!-- REACT -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.8/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.8/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.5/marked.min.js"></script>
+
+    <!-- BOOTSTRAP CORE CSS -->
+    <link href="https://googledrive.com/host/0By8VsAnK-ZRDVlFYWGtNTXZNaWs" rel="stylesheet" />
+    <!-- ION ICONS STYLES -->
+    <link href="https://googledrive.com/host/0By8VsAnK-ZRDMmJSU0Jia0JCb0E" rel="stylesheet" />
+    <!-- FONT AWESOME ICONS STYLES -->
+    <link href="https://googledrive.com/host/0By8VsAnK-ZRDSXM3N09oNTVweVE" rel="stylesheet" />
+    <!-- FANCYBOX POPUP STYLES -->
+    <link href="https://googledrive.com/host/0By8VsAnK-ZRDcDNXX0F1NEZrTTA" rel="stylesheet" />
+    <!-- STYLES FOR VIEWPORT ANIMATION -->
+    <link href="https://googledrive.com/host/0By8VsAnK-ZRDMmJSU0Jia0JCb0E" rel="stylesheet" />
+    <!-- CUSTOM CSS -->
+    <link href="https://googledrive.com/host/0By8VsAnK-ZRDMG41R1BtUGhMYWs" rel="stylesheet" />
+    <!-- HTML5 Shiv and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+
+<body>
+    <div class="content-wrapper">  
+        <!--MENU SECTION START-->
+        <div class="navbar navbar-inverse navbar-fixed-top scroll-me" id="menu-section">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                </button>
+                    <a class="navbar-brand" href="/home">SWEetSpots</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/cities">CITIES</a></li>
+                        <li class="active"><a href="/attractions">ATTRACTIONS</a></li>
+                        <li><a href="/restaurants">RESTAURANTS</a></li>
+                        <li><a href="/about">ABOUT</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--MENU SECTION END-->
+        <div id="attractions">
+            <div class="container">
+            </div>
+        </div>
+        <!--TABLE SECTION START-->
+        <section id="grid">
+            <div class="container">
+                <div class="row text-center header animate-in" data-anim-type="fade-in-up">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <h3>Attractions</h3>
+                        <hr />
+                    </div>
+                </div>
+                <div id="content" class="row animate-in" data-anim-type="fade-in-up">
+                    <script type="text/babel" src="https://googledrive.com/host/0By8VsAnK-ZRDdkkzeTVvS0RuNmM"></script>
+                    <script type="text/javascript">
+
+                        $(document).ready(function() {
+                            $('#example').dataTable();
+                        } );
+                    
+                       function initMyDataTable() {
+                         $('#example').dataTable();
+                           
+                       }
+                       function addTableRow(a){
+                            $('#example').dataTable().fnAddData(["<a href=\"/attractions/"+ a.id +"\">"+a.name+"</a>",
+                                                                "<a href=\"/cities/" + a.city_id + "\">"+ a.city_name + "</a>",
+                                                                a.rating, a.num_reviews, a.category]);
+                       }
+                    </script>
+                </div>
+            </div>
+        </section>
+        <!-- TABLE SECTION END -->
+    </div>
+        <!--FOOTER SECTION START-->
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="text-muted">&copy; 2016 SWEetSpots | By : <a href="http://www.designbootstrap.com/" target="_blank">DesignBootstrap</a></p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- // FOOTER SECTION END -->
+
+
+    <!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME -->
+    <!-- CORE JQUERY -->
+    <script src="https://googledrive.com/host/0By8VsAnK-ZRDR2lQMnhESll0OFE"></script>
+    <script src="https://googledrive.com/host/0By8VsAnK-ZRDZUF6OGZOVjdfQ1E"></script>    
+    <!-- BOOTSTRAP SCRIPTS -->
+    <script src="https://googledrive.com/host/0By8VsAnK-ZRDMkttUzU3WFdRcEk"></script>
+    <!-- DATA TABLE SCRIPT -->
+    <script src="https://googledrive.com/host/0By8VsAnK-ZRDZFIzZ0pkbXBjNHc"></script>
+    <!-- EASING SCROLL SCRIPTS PLUGIN -->
+    <script src="https://googledrive.com/host/0By8VsAnK-ZRDR2k4SEw5alVnMVU"></script>
+    <!-- VEGAS SLIDESHOW SCRIPTS -->
+    <script src="https://googledrive.com/host/0By8VsAnK-ZRDRjdtU280dG03aWc"></script>
+    <!-- FANCYBOX PLUGIN -->
+    <script src="https://googledrive.com/host/0By8VsAnK-ZRDLVA3SzNWWHVLZ0E"></script>
+    <!-- ISOTOPE SCRIPTS -->
+    <script src="https://googledrive.com/host/0By8VsAnK-ZRDTHVvS1kwNDY0ams"></script>
+    <!-- VIEWPORT ANIMATION SCRIPTS   -->
+    <script src="https://googledrive.com/host/0By8VsAnK-ZRDY3IzWU1PcDRzQlU"></script>
+    <script src="https://googledrive.com/host/0By8VsAnK-ZRDOWRpWGt6LV9xNVk"></script>
+    <!-- CUSTOM SCRIPTS -->
+    <script src="https://googledrive.com/host/0By8VsAnK-ZRDTWp5UlRNWDlyYkU"></script>
+ </body>
+
+</html>

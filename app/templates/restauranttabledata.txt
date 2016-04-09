@@ -1,0 +1,48 @@
+                   <!-- <table id="example" class="display" cellspacing="0" width="100%">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Location</th>
+                                <th>Rating</th>
+                                <th>Category</th>
+                                <th>Address</th>
+                            </tr>
+                        </thead> -->
+<!--                         <tfoot>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Location</th>
+                                <th>Rating</th>
+                                <th>Category</th>
+                                <th>Address</th>
+                            </tr>
+                        </tfoot> -->
+                        <!-- <tbody>
+                            <tr>
+                                <td data-search="0">0</td>
+                                <td><a href="/restaurants/0">Eggslut</a></td>
+                                <td>Los Angeles</td>
+                                <td>4.2</td>
+                                <td>Breakfast &amp; Brunch</td>
+                                <td>317 S BroadwayLos Angeles, CA 90013</td>
+                            </tr>
+                            <tr>
+                                <td data-search="1">1</td>
+                                <td><a href="/restaurants/1">Cera 23</a></td>
+                                <td>Barcelona</td>
+                                <td>4.6</td>
+                                <td>Spanish</td>
+                                <td>Carrer de la Cera, 2308001 Barcelona, Spain</td>
+                            </tr>
+                            <tr>
+                                <td data-search="2">2</td>
+                                <td><a href="restaurants/2">Den Noc</a></td>
+                                <td>Prague</td>
+                                <td>4.4</td>
+                                <td>Breakfast &amp; Brunch</td>
+                                <td>110 00 Prague, Czech Republic</td>
+                            </tr>
+                        </tbody>
+                    </table> -->

@@ -2,7 +2,7 @@ FILES :=							\
 	.gitignore						\
     .travis.yml						\
     apiary.apib						\
-    IDB1.log						\
+    IDB2.log						\
     models.html						\
     models.py						\
     tests.py						\
@@ -54,9 +54,8 @@ test: tests.out
 models.html: models.py
 	pydoc -w models
 
-IDB2.log:
+IDB1.log:
 	git log > IDB2.log
 
 tests.out: tests.py
-	coverage run tests.py
-	coverage report --include=models.py
+	python3 tests.py
