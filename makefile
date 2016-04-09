@@ -58,5 +58,4 @@ IDB2.log:
 	git log > IDB2.log
 
 tests.out: tests.py
-	coverage run tests.py
-	coverage report --include=models.py
+	python3 tests.py
