@@ -3,6 +3,7 @@
 __pycache__
 .coverage
 *.pyc
+*.py~
 .idea
 venv
 *.swp
