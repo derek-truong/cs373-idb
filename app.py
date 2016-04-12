@@ -25,13 +25,20 @@ def home_page():
     print("reading correctly")
     return render_template('index.html', cities= city, attractions =attractions, restaurants = restaurants)
 
-#search
-@app.route('/search',  methods=['GET'])
-def search():
-    query = request.args.get('q')
-    page = request.args.get('page')
-    searchType = request.args.get('searchType')
-    return render_template('search.html', query=query, page=page, searchType=searchType)
+# @app.route('/sitemap.xml')
+# def sitemap():
+#     sitemap_xml = render_template('sitemap.xml')
+#     response = make_response(sitemap_xml)
+#     response.headers['Content-Type'] = 'application/xml'
+#     return response
+
+# #search
+# @app.route('/search',  methods=['GET'])
+# def search():
+#     query = request.args.get('q')
+#     page = request.args.get('page')
+#     searchType = request.args.get('searchType')
+#     return render_template('search.html', query=query, page=page, searchType=searchType)
 
 #city detail page
 @app.route('/cities')
@@ -144,6 +151,10 @@ def restaurant_api():
         d["city_name"] = x[1].name
         l.append(d)
     return json.dumps(l)
+
+@app.route('/search')
+def search():
+    return 'searching'
 
 
 if __name__ == '__main__':
