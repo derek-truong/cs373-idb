@@ -44,7 +44,7 @@ a {
 
 a:hover, a:focus {
   color: #E6BE42;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 /*#cities .container {
@@ -97,7 +97,7 @@ a:hover, a:focus {
 }*/
 section {
     padding-top: 80px;
-    padding-bottom: 40px;
+    /*padding-bottom: 40px;*/
 }
 
 .pad-bottom {
@@ -118,6 +118,7 @@ text-transform: uppercase;
 .header hr {
     width: 50px;
     border-top: 2px solid rgb(102, 204, 204);
+    margin-bottom: 40px
 }
 
 .content-wrapper {
@@ -590,8 +591,6 @@ padding-top: 10px;
 /*============================
 TEAM SECTION STYLES
 ==============================*/
-
-
 .team-wrapper {
 overflow-x: hidden;
 position: relative;
@@ -600,7 +599,7 @@ position: relative;
 -ms-transform: all 0.2s ease;
 -o-transition: all 0.2s ease;
 transition: all 0.2s ease;
-margin-bottom:20px;
+margin-bottom:10px;
 }
 /*.team-wrapper:hover {
 -webkit-transform: scale(1.1);
@@ -610,41 +609,40 @@ margin-bottom:20px;
 transform: scale(1.1);
 }*/
 .team-wrapper .team-inner {
-background-size: cover;
-background-position: center;
--moz-background-size: cover;
--webkit-background-size: cover;
-padding: 150px 0 10px;
-/*background-image: url('../img/girl-big.jpg');*/
-border-top: 1px solid #fff;
-border-right: 1px solid #fff;
-border-left: 1px solid #fff;
-border-radius: 10px 10px 0px 0px;
+    margin: auto;
+    /*240 for 2.5in 192 for 2in*/
+    max-width: 240px;
+    height: 240px;
+    background-position: center top;
+    background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    border-radius: 10px 10px;
+    background-repeat: no-repeat;
 }
-.team-wrapper > .team-inner > a {
-color: rgb(102,204,204);
-width: 80px;
-height: 80px;
-border-radius: 50%;
+.team-wrapper .description a {
+/*width: 80px;*/
+/*height: 80px;*/
+/*border-radius: 50%;
 -moz-border-radius: 50%;
 -webkit-border-radius: 50%;
 margin: 0 auto -50px;
-display: block;
+display: block;*/
 color: rgb(102,204,204);
-z-index: 999;
-font-size: 40px;
+/*z-index: 999;*/
+/*font-size: 40px;*/
 padding: 15px 22px;
-background-color: #fff;
--webkit-transition: all 0.8s ease-in-out;
+/*background-color: #fff;*/
+/*-webkit-transition: all 0.8s ease-in-out;
 -moz-transition: all 0.8s ease-in-out;
 -o-transition: all 0.8s ease-in-out;
-transition: all 0.8s ease-in-out;
+transition: all 0.8s ease-in-out;*/
 }
 
-.team-wrapper > .team-inner > a:hover {
-color: #fff;
-text-decoration: none;
-background-color: rgb(102,204,204);
+.team-wrapper .description a:hover, .team-wrapper .description a:focus {
+    color: #E6BE42;
+    text-decoration: none;
+    /*background-color: rgb(102,204,204);*/
 }
 
 .team-wrapper .description {
@@ -659,10 +657,7 @@ border-radius: 0px 0px 10px 10px;
 .team-wrapper .description h5 {
 color: rgb(102,204,204);
 }
-.team-wrapper .description h3, .team-wrapper .description h3 > a {
-/*color: rgb(102, 204, 204);*/
-color: #333;
-}
+
 .team-wrapper .description .bio {
 padding: 5px 20px 20px;
 text-align: left;
@@ -748,11 +743,6 @@ footer {
     bottom: 0; /* stick to bottom */
 }
 
-footer > a, footer > a:hover {
-    color: #fff;
-    text-decoration: underline;
-}
-
 /*footer {
     margin: 0 0 3em 0;
 }
@@ -782,7 +772,7 @@ table.dataTable a, {
     border-collapse: separate;
     border-spacing: 0;
     color: #66CCCC;
-    text-decoration: underline;
+    text-decoration: none;
 }
 table.dataTable a:hover {
     color: #E6BE42;
