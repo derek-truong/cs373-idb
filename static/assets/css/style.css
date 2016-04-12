@@ -822,13 +822,28 @@ table.dataTable thead .sorting_desc_disabled {
     background-position: center right
 }
 table.dataTable thead .sorting {
-    background-image: url("../images/sort_both.png")
+    /*background-image: url("../images/sort_both.png")*/
+    position: relative;
+}
+table.dataTable:before thead:before .sorting:before {
+    content: fa-sort;
+    font-family: FontAwesome;
 }
 table.dataTable thead .sorting_asc {
-    background-image: url("../images/sort_asc.png")
+    /*background-image: url("../images/sort_asc.png")*/
+    position: relative;
+}
+table.dataTable:before thead:before .sorting_asc:before {
+    content: "fa-sort-asc";
+    font-family: FontAwesome;    
 }
 table.dataTable thead .sorting_desc {
-    background-image: url("../images/sort_desc.png")
+    /*background-image: url("../images/sort_desc.png")*/
+    position: relative;
+}
+table.dataTable:before thead:before .sorting_desc:before {
+    content: "fa-sort-desc";
+    font-family: FontAwesome;
 }
 table.dataTable thead .sorting_asc_disabled {
     background-image: url("../images/sort_asc_disabled.png")

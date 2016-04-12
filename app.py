@@ -1,16 +1,19 @@
 import logging
 import os
 
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, jsonify, make_response, abort, Response
+from flask.ext.cors import CORS, cross_origin
 from flask.ext.script import Manager
 from flask.ext.sqlalchemy import SQLAlchemy
 from models import Base, City, Attraction, Restaurant
+
 import dbops
 import json
 import subprocess
 
 app = Flask(__name__)
 manager = Manager(app)
+
 
 #Splash/Home page
 @app.route('/')
@@ -21,6 +24,14 @@ def home_page():
     restaurants = dbops.db_read_all(Restaurant)
     print("reading correctly")
     return render_template('index.html', cities= city, attractions =attractions, restaurants = restaurants)
+
+#search
+@app.route('/search',  methods=['GET'])
+def search():
+    query = request.args.get('q')
+    page = request.args.get('page')
+    searchType = request.args.get('searchType')
+    return render_template('search.html', query=query, page=page, searchType=searchType)
 
 #city detail page
 @app.route('/cities')
@@ -59,6 +70,7 @@ def attraction_detail(a_id):
     attraction = dbops.db_read(Attraction, a_id)
     city = dbops.db_read(City, attraction.city_id)
     return render_template('attraction.html',attraction = attraction, city = city)
+
 
 @app.route('/about')
 def about():
@@ -132,14 +144,6 @@ def restaurant_api():
         d["city_name"] = x[1].name
         l.append(d)
     return json.dumps(l)
-
-#search
-@app.route('/search',  methods=['GET'])
-def search():
-    query = request.args.get('q')
-    page = request.args.get('page')
-    searchType = request.args.get('searchType')
-    return render_template('search.html', query=query, page=page, searchType=searchType)
 
 
 if __name__ == '__main__':
