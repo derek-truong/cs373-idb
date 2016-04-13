@@ -17,14 +17,14 @@ logger = logging.getLogger(__name__)
 logger.debug("Welcome to Carina Guestbook")
 
 
-SQLALCHEMY_DATABASE_URI = \
-    '{engine}://{username}:{password}@{hostname}/{database}'.format(
-        engine='mysql+pymysql',
-        username=os.getenv('MYSQL_USER'),
-        password=os.getenv('MYSQL_PASSWORD'),
-        hostname=os.getenv('MYSQL_HOST'),
-        database=os.getenv('MYSQL_DATABASE'))
-
+# SQLALCHEMY_DATABASE_URI = \
+#     '{engine}://{username}:{password}@{hostname}/{database}'.format(
+#         engine='mysql+pymysql',
+#         username=os.getenv('MYSQL_USER'),
+#         password=os.getenv('MYSQL_PASSWORD'),
+#         hostname=os.getenv('MYSQL_HOST'),
+#         database=os.getenv('MYSQL_DATABASE'))
+SQLALCHEMY_DATABASE_URI = 'sqlite:///swespt.db'
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = SQLALCHEMY_DATABASE_URI
@@ -139,8 +139,12 @@ def restaurant_detail_api(r_id):
 #Cities api page
 @app.route('/api/cities')
 def city_api():
-	cl = [serialize(c) for c in db.session.query(City).all()]
-	return json.dumps(cl)
+	l = []
+	for c in db.session.query(City).all() :
+		d = serialize(c)
+		d["name"] = d["name"].decode('utf8')
+		l.append(d)
+	return json.dumps(l)
 
 #Attractions api page
 @app.route('/api/attractions')
@@ -148,8 +152,9 @@ def attraction_api():
 	l = []
 	for x in db.session.query(Attraction, City).filter(Attraction.city_id == City.id).all():
 		d = serialize(x[0])
-		print (x)
-		d["city_name"] = x[1].name
+		d["name"] = d["name"].decode('utf8')
+		# print (x)
+		d["city_name"] = x[1].name.decode('utf8')
 		l.append(d)
 	return json.dumps(l)
 
@@ -159,8 +164,10 @@ def restaurant_api():
 	l = []
 	for x in db.session.query(Restaurant, City).filter(Restaurant.city_id == City.id).all():
 		d = serialize(x[0])
-		print (x)
-		d["city_name"] = x[1].name
+		d["name"] = d["name"].decode('utf8')
+		# print (x)
+		d["city_name"] = x[1].name.decode('utf8')
+		d["address"] = d["address"].decode('utf8')
 		l.append(d)
 	return json.dumps(l)
 
