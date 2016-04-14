@@ -354,17 +354,19 @@ HOME SECTION STYLES - CAROUSEL
 ============================================================ */
 .full-screen {
   background-size: cover;
-  background-position: center;
+  background-position: top;
   background-repeat: no-repeat;
 }
 
 /* Since positioning the image, we need to help out the caption */
 .carousel-caption {
-  z-index: 10;
+    bottom: auto;
+    z-index: 10;
 }
-.carousel-caption > h1 {
-    letter-spacing: 3px;
-}
+/*.carousel-caption > h1 {
+    letter-spacing: 5px;
+    font-size: 72px;
+}*/
 .carousel-overlay {
     z-index: 100;
 }
@@ -403,11 +405,18 @@ HOME SECTION STYLES - CAROUSEL
   }
 
   /* Bump up size of carousel content */
-  .carousel-caption p {
-    margin-bottom: 175px;
-    font-size: 21px;
-    line-height: 1.4;
+  .carousel-caption {
+    margin-top: 150px;
   }
+  .carousel-caption p {
+    font-size: 22px;
+    /*line-height: 1.4;*/
+    font-weight: 500;
+  }
+  .carousel-caption > h1 {
+    letter-spacing: 5px;
+    font-size: 60px;
+    }
 
   .featurette-heading {
     font-size: 50px;
@@ -419,124 +428,6 @@ HOME SECTION STYLES - CAROUSEL
     margin-top: 120px;
   }
 }
-/* =============================================================
-SERVICES SECTION STYLES
-============================================================ */
-
-#services .services-wrapper {
-padding: 20px;
-border-radius: 5px;
--moz-border-radius: 5px;
--webkit-border-radius: 5px;
-margin-bottom: 40px;
-background-color: rgba(255, 255, 255, 0.07);
-cursor: pointer;
--webkit-transition: all 0.5s ease-in-out;
--moz-transition: all 0.5s ease-in-out;
--o-transition: all 0.5s ease-in-out;
-transition: all 0.5s ease-in-out;
-}
-
-#services .services-wrapper:hover {
-background-color: rgba(255, 255, 255, 0.20);
-}
-
-#services h3 {
-font-family: 'Roboto', sans-serif;
-}
-
-#services .services-wrapper i {
-margin: 5px;
-color: rgb(102,204,204);
-font-size: 60px;
-}
-
-
-/*============================
-PRICING SECTION STYLES
-==============================*/
-
-.light-pricing {
-margin-bottom: 30px;
-margin-top: 50px;
-text-align: center;
-box-shadow: 0 0 5px rgba(0, 0, 0, .5);
-background-color: rgba(255, 255, 255, 0.1);
-color: #fff;
-line-height: 30px;
-cursor: pointer;
--webkit-transition: all 0.5s ease-in-out;
--moz-transition: all 0.5s ease-in-out;
--o-transition: all 0.5s ease-in-out;
-transition: all 0.5s ease-in-out;
-}
-
-.light-pricing:hover {
-background-color: transparent;
-}
-
-.light-pricing ul {
-list-style: none;
-margin: 0;
-text-align: center;
-padding-left: 0px;
-}
-
-.light-pricing ul li {
-padding-top: 20px;
-padding-bottom: 20px;
-cursor: pointer;
-}
-
-.light-pricing ul li i {
-margin-right: 5px;
-}
-
-
-.light-pricing .price {
-padding: 40px 20px 20px 20px;
-font-size: 60px;
-font-weight: 900;
-}
-
-.light-pricing .price small {
-color: #000;
-display: block;
-font-size: 15px;
-margin-top: 22px;
-}
-
-.light-pricing .type {
-background-color: rgba(0, 0, 0, 0.40);
-padding: 30px 20px;
-font-weight: 900;
-text-transform: uppercase;
-font-size: 30px;
-color: rgb(102,204,204);
-}
-
-.light-pricing .pricing-footer {
-padding: 20px;
-}
-
-.db-attached > .col-lg-4,
-.db-attached > .col-lg-3,
-.db-attached > .col-md-4,
-.db-attached > .col-md-3,
-.db-attached > .col-sm-4,
-.db-attached > .col-sm-3 {
-padding-left: 0;
-padding-right: 0;
-}
-
-.light-pricing.popular {
-margin-top: 10px;
-}
-
-.light-pricing.popular .price {
-padding-top: 80px;
-}
-
 
 /*============================
 SWEETSPOT SECTION STYLES
