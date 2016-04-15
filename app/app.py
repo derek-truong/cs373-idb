@@ -6,6 +6,7 @@ from flask.ext.script import Manager
 from flask.ext.sqlalchemy import SQLAlchemy
 from models import City, Restaurant, Attraction
 from sqlalchemy.orm import sessionmaker, class_mapper
+from sqlalchemy_fulltext import FullText, FullTextSearch
 
 import json
 import subprocess
@@ -171,6 +172,14 @@ def restaurant_api():
 		l.append(d)
 	return json.dumps(l)
 
+@app.route('/search', methods=['GET'])
+def search():
+	query = request.args.get('q')
+	for x in db.session.query(City).filter(FullTextSearch(query, City)).all() :
+		d=serialize(x[0])
+		print(d['name'])
+	return "hello"
+	
 @manager.command
 def create_db():
 	db.create_all()
@@ -186,5 +195,7 @@ def drop_db():
 
 if __name__ == '__main__':
 	logger.debug("Main Method")
+	drop_db()
+	create_db()
 	manager.run()
 

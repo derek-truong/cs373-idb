@@ -12,21 +12,20 @@
 	font-style: normal;
 }
 
-/**, *:after, *:before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
-body, html { font-size: 100%; padding: 0; margin: 0;}*/
 
 /* Clearfix hack by Nicolas Gallagher: http://nicolasgallagher.com/micro-clearfix-hack/ */
 .clearfix:before, .clearfix:after { content: " "; display: table; }
 .clearfix:after { clear: both; }
 
+
 /* Header Style */
-.main,
+/*.main,
 .container > header {
 	margin: 0 auto;
-	padding: 0em;
+	padding: 2em;
 }
 
-/*.container > header {
+.container > header {
 	text-align: center;
 	background: rgba(0,0,0,0.01);
 }
@@ -43,12 +42,11 @@ body, html { font-size: 100%; padding: 0; margin: 0;}*/
 	font-size: 60%;
 	color: #e67e22;
 	padding: 0 0 0.6em 0.1em;
-}*/
-
+}
+*/
 /* Main Content */
 .main {
-	width: 25%;
-	z-index: 9999;
+	max-width: 69em;
 }
 
 .column {

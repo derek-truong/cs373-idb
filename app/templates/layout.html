@@ -32,26 +32,17 @@
     <!--<link href="../static/assets/css/animations.min.css" rel="stylesheet" />-->
     <link href="https://googledrive.com/host/0By8VsAnK-ZRDMmJSU0Jia0JCb0E" rel="stylesheet" />
 
-    <!-- EXPANDING SEARCH BAR STYLES -->
-    <meta name="description" content="Expanding Search Bar Deconstructed" />
-    <meta name="keywords" content="transition, search, expanding, search input, sliding input, css3, javascript" />
-    <meta name="author" content="Codrops" />
-<!--     <link rel="shortcut icon" href="../favicon.ico"> 
- --><link rel="stylesheet" type="text/css" href="../static/assets/css/default.css" />
-    <link rel="stylesheet" type="text/css" href="../static/assets/css/component.css" />
-    <!-- // <script src="js/modernizr.custom.js"></script> -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- EXPANDING SEARCH BAR STYLES -->
+    <link rel="stylesheet" type="text/css" href="../static/assets/css/default.css" />
+    <link rel="stylesheet" type="text/css" href="../static/assets/css/component.css" />
+    <script src="../static/assets/js/modernizr.custom.js"></script>
 
 
     <!-- CUSTOM CSS -->
     <link href="../static/assets/css/style.css" rel="stylesheet" />
-    <!-- <link href="https://googledrive.com/host/0By8VsAnK-ZRDMG41R1BtUGhMYWs" rel="stylesheet" /> -->
-    <!-- HTML5 Shiv and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+
 </head>
 
 <body>
@@ -67,15 +58,29 @@
                     </button>
                     <a class="navbar-brand" href="/home">SWEetSpots</a>
                 </div>
-                <div class="navbar-collapse collapse">
+                <div class="navbar-collapse collapse navbar-right">
                     <!-- <ul id="menu-top" class="nav navbar-nav navbar-right"> -->
-                    <ul class="nav navbar-nav navbar-right">
+                    <ul class="nav navbar-nav">
                         <li><a href="/cities">CITIES</a></li>
                         <li><a href="/attractions">ATTRACTIONS</a></li>
                         <li><a href="/restaurants">RESTAURANTS</a></li>
                         <li><a href="/about">ABOUT</a></li>
                     </ul>
-                    <form class="navbar-form" role="search" action="/search">
+                   <!--  <div class="search">
+                        <div class="main clearfix">
+                            <div class="column">
+                                <div id="sb-search" class="sb-search">
+                                    <form>
+                                        <input class="sb-search-input" placeholder="Enter your search term..." type="text" value="" name="search" id="search">
+                                        <input class="sb-search-submit" type="submit" value="">
+                                        <span class="sb-icon-search"></span>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                    <!-- Old search bar -->
+                    <form class="navbar-form navbar-right" role="search" action="/search">
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="Search" name="q">
                             <input type="hidden" class="form-control" name="searchType" value="AND">
@@ -84,7 +89,7 @@
                                 <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
                             </div>
                         </div>
-                    </form>                    
+                    </form>               
                 </div>
             </div>
         </div>
@@ -143,6 +148,11 @@
     <!--<script src="../static/assets/js/animations.min.js"></script>-->
     <script src="https://googledrive.com/host/0By8VsAnK-ZRDOWRpWGt6LV9xNVk"></script>
     <!-- CUSTOM SCRIPTS -->
+    <script src="../static/assets/js/classie.js"></script>
+    <script src="../static/assets/js/uisearch.js"></script>
+    <script>
+        new UISearch( document.getElementById( 'sb-search' ) );
+    </script>
     <script src="../static/assets/js/custom.js"></script>
     <!-- // <script src="https://googledrive.com/host/0By8VsAnK-ZRDTWp5UlRNWDlyYkU"></script> -->
 </body>
