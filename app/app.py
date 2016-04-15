@@ -6,7 +6,7 @@ from flask.ext.script import Manager
 from flask.ext.sqlalchemy import SQLAlchemy
 from models import City, Restaurant, Attraction
 from sqlalchemy.orm import sessionmaker, class_mapper
-from sqlalchemy_fulltext import FullText, FullTextSearch
+# from sqlalchemy_fulltext import FullText, FullTextSearch
 
 import json
 import subprocess
@@ -107,6 +107,10 @@ def attraction_detail(a_id):
 @app.route('/about')
 def about():
 	return render_template('about.html')
+
+@app.route('/recipes')
+def recipes():
+	return render_template('recipe.html')
 
 @app.route('/tests')
 def tests():

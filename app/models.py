@@ -5,7 +5,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from sqlalchemy_fulltext import FullText, FullTextSearch
+#from sqlalchemy_fulltext import FullText, FullTextSearch
 
 Base = declarative_base()
 
@@ -13,14 +13,14 @@ Base = declarative_base()
 Model for cities.
 It has a one to many relationship with both Attractions and Restaurants.
 """
-class City(FullText, Base):
+class City(Base):
 
     __tablename__ = 'city'
 
-    __table_args__ = {'mysql_engine':'MyISAM',
-                      'mysql_charset':'utf8'}
+    # __table_args__ = {'mysql_engine':'MyISAM',
+    #                   'mysql_charset':'utf8'}
 
-    __fulltext_columns__ = ('id','name','population','country','demonym','elevation','description','image')
+    #__fulltext_columns__ = ('id','name','population','country','demonym','elevation','description','image')
 
     id = Column(Integer, primary_key=True)
     name = Column(String(80), nullable=False)

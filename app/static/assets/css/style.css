@@ -1182,3 +1182,32 @@ input, button, select, textarea {
         margin-top: 0.5em
     }
 }
+
+/* =============================================================
+RECIPE SECTION STYLES
+============================================================ */
+
+#recipe {
+  height: 400px;
+  width: 283px;
+  position: relative;
+}
+
+#menuImage {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+#menuList {
+  z-index: 100;
+  position: absolute;
+  color: #6f5d51;
+  font-size: 16px;
+  font-weight: bold;
+  left: 10px;
+  top: 100px;
+  width: 200px;
+  height: 250px;
+  overflow: auto;
+}
