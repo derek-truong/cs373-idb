@@ -1,6 +1,7 @@
 import logging
 import os
 
+import requests
 from flask import Flask, render_template, request, redirect, url_for
 from flask.ext.script import Manager
 from flask.ext.sqlalchemy import SQLAlchemy
@@ -183,6 +184,15 @@ def search():
 		d=serialize(x[0])
 		print(d['name'])
 	return "hello"
+
+@app.route('/api/recipes')
+def recipes_api():
+	page_num = request.args.get('page')
+	r = requests.get("http://swedishchef.me/recipes?page=" + str(page_num))
+	json_str = r.content.decode('utf8')
+	d = json.loads(json_str)
+	return json.dumps(d["recipes"])
+
 	
 @manager.command
 def create_db():

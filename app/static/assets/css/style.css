@@ -1195,7 +1195,7 @@ RECIPE SECTION STYLES
 
 #menuImage {
   position: absolute;
-  left: 0;
+  left: 10px;
   top: 0;
 }
 
@@ -1203,11 +1203,11 @@ RECIPE SECTION STYLES
   z-index: 100;
   position: absolute;
   color: #6f5d51;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: bold;
-  left: 10px;
+  left: 0px;
   top: 100px;
-  width: 200px;
-  height: 250px;
+  width: 300px;
+  height: 350px;
   overflow: auto;
 }
