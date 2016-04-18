@@ -11,17 +11,24 @@ var MenuBox = React.createClass({
     return {data: []};
   },
   loadDataFromServer: function() {
-     $.ajax({
-      url: this.props.url,
-      dataType: 'json',
-      cache: false,
-      success: function(data) {
-        this.setState({data: data});
-      }.bind(this),
-      error: function(xhr, status, err) {
-        // console.error(this.props.url, status, err.toString());
-      }.bind(this)
-    });
+    var recipeData = [];
+    for (var i = 0; i < 40; i++) {
+      $.ajax({
+        url: this.props.url + i,
+        dataType: 'json',
+        cache: false,
+        // async: false,
+        success: function(data) {
+          for (var j = 0; j <10; j++){
+            recipeData.push(data[j]);
+          }
+          this.setState({data: recipeData});
+        }.bind(this),
+        error: function(xhr, status, err) {
+          // console.error(this.props.url, status, err.toString());
+        }.bind(this)
+      });
+    }
   },
   componentDidMount: function() {
     this.loadDataFromServer();
@@ -88,6 +95,6 @@ var RecipeImg = React.createClass({
 })
 
 ReactDOM.render(
-  <MenuBox url="/api/recipes?page=1" />,
+  <MenuBox url="/api/recipes?page=" />,
   document.getElementById('menuList')
 );
