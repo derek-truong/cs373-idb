@@ -1188,26 +1188,26 @@ RECIPE SECTION STYLES
 ============================================================ */
 
 #recipe {
-  height: 400px;
-  width: 283px;
-  position: relative;
+    height: 400px;
+    width: 283px;
+    position: relative;
 }
 
 #menuImage {
-  position: absolute;
-  left: 10px;
-  top: 0;
+    position: absolute;
+    left: 10px;
+    top: 0;
 }
 
 #menuList {
-  z-index: 100;
-  position: absolute;
-  color: #6f5d51;
-  font-size: 15px;
-  font-weight: bold;
-  left: 0px;
-  top: 100px;
-  width: 300px;
-  height: 350px;
-  overflow: auto;
+    z-index: 100;
+    position: absolute;
+    color: #6f5d51;
+    font-size: 15px;
+    font-weight: bold;
+    left: 0px;
+    top: 100px;
+    /*width: 300px;*/
+    height: 350px;
+    overflow: auto;
 }

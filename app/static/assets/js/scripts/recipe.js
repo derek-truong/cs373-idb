@@ -66,10 +66,15 @@ var Recipe = React.createClass({
       };
   },
   handleClick: function() {
-    this.setState({
-      isSelected: true
-    })
-    console.log("got clicked");
+    if(this.state.isSelected){
+      this.setState({
+        isSelected: false
+      })
+    }else{
+      this.setState({
+        isSelected: true
+      })
+    }
 
   },
   render: function() {
@@ -88,7 +93,6 @@ var RecipeImg = React.createClass({
     console.log(this.props.image);
     return (
       <div className = "recipeImg">
-        <p>RecipeImg</p>
         <img src = {this.props.image} />
       </div>
     );
