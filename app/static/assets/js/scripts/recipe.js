@@ -12,14 +12,14 @@ var MenuBox = React.createClass({
   },
   loadDataFromServer: function() {
     var recipeData = [];
-    for (var i = 0; i < 40; i++) {
+    for (var i = 1; i < 40; i++) {
       $.ajax({
         url: this.props.url + i,
         dataType: 'json',
         cache: false,
         // async: false,
         success: function(data) {
-          for (var j = 0; j <10; j++){
+          for (var j = 0, len=data.length; j <len; j++){
             recipeData.push(data[j]);
           }
           this.setState({data: recipeData});
