@@ -77,8 +77,7 @@ var Recipe = React.createClass({
     return (
       <div className="recipe">
         <li><a onClick={this.handleClick}>{this.props.title}</a></li>
-        {this.state.isSelected ? <RecipeImg/> : null}
-        
+        {this.state.isSelected ? <RecipeImg image = {this.props.image_uri}></RecipeImg> : null}
       </div>
     );
   }
@@ -86,9 +85,11 @@ var Recipe = React.createClass({
 
 var RecipeImg = React.createClass({
   render: function(){
+    console.log(this.props.image);
     return (
       <div className = "recipeImg">
-        <img src = {this.props.image_uri} />
+        <p>RecipeImg</p>
+        <img src = {this.props.image} />
       </div>
     );
   }
