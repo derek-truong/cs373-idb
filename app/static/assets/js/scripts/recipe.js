@@ -1,11 +1,3 @@
-// var data = [recipes: {"image_uri": "https://spoonacular.com/recipeImages/African-Bean-Soup-632003.jpg", 
-//     "servings": 4, "ready_in_minutes": 45, "cuisine": "african", "id": 1, "title": "African Bean Soup"}, 
-//     {"image_uri": "https://spoonacular.com/recipeImages/Ethiopian-Lentil-Curry-642468.jpg", 
-//     "servings": 6, "ready_in_minutes": 75, "cuisine": "african", "id": 2, "title": "Ethiopian Lentil Curry"}, 
-//   {"image_uri": "https://spoonacular.com/recipeImages/North-African-Chickpea-Soup-653275.jpg", 
-//     "servings": 4, "ready_in_minutes": 45, "cuisine": "african", "id": 3, "title": "North African Chickpea Soup"}
-//     ];
-
 var MenuBox = React.createClass({
   getInitialState: function() {
     return {data: []};
@@ -47,7 +39,7 @@ var RecipeList = React.createClass({
     var recipeNodes = this.props.data.map(function(recipe) {
       return (
         <Recipe title={recipe.title} key={recipe.id} cuisine = {recipe.cuisine}
-          image_uri = {recipe.image_uri} >
+          image_uri = {recipe.image_uri} ready_in_minutes = {recipe.ready_in_minutes}>
         </Recipe>
       );
     });
@@ -62,42 +54,53 @@ var RecipeList = React.createClass({
 var Recipe = React.createClass({
   getInitialState: function() {
       return {
-          isSelected: false
+          showModal: false
       };
   },
-  handleClick: function() {
-    if(this.state.isSelected){
-      this.setState({
-        isSelected: false
-      })
-    }else{
-      this.setState({
-        isSelected: true
-      })
-    }
-
+  close(){
+    this.setState({
+      showModal: false
+    });
+  },
+  open(){
+    this.setState({
+      showModal: true
+    });
   },
   render: function() {
-    var isSelected = this.state.isSelected;
+    var Modal = ReactBootstrap.Modal;
+    var Button  = ReactBootstrap.Button;
+    var showModal = this.state.showModal;
     return (
+
       <div className="recipe">
-        <li><a onClick={this.handleClick}>{this.props.title}</a></li>
-        {this.state.isSelected ? <RecipeImg image = {this.props.image_uri}></RecipeImg> : null}
+        <li><a onClick={this.open}>{this.props.title}</a></li>
+
+        <Modal show={this.state.showModal} onHide={this.close}>
+          <Modal.Header closeButton>
+              <Modal.Title>{this.props.title}</Modal.Title>
+          </Modal.Header>
+
+          <Modal.Body>
+            <img src = {this.props.image_uri} />
+            <div class="recipeInfo">
+              <h4>Cuisine:</h4>
+              <p>{this.props.cuisine}</p>
+            </div>
+
+            <div class="recipeInfo">
+              <h4>Time in Minutes to Cook:</h4>
+              <p>{this.props.ready_in_minutes}</p>
+            </div>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button bsStyle="info" onClick={this.close}>Close</Button>
+          </Modal.Footer>
+        </Modal>
       </div>
     );
   }
 });
-
-var RecipeImg = React.createClass({
-  render: function(){
-    console.log(this.props.image);
-    return (
-      <div className = "recipeImg">
-        <img src = {this.props.image} />
-      </div>
-    );
-  }
-})
 
 ReactDOM.render(
   <MenuBox url="/api/recipes?page=" />,
