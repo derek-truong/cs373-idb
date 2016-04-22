@@ -10,9 +10,6 @@ from sqlalchemy import or_, and_
 import json
 import subprocess
 
-manager = Manager(app)
-db = SQLAlchemy(app)
-
 def reload_data(s,type, file_path):
     with open(file_path, encoding = "utf8") as json_file:
         json_str = json_file.read()
