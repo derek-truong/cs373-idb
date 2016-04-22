@@ -1,6 +1,6 @@
 from unittest import main, TestCase
 from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker 
+from sqlalchemy.orm import sessionmaker
 
 from flask import *
 from flask import request
@@ -18,7 +18,7 @@ test_session = DBSession()
 
 class FunctionalTestCase(TestCase):
 
-    
+
 
     def test_city1(self):
         row = City(
@@ -198,7 +198,7 @@ class FunctionalTestCase(TestCase):
         self.assertEqual(row.address, '131')
         self.assertEqual(row.image,'image_url31')
 
-   
+
 
     def test_serialize1(self):
         city = City(
@@ -248,24 +248,24 @@ class FunctionalTestCase(TestCase):
         test_session.query(City).delete()
         app.reload_data(test_session, City,"Cities.json")
         city = test_session.query(City).filter_by(id=1).one()
-        self.assertEqual(city.name.decode('utf8'), "Amsterdam")
+        self.assertEqual(city.name, "Amsterdam")
         test_session.query(City).delete()
 
     def test_reload_data2(self):
         test_session.query(Restaurant).delete()
         app.reload_data(test_session, Restaurant, "Restaurants.json")
         restaurant = test_session.query(Restaurant).filter_by(id=5).one()
-        self.assertEqual(restaurant.name.decode('utf8'), "Moonshine")
+        self.assertEqual(restaurant.name, "Moonshine")
         test_session.query(Restaurant).delete()
 
     def test_reload_data3(self):
         test_session.query(Attraction).delete()
         app.reload_data(test_session, Attraction, "Attractions.json")
         attraction = test_session.query(Attraction).filter_by(id=5).one()
-        self.assertEqual(attraction.name.decode('utf8'), "House of Torment")
+        self.assertEqual(attraction.name, "House of Torment")
         test_session.query(Attraction).delete()
 
 
 if __name__ == "__main__" :
-    main()  
+    main()
 
