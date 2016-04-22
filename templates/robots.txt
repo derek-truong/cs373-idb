@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: http://sweetspots.me/sitemap.xml
