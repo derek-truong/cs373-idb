@@ -19,7 +19,7 @@ def reload_data(s,type, file_path):
         json_data = json.loads(json_str)
         for x in json_data:
             s.add(type(**x))
-                s.commit()
+            s.commit()
 
 
 def serialize(model):
