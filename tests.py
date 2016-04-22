@@ -5,195 +5,268 @@ from sqlalchemy.orm import sessionmaker
 from flask import *
 from flask import request
 from sqlalchemy import Column, ForeignKey, Integer, String, Text, Float, LargeBinary, Boolean
-
+from sqlalchemy.ext.declarative import declarative_base
 import threading
 from flask import Flask, render_template, url_for, g, request, session, redirect, abort, flash
+import app
+from models import City, Restaurant, Attraction, Base
 
-from models import *
-from dbops import *
-
-engine = create_engine('sqlite:///test-swespt.db')
+engine = create_engine('mysql+pymysql://travis:@localhost/test?charset=utf8')
 Base.metadata.create_all(engine)
 DBSession = sessionmaker(bind=engine)
 test_session = DBSession()
 
-
 class FunctionalTestCase(TestCase):
 
-    def test_db_create1(self):
-        query = session.query(City).all()
-        startSize = len(query)
+    
 
-        temp_city = {"id": 55,"name": "Dallas","population": 5000, "country": "USA", "demonym": "American", "elevation": 100000.0, "description": "Dallas is Great", "image": "url"}
-        
-        db_create(City(**temp_city))
-        query = session.query(City).all()
+    def test_city1(self):
+        row = City(
+            id=1,
+            name='name',
+            population=123456,
+            country='country',
+            demonym='demonym',
+            elevation=1.0,
+            description='description',
+            image='image_url'
+        )
 
-        endSize = len(query)
+        self.assertEqual(row.id ,1)
+        self.assertEqual(row.name,'name')
+        self.assertEqual(row.population,123456)
+        self.assertEqual(row.country ,'country')
+        self.assertEqual(row.demonym ,'demonym')
+        self.assertEqual(row.elevation , 1.0)
+        self.assertEqual(row.description , 'description')
+        self.assertEqual(row.image,'image_url')
 
-        self.assertEqual(startSize + 1, endSize) 
+    def test_city2(self):
+        row = City(
+            id=2,
+            name='fred',
+            population=123456,
+            country='country',
+            demonym='demonym',
+            elevation=1.0,
+            description='description',
+            image='image_url'
+        )
 
-    def test_db_create2(self):
-        query = session.query(Restaurant).all()
-        startSize = len(query)
+        self.assertEqual(row.id ,2)
+        self.assertEqual(row.name,'fred')
+        self.assertEqual(row.population,123456)
+        self.assertEqual(row.country ,'country')
+        self.assertEqual(row.demonym ,'demonym')
+        self.assertEqual(row.elevation , 1.0)
+        self.assertEqual(row.description , 'description')
+        self.assertEqual(row.image,'image_url')
 
-        restaurant = {"id": 200, "name": "Don", "rating": 5, "category": "Japanese",
-               "address": "Guadalupe", "city_id": 55, "image": "url"
-          }
-        db_create(Restaurant(**restaurant))
-        query = session.query(Restaurant).all()
+    def test_city3(self):
+        row = City(
+            id=3,
+            name='fred2',
+            population=123456,
+            country='country',
+            demonym='dem0nym',
+            elevation=1.0,
+            description='description2',
+            image='image_url'
+        )
 
-        endSize = len(query)
+        self.assertEqual(row.id ,3)
+        self.assertEqual(row.name,'fred2')
+        self.assertEqual(row.population,123456)
+        self.assertEqual(row.country ,'country')
+        self.assertEqual(row.demonym ,'dem0nym')
+        self.assertEqual(row.elevation , 1.0)
+        self.assertEqual(row.description , 'description2')
+        self.assertEqual(row.image,'image_url')
 
-        self.assertEqual(startSize + 1, endSize) 
 
-    def test_db_create3(self):
-        query = session.query(Attraction).all()
-        startSize = len(query)
+    def test_attraction1(self):
+        row = Attraction(
+            id=1,
+            name='name',
+            rating=12346,
+            city_id=1,
+            num_reviews=32,
+            category='hi',
+            image='image_url'
+        )
 
-        attraction = {"id": 200, "name": "Six Flags", "rating": 5, "category": "Amusement Park",
-                 "num_reviews": 50, "city_id": 55, "image": "url"
-            }
-        db_create(Attraction(**attraction))
-        query = session.query(Attraction).all()
+        self.assertEqual(row.id ,1)
+        self.assertEqual(row.name,'name')
+        self.assertEqual(row.rating,12346)
+        self.assertEqual(row.city_id ,1)
+        self.assertEqual(row.num_reviews,32)
+        self.assertEqual(row.category, 'hi')
+        self.assertEqual(row.image,'image_url')
 
-        endSize = len(query)
+    def test_attraction2(self):
+        row = Attraction(
+            id=2,
+            name='n4me',
+            rating=12346,
+            city_id=11,
+            num_reviews=322,
+            category='hi2',
+            image='image_url'
+        )
 
-        self.assertEqual(startSize + 1, endSize) 
+        self.assertEqual(row.id ,2)
+        self.assertEqual(row.name,'n4me')
+        self.assertEqual(row.rating,12346)
+        self.assertEqual(row.city_id ,11)
+        self.assertEqual(row.num_reviews,322)
+        self.assertEqual(row.category, 'hi2')
+        self.assertEqual(row.image,'image_url')
 
-    def test_db_read1(self):
-        temp_city = db_read(City, 55)
-        self.assertEqual(temp_city.name, "Dallas")
+    def test_attraction3(self):
+        row = Attraction(
+            id=7,
+            name='nam3',
+            rating=1234226,
+            city_id=1414,
+            num_reviews=3222,
+            category='h1',
+            image='image_url'
+        )
 
-    def test_db_read2(self):
-        temp_restaurant = db_read(Restaurant, 200)
-        self.assertEqual(temp_restaurant.name, "Don")
+        self.assertEqual(row.id ,7)
+        self.assertEqual(row.name,'nam3')
+        self.assertEqual(row.rating,1234226)
+        self.assertEqual(row.city_id ,1414)
+        self.assertEqual(row.num_reviews,3222)
+        self.assertEqual(row.category, 'h1')
+        self.assertEqual(row.image,'image_url')
 
-    def test_db_read3(self):
-        temp_attraction = db_read(Attraction, 200)
-        self.assertEqual(temp_attraction.name, "Six Flags")
+    def test_restaurant1(self):
+        row = Restaurant(
+            id=1,
+            name='name',
+            rating=12346,
+            city_id=1,
+            category='hi',
+            address='1',
+            image='image_url'
+        )
 
-    def test_db_read_all1(self):
-        city_list = db_read_all(City)
-        self.assertEqual(city_list[0].name, "Amsterdam")
+        self.assertEqual(row.id ,1)
+        self.assertEqual(row.name,'name')
+        self.assertEqual(row.rating,12346)
+        self.assertEqual(row.city_id ,1)
+        self.assertEqual(row.category, 'hi')
+        self.assertEqual(row.address, '1')
+        self.assertEqual(row.image,'image_url')
 
-    def test_db_read_all2(self):
-        restaurant_list = db_read_all(Restaurant)
-        self.assertEqual(restaurant_list[0].name, "Restaurant De Kas")
+    def test_restaurant2(self):
+        row = Restaurant(
+            id=11,
+            name='name1',
+            rating=123461,
+            city_id=11,
+            category='hi1',
+            address='11',
+            image='image_url1'
+        )
 
-    def test_db_read_all3(self):
-        attraction_list = db_read_all(Attraction)
-        self.assertEqual(attraction_list[0].name, "Anne Frank House")
+        self.assertEqual(row.id ,11)
+        self.assertEqual(row.name,'name1')
+        self.assertEqual(row.rating,123461)
+        self.assertEqual(row.city_id ,11)
+        self.assertEqual(row.category, 'hi1')
+        self.assertEqual(row.address, '11')
+        self.assertEqual(row.image,'image_url1')
+
+    def test_restaurant3(self):
+        row = Restaurant(
+            id=131,
+            name='name31',
+            rating=1234631,
+            city_id=131,
+            category='hi31',
+            address='131',
+            image='image_url31'
+        )
+
+        self.assertEqual(row.id ,131)
+        self.assertEqual(row.name,'name31')
+        self.assertEqual(row.rating,1234631)
+        self.assertEqual(row.city_id ,131)
+        self.assertEqual(row.category, 'hi31')
+        self.assertEqual(row.address, '131')
+        self.assertEqual(row.image,'image_url31')
+
+   
 
     def test_serialize1(self):
-        city = session.query(City).filter_by(id=1).one()
-        city_dict = serialize(city)
+        city = City(
+            id=3,
+            name='fred2',
+            population=123456,
+            country='country',
+            demonym='dem0nym',
+            elevation=1.0,
+            description='description2',
+            image='image_url'
+        )
+        city_dict = app.serialize(city)
 
-        self.assertEqual(city_dict['name'], "Amsterdam")
+        self.assertEqual(city_dict['name'], "fred2")
 
     def test_serialize2(self):
-        restaurant = session.query(Restaurant).filter_by(id=5).one()
-        restaurant_dict = serialize(restaurant)
+        restaurant = Restaurant(
+            id=1,
+            name='name',
+            rating=12346,
+            city_id=1,
+            category='hi',
+            address='1',
+            image='image_url'
+        )
+        restaurant_dict = app.serialize(restaurant)
 
-        self.assertEqual(restaurant_dict['name'], "Moonshine")
+        self.assertEqual(restaurant_dict['name'], "name")
 
     def test_serialize3(self):
-        attraction = session.query(Attraction).filter_by(id=5).one()
-        attraction_dict = serialize(attraction)
+        attraction = Attraction(
+            id=7,
+            name='nam3',
+            rating=1234226,
+            city_id=1414,
+            num_reviews=3222,
+            category='h1',
+            image='image_url'
+        )
+        attraction_dict = app.serialize(attraction)
 
-        self.assertEqual(attraction_dict['name'], "House of Torment")
+        self.assertEqual(attraction_dict['name'], "nam3")
 
-    def test_drop_table2(self):
-        drop_table(Restaurant)
-        query = session.query(Restaurant).all()
-        endSize = len(query)
-
-        self.assertTrue(endSize == 0)
-
-    def test_drop_table3(self):
-        drop_table(Attraction)
-        query = session.query(Attraction).all()
-        endSize = len(query)
-
-        self.assertTrue(endSize == 0)
-
-    def test_drop_table1(self):
-        drop_table(Restaurant)
-        drop_table(Attraction)
-        drop_table(City)
-        query = session.query(City).all()
-        endSize = len(query)
-
-        self.assertTrue(endSize == 0)
 
     def test_reload_data1(self):
-        reload_data(City,"Cities.json")
-        city = session.query(City).filter_by(id=1).one()
-        self.assertEqual(city.name, "Amsterdam")
+        test_session.query(City).delete()
+        app.reload_data(test_session, City,"Cities.json")
+        city = test_session.query(City).filter_by(id=1).one()
+        self.assertEqual(city.name.decode('utf8'), "Amsterdam")
+        test_session.query(City).delete()
 
     def test_reload_data2(self):
-        reload_data(Restaurant, "Restaurants.json")
-        restaurant = session.query(Restaurant).filter_by(id=5).one()
-        self.assertEqual(restaurant.name, "Moonshine")
+        test_session.query(Restaurant).delete()
+        app.reload_data(test_session, Restaurant, "Restaurants.json")
+        restaurant = test_session.query(Restaurant).filter_by(id=5).one()
+        self.assertEqual(restaurant.name.decode('utf8'), "Moonshine")
+        test_session.query(Restaurant).delete()
 
     def test_reload_data3(self):
-        reload_data(Attraction, "Attractions.json")
-        attraction = session.query(Attraction).filter_by(id=5).one()
-        self.assertEqual(attraction.name, "House of Torment")
-
-    def test_db_city_join1(self):
-        drop_table(Attraction)
-        drop_table(Restaurant)
-        drop_table(City)
-        reload_data(City,"Cities.json")
-        reload_data(Restaurant, "Restaurants.json")
-        reload_data(Attraction, "Attractions.json")
-        restaurant_list = db_city_join(Restaurant)
-        self.assertEqual(restaurant_list[0][0].name, "Restaurant De Kas")
-        self.assertEqual(restaurant_list[0][1].name, "Amsterdam")
-
-    def test_db_city_join2(self):
-        drop_table(Restaurant)
-        drop_table(Attraction)
-        drop_table(City)
-        reload_data(City,"Cities.json")
-        reload_data(Attraction, "Attractions.json")
-        reload_data(Restaurant, "Restaurants.json")
-        attraction_list = db_city_join(Attraction)
-        self.assertEqual(attraction_list[0][0].name, "Anne Frank House")
-        self.assertEqual(attraction_list[0][1].name, "Amsterdam")
-
-    def test_db_city_join3(self):
-        drop_table(Restaurant)
-        drop_table(Attraction)
-        drop_table(City)
-        reload_data(City,"Cities.json")
-        reload_data(Attraction, "Attractions.json")
-        reload_data(Restaurant, "Restaurants.json")
-        attraction_list = db_city_join(Attraction)
-        self.assertEqual(attraction_list[4][0].name, "House of Torment")
-        self.assertEqual(attraction_list[4][1].name, "Austin")
-
-    def test_db_city_join4(self):
-        drop_table(Attraction)
-        drop_table(Restaurant)
-        drop_table(City)
-        reload_data(City,"Cities.json")
-        reload_data(Attraction, "Attractions.json")
-        reload_data(Restaurant, "Restaurants.json")
-        restaurant_list = db_city_join(Restaurant)
-        self.assertEqual(restaurant_list[20][0].name, "Neptune Oyster")
-        self.assertEqual(restaurant_list[20][1].name, "Boston")
-
-    def test_db_read_city_spots1(self):
-        restaurant_list = db_read_city_spots(Restaurant, 55)
-        self.assertEqual(restaurant_list[0].name, "Don")
-
-    def test_db_read_city_spots2(self):
-        attraction_list = db_read_city_spots(Attraction, 55)
-        self.assertEqual(attraction_list[0].name, "Six Flags")
+        test_session.query(Attraction).delete()
+        app.reload_data(test_session, Attraction, "Attractions.json")
+        attraction = test_session.query(Attraction).filter_by(id=5).one()
+        self.assertEqual(attraction.name.decode('utf8'), "House of Torment")
+        test_session.query(Attraction).delete()
 
 
 if __name__ == "__main__" :
     main()  
+
 
