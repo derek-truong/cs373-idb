@@ -2,12 +2,12 @@ FILES :=							\
 	.gitignore						\
     .travis.yml						\
     apiary.apib						\
-    IDB2.log						\
+    IDB3.log						\
     models.html						\
     models.py						\
     tests.py						\
     app.py						\
-    UML.pdf							
+    UML.pdf
 
 check:
 	@not_found=0;                                 \
@@ -58,4 +58,4 @@ IDB1.log:
 	git log > IDB2.log
 
 tests.out: tests.py
-	python3 tests.py
+	python3 app/tests.py
