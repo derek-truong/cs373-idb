@@ -2,7 +2,7 @@ FILES :=							\
 	.gitignore						\
     .travis.yml						\
     apiary.apib						\
-    IDB1.log						\
+    IDB2.log						\
     models.html						\
     models.py						\
     tests.py						\
@@ -40,7 +40,7 @@ config:
 scrub:
 	make clean
 	rm -f  models.html
-	rm -f  IDB1.log
+	rm -f  IDB2.log
 
 status:
 	make clean
@@ -55,8 +55,7 @@ models.html: models.py
 	pydoc -w models
 
 IDB1.log:
-	git log > IDB1.log
+	git log > IDB2.log
 
 tests.out: tests.py
-	coverage run tests.py
-	coverage report --include=models.py
+	python3 tests.py
