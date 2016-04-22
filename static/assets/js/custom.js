@@ -139,11 +139,6 @@ $(document).ready(function () {
     });
 });
 
-/*====================================
-DATA TABLE FROM https://datatables.net/examples/advanced_init/html5-data-attributes.html
-======================================*/
-	$(document).ready(function() {
-	    $('#example').DataTable();
-	} );
+
 
 });

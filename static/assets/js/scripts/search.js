@@ -1,3 +1,10 @@
+function isEmptyObject( obj ) {
+    for ( var name in obj ) {
+        return false;
+    }
+    return true;
+}
+
 var SearchList = React.createClass({
   loadDataFromServer: function() {
     $.ajax({
@@ -17,17 +24,31 @@ var SearchList = React.createClass({
     return {data: []};
   },
   componentWillMount: function() {
+    console.log("IDK IF THIS WORK");
     this.loadDataFromServer();
   },
   render: function() {
-    var searchNodes = this.state.data.map(function(search) {
-      return (<SearchItem search_ob={search}/>);
-    });
-    return (
+    if(!isEmptyObject(this.state.data)){
+      var searchOrNodes = this.state.data['or_results'].map(function(search) {
+        return (<SearchItem search_ob={search}/>);});
+
+      var searchAndNodes = this.state.data['and_results'].map(function(search) {
+        return (<SearchItem search_ob={search}/>);});
+    }
+      return (
         <div>
-          {searchNodes}
+        <h4>Or Results</h4>
+        <hr/>
+          <ul>
+            {searchOrNodes}
+          </ul>
+        <h4 id="and_res">And Results</h4>
+        <hr/>
+          <ul>
+            {searchAndNodes}
+          </ul>
         </div>
-    );
+      );
   }
 });
 
@@ -35,10 +56,12 @@ var SearchList = React.createClass({
 var SearchItem = React.createClass({
   render: function() {
     return (
-      <p>
-      <a href={this.props.search_ob.link}>{this.props.search_ob.name}</a>
-      {this.props.search_ob.description}
-      </p>
+      <a id="ss" href={this.props.search_ob.link}>
+      <li id="ll">
+      <b id="search_name">{this.props.search_ob.name}</b> <p id="cap">{this.props.search_ob.description}</p>
+      </li>
+      <hr/>
+      </a>
 
     );
   }
@@ -53,9 +76,9 @@ function getParameterByName(name, url) {
     if (!results[2]) return '';
     return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
-var query=getParameterByName('search');
-var str1 = "/api/search/";
-var str2 = str1.concat(query)
+var query=getParameterByName('q');
+var str1 = "/api/search?q=";
+var str2 = str1.concat(query);
 console.log(str2);
 ReactDOM.render(
     <SearchList url = {str2}/>,
