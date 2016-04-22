@@ -19,11 +19,6 @@ def reload_data(s,type, file_path):
         json_data = json.loads(json_str)
         for x in json_data:
             s.add(type(**x))
-<<<<<<< HEAD
-=======
-            s.commit()
->>>>>>> 78bf8b136edc85cd365f0a145640e9b7cf0e5e46
-
 
 def serialize(model):
     # """Transforms a model into a dictionary which can be dumped to JSON."""
