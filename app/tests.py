@@ -251,14 +251,12 @@ class FunctionalTestCase(TestCase):
 
     def test_reload_data2(self):
         test_session.query(Restaurant).delete()
-        app.reload_data(test_session, City,"Cities.json")
         app.reload_data(test_session, Restaurant, "Restaurants.json")
         restaurant = test_session.query(Restaurant).filter_by(id=5).one()
         self.assertEqual(restaurant.name, "Moonshine")
 
     def test_reload_data3(self):
         test_session.query(Attraction).delete()
-        app.reload_data(test_session, City,"Cities.json")
         app.reload_data(test_session, Attraction, "Attractions.json")
         attraction = test_session.query(Attraction).filter_by(id=5).one()
         self.assertEqual(attraction.name, "House of Torment")
