@@ -243,14 +243,6 @@ class FunctionalTestCase(TestCase):
 
         self.assertEqual(attraction_dict['name'], "nam3")
 
-
-    def test_reload_data1(self):
-        test_session.query(City).delete()
-        app.reload_data(test_session, City,"Cities.json")
-        city = test_session.query(City).filter_by(id=1).one()
-        self.assertEqual(city.name, "Amsterdam")
-        test_session.query(City).delete()
-
     def test_reload_data2(self):
         test_session.query(Restaurant).delete()
         app.reload_data(test_session, Restaurant, "Restaurants.json")
@@ -264,6 +256,13 @@ class FunctionalTestCase(TestCase):
         attraction = test_session.query(Attraction).filter_by(id=5).one()
         self.assertEqual(attraction.name, "House of Torment")
         test_session.query(Attraction).delete()
+
+    def test_reload_data1(self):
+        test_session.query(City).delete()
+        app.reload_data(test_session, City,"Cities.json")
+        city = test_session.query(City).filter_by(id=1).one()
+        self.assertEqual(city.name, "Amsterdam")
+        test_session.query(City).delete()
 
 
 if __name__ == "__main__" :
