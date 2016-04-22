@@ -243,27 +243,28 @@ class FunctionalTestCase(TestCase):
 
         self.assertEqual(attraction_dict['name'], "nam3")
 
-    def test_reload_data2(self):
-        test_session.query(Restaurant).delete()
-        app.reload_data(test_session, Restaurant, "Restaurants.json")
-        restaurant = test_session.query(Restaurant).filter_by(id=5).one()
-        self.assertEqual(restaurant.name, "Moonshine")
-        test_session.query(Restaurant).delete()
-
-    def test_reload_data3(self):
-        test_session.query(Attraction).delete()
-        app.reload_data(test_session, Attraction, "Attractions.json")
-        attraction = test_session.query(Attraction).filter_by(id=5).one()
-        self.assertEqual(attraction.name, "House of Torment")
-        test_session.query(Attraction).delete()
-
     def test_reload_data1(self):
         test_session.query(City).delete()
         app.reload_data(test_session, City,"Cities.json")
         city = test_session.query(City).filter_by(id=1).one()
         self.assertEqual(city.name, "Amsterdam")
-        test_session.query(City).delete()
 
+    def test_reload_data2(self):
+        test_session.query(Restaurant).delete()
+        app.reload_data(test_session, City,"Cities.json")
+        app.reload_data(test_session, Restaurant, "Restaurants.json")
+        restaurant = test_session.query(Restaurant).filter_by(id=5).one()
+        self.assertEqual(restaurant.name, "Moonshine")
+
+    def test_reload_data3(self):
+        test_session.query(Attraction).delete()
+        app.reload_data(test_session, City,"Cities.json")
+        app.reload_data(test_session, Attraction, "Attractions.json")
+        attraction = test_session.query(Attraction).filter_by(id=5).one()
+        self.assertEqual(attraction.name, "House of Torment")
+        test_session.query(Attraction).delete()
+        test_session.query(Restaurant).delete()
+        test_session.query(City).delete()
 
 if __name__ == "__main__" :
     main()
