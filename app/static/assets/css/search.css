@@ -1,0 +1,32 @@
+@import "compass/css3";
+
+
+#ll:hover {
+  /*font-size: 16px;*/
+  /*color: #333;*/
+  background-color: #f6f6f6;
+  text-decoration: none;
+  padding: 10px 10px;
+  border-radius: 10px 10px;
+  transition: all .3s ease-in-out;
+  transform: scale(1.02);
+}
+
+#ss{
+  color: #333;
+  text-decoration: none;
+  background-color: none;
+  /*font-size: 18px;*/
+}
+
+#search_name {
+  font-size: 18px;
+}
+
+#cap{
+  text-transform: capitalize;
+}
+
+#and_res {
+  margin-top: 50px;
+}
