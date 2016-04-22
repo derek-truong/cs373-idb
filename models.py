@@ -22,7 +22,7 @@ class City(Base):
     country = Column(String(80), nullable=False)
     demonym = Column(String(80), nullable=False)
     elevation = Column(Float, nullable=False)
-    description = Column(String(1024), nullable=False)
+    description = Column(String(255), nullable=False)
     image = Column(String(255), nullable=False)     
 
 """
@@ -58,8 +58,7 @@ class Restaurant(Base):
     image = Column(String(255), nullable=False)  
 
 
+engine = create_engine('mysql+pymysql://travis:@localhost/test?charset=utf8')
 # engine = create_engine('sqlite:///swespt.db')
-# if __name__ == '__main__':
-engine = create_engine('mysql+pymysql://guestbook-admin:my-guestbook-admin-password@pythonwebapp_db/guestbook')
-# engine = create_engine('mysql://admin:password@localhost/swespt')
+
 Base.metadata.create_all(engine)
