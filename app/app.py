@@ -16,15 +16,15 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 
-SQLALCHEMY_DATABASE_URI = \
-    '{engine}://{username}:{password}@{hostname}/{database}'.format(
-        engine='mysql+pymysql',
-        username=os.getenv('MYSQL_USER'),
-        password=os.getenv('MYSQL_PASSWORD'),
-        hostname=os.getenv('MYSQL_HOST'),
-        database=os.getenv('MYSQL_DATABASE'))
+# SQLALCHEMY_DATABASE_URI = \
+#     '{engine}://{username}:{password}@{hostname}/{database}'.format(
+#         engine='mysql+pymysql',
+#         username=os.getenv('MYSQL_USER'),
+#         password=os.getenv('MYSQL_PASSWORD'),
+#         hostname=os.getenv('MYSQL_HOST'),
+#         database=os.getenv('MYSQL_DATABASE'))
 
-# SQLALCHEMY_DATABASE_URI = 'sqlite:///swespt.db'
+SQLALCHEMY_DATABASE_URI = 'sqlite:///swespt.db'
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = SQLALCHEMY_DATABASE_URI
@@ -58,7 +58,7 @@ def reload_data(s,type, file_path):
 # 			s.commit()
 
 
-def serialize(model): 	
+def serialize(model):
 	# """Transforms a model into a dictionary which can be dumped to JSON."""
 	columns = [c.key for c in class_mapper(model.__class__).columns]
 	return dict((c, getattr(model, c)) for c in columns)
@@ -181,10 +181,10 @@ def search_api():
 	words = query_str.split(' ')
 	ol = []
 	al = []
-	
+
 	# Handles the OR Clauses
-	c = db.session.query(City).filter(or_(*[or_(City.id.contains(w), City.name.contains(w), 
-		City.population.contains(w), City.country.contains(w), City.demonym.contains(w), 
+	c = db.session.query(City).filter(or_(*[or_(City.id.contains(w), City.name.contains(w),
+		City.population.contains(w), City.country.contains(w), City.demonym.contains(w),
 		City.elevation.contains(w), City.description.contains(w)) for w in words])).all()
 	a = db.session.query(Attraction).filter(or_(*[or_(Attraction.id.contains(w),
 		Attraction.name.contains(w), Attraction.rating.contains(w), Attraction.city_id.contains(w),
@@ -194,8 +194,8 @@ def search_api():
 		Restaurant.category.contains(w), Restaurant.address.contains(w)) for w in words])).all()
 
 	# Handles the AND Clauses
-	ca = db.session.query(City).filter(and_(*[or_(City.id.contains(w), City.name.contains(w), 
-		City.population.contains(w), City.country.contains(w), City.demonym.contains(w), 
+	ca = db.session.query(City).filter(and_(*[or_(City.id.contains(w), City.name.contains(w),
+		City.population.contains(w), City.country.contains(w), City.demonym.contains(w),
 		City.elevation.contains(w), City.description.contains(w)) for w in words]))
 	aa = db.session.query(Attraction).filter(and_(*[or_(Attraction.id.contains(w),
 		Attraction.name.contains(w), Attraction.rating.contains(w), Attraction.city_id.contains(w),
