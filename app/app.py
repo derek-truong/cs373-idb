@@ -24,7 +24,9 @@ logger = logging.getLogger(__name__)
 #         hostname=os.getenv('MYSQL_HOST'),
 #         database=os.getenv('MYSQL_DATABASE'))
 
-SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://travis:@localhost/test?charset=utf8'
+# SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://travis:@localhost/test?charset=utf8'
+
+SQLALCHEMY_DATABASE_URI = 'sqlite:///swespt.db'
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = SQLALCHEMY_DATABASE_URI
@@ -35,27 +37,27 @@ manager = Manager(app)
 db = SQLAlchemy(app)
 
 
-def reload_data(s,type, file_path):
-	with open(file_path) as json_file:
-		json_str = json_file.read()
-		json_data = json.loads(json_str)
-		for x in json_data:
-			if type == City:
-				s.add(type(id=x["id"], name=x["name"].encode('utf8'), country=x["country"], population=x["population"], demonym=x["demonym"], elevation=x["elevation"], description=x["description"].encode('utf8'), image=x["image"]))
-			if type == Attraction:
-				s.add(type(id=x["id"], name=x["name"].encode('utf8'), rating=x["rating"], city_id = x["city_id"], num_reviews = x["num_reviews"], category = x["category"], image=x["image"]))
-			if type == Restaurant:
-				s.add(type(id=x["id"], name=x["name"].encode('utf8'), rating=x["rating"], city_id = x["city_id"], category = x["category"], address=x["address"].encode('utf8'), image=x["image"]))
-		s.commit()
-
 # def reload_data(s,type, file_path):
-# 	with open(file_path, encoding = "utf8") as json_file:
-# 		# print(json_file.read())
+# 	with open(file_path) as json_file:
 # 		json_str = json_file.read()
 # 		json_data = json.loads(json_str)
 # 		for x in json_data:
-# 			s.add(type(**x))
-# 			s.commit()
+# 			if type == City:
+# 				s.add(type(id=x["id"], name=x["name"].encode('utf8'), country=x["country"], population=x["population"], demonym=x["demonym"], elevation=x["elevation"], description=x["description"].encode('utf8'), image=x["image"]))
+# 			if type == Attraction:
+# 				s.add(type(id=x["id"], name=x["name"].encode('utf8'), rating=x["rating"], city_id = x["city_id"], num_reviews = x["num_reviews"], category = x["category"], image=x["image"]))
+# 			if type == Restaurant:
+# 				s.add(type(id=x["id"], name=x["name"].encode('utf8'), rating=x["rating"], city_id = x["city_id"], category = x["category"], address=x["address"].encode('utf8'), image=x["image"]))
+# 		s.commit()
+
+def reload_data(s,type, file_path):
+	with open(file_path, encoding = "utf8") as json_file:
+		# print(json_file.read())
+		json_str = json_file.read()
+		json_data = json.loads(json_str)
+		for x in json_data:
+			s.add(type(**x))
+			s.commit()
 
 
 def serialize(model):
@@ -185,7 +187,7 @@ def search_api():
 	# Handles the OR Clauses
 	c = db.session.query(City).filter(or_(*[or_(City.id.contains(w), City.name.contains(w),
 		City.population.contains(w), City.country.contains(w), City.demonym.contains(w),
-		City.elevation.contains(w), City.description.contains(w)) for w in words])).all()
+		City.elevation.contains(w)) for w in words])).all()
 	a = db.session.query(Attraction).filter(or_(*[or_(Attraction.id.contains(w),
 		Attraction.name.contains(w), Attraction.rating.contains(w), Attraction.city_id.contains(w),
 		Attraction.num_reviews.contains(w), Attraction.category.contains(w)) for w in words])).all()
@@ -196,7 +198,7 @@ def search_api():
 	# Handles the AND Clauses
 	ca = db.session.query(City).filter(and_(*[or_(City.id.contains(w), City.name.contains(w),
 		City.population.contains(w), City.country.contains(w), City.demonym.contains(w),
-		City.elevation.contains(w), City.description.contains(w)) for w in words]))
+		City.elevation.contains(w)) for w in words]))
 	aa = db.session.query(Attraction).filter(and_(*[or_(Attraction.id.contains(w),
 		Attraction.name.contains(w), Attraction.rating.contains(w), Attraction.city_id.contains(w),
 		Attraction.num_reviews.contains(w), Attraction.category.contains(w)) for w in words])).all()
@@ -205,18 +207,18 @@ def search_api():
 		Restaurant.category.contains(w), Restaurant.address.contains(w)) for w in words])).all()
 
 	for x in c:
-		ol.append({"name":x.name, "description":x.country, "link":"/cities/"+str(x.id)})
+		ol.append({"name":x.name, "description":"Country: "+x.country,"address":"", "link":"/cities/"+str(x.id)})
 	for y in a:
-		ol.append({"name":y.name, "description":y.category, "link":"/attractions/"+str(y.id)})
+		ol.append({"name":y.name, "description":"Category: "+y.category,"address":"", "link":"/attractions/"+str(y.id)})
 	for z in r:
-		ol.append({"name":z.name, "description":z.category, "link":"/restaurants/"+str(z.id)})
+		ol.append({"name":z.name, "description":"Category: "+z.category,"address":"Address: "+z.address, "link":"/restaurants/"+str(z.id)})
 
 	for m in ca:
-		al.append({"name":m.name, "description":m.country, "link":"/cities/"+str(m.id)})
+		al.append({"name":m.name, "description":"Country: "+m.country,"address":"", "link":"/cities/"+str(m.id)})
 	for n in aa:
-		al.append({"name":n.name, "description":n.category, "link":"/attractions/"+str(n.id)})
+		al.append({"name":n.name, "description":"Category: "+n.category,"address":"", "link":"/attractions/"+str(n.id)})
 	for o in ra:
-		al.append({"name":o.name, "description":o.category, "link":"/restaurants/"+str(o.id)})
+		al.append({"name":o.name, "description":"Category: "+o.category,"address":"Address: "+z.address, "link":"/restaurants/"+str(o.id)})
 
 
 	wl = {"or_results":ol, "and_results":al}
