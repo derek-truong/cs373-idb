@@ -25,7 +25,6 @@ logger = logging.getLogger(__name__)
 #         database=os.getenv('MYSQL_DATABASE'))
 
 SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://travis:@localhost/test?charset=utf8'
-
 # SQLALCHEMY_DATABASE_URI = 'sqlite:///swespt.db'
 
 app = Flask(__name__)

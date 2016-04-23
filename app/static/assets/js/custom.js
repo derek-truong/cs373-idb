@@ -10,8 +10,6 @@
     100% Free To use For Personal And Commercial Use.
 
     IN EXCHANGE JUST TELL PEOPLE ABOUT THIS WEBSITE
-    TODO: fix categories -> categories
-    #work-div -> #sweetspots-div
    
 ========================================================  */
 
@@ -36,7 +34,7 @@ SLIDER SCRIPTS
 
 
 // $('#carousel-slider').carousel({
-// 	interval: 3000 //TIME IN MILLI SECONDS
+// 	interval: 10000 //TIME IN MILLI SECONDS
 // });
 
 
@@ -73,7 +71,6 @@ type: 'inside'
 FILTER FUNCTIONALITY SCRIPTS
 ======================================*/
 $(window).load(function () {
-// var $container = $('#work-div');
 var $container = $('#sweetspots-div');
 $container.isotope({
 filter: '*',
@@ -127,7 +124,7 @@ $(window).on('resize', function (){
 });
 
 $('.carousel').carousel({
-  interval: 5000,
+  interval: 10000,
   pause: "true"
 });
 
