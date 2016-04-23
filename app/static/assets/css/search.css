@@ -1,10 +1,10 @@
-@import "compass/css3";
+/*@import "compass/css3*";*/
 
 
 #ll:hover {
   /*font-size: 16px;*/
   /*color: #333;*/
-  background-color: #f6f6f6;
+  /*background-color: #f6f6f6;*/
   text-decoration: none;
   padding: 10px 10px;
   border-radius: 10px 10px;
@@ -29,4 +29,8 @@
 
 #and_res {
   margin-top: 50px;
+}
+
+#result {
+  background-color: #E6BE42;
 }

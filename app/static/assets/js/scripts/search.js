@@ -55,10 +55,45 @@ var SearchList = React.createClass({
 
 var SearchItem = React.createClass({
   render: function() {
+    var name = this.props.search_ob.name;
+    var regex = new RegExp("("+getParameterByName('q')+")","gi");
+    var line = name.split(regex);
+    var output = []
+
+    for(var i=0; i<line.length;i++){
+      if(line[i] != undefined && line[i].search(regex)===0)
+        output.push(<span id="result">{line[i]}</span>);
+      else
+        output.push(line[i])
+    }
+
+    var description = this.props.search_ob.description;
+    var line2 = description.split(regex);
+    var output2 = []
+
+    for(var i=0; i<line2.length;i++){
+      if(line2[i] != undefined && line2[i].search(regex)===0)
+        output2.push(<span id="result">{line2[i]}</span>);
+      else
+        output2.push(line2[i])
+    }
+
+    var address = this.props.search_ob.address;
+    var line3= address.split(regex);
+    var output3 = []
+
+    for(var i=0; i<line3.length;i++){
+      if(line3[i] != undefined && line3[i].search(regex)===0)
+        output3.push(<span id="result">{line3[i]}</span>);
+      else
+        output3.push(line3[i])
+    }
+
     return (
       <a id="ss" href={this.props.search_ob.link}>
       <li id="ll">
-      <b id="search_name">{this.props.search_ob.name}</b> <p id="cap">{this.props.search_ob.description}</p>
+      <b id="search_name">{output}</b> 
+      <p id="cap">{output2}<br/>{output3}</p>
       </li>
       <hr/>
       </a>

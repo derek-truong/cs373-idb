@@ -10,3 +10,5 @@ venv
 env
 config_secret.json
 swespt.db
+*.py~
+*.yml~
