@@ -24,7 +24,6 @@ var SearchList = React.createClass({
     return {data: []};
   },
   componentWillMount: function() {
-    console.log("IDK IF THIS WORK");
     this.loadDataFromServer();
   },
   render: function() {

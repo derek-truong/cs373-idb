@@ -9,11 +9,11 @@
                     <!-- <div class="col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 "> -->
                         <div id="carousel-slider" data-ride="carousel" class="carousel slide  animate-in" data-anim-type="fade-in-up">
                               <!-- Indicators -->
-<!--                               <ol class="carousel-indicators">
+                              <ol class="carousel-indicators">
                                 <li data-target="#carousel-slider" data-slide-to="0" class="active"></li>
                                 <li data-target="#carousel-slider" data-slide-to="1"></li>
                                 <li data-target="#carousel-slider" data-slide-to="2"></li>
-                              </ol> -->
+                              </ol>
                             <!-- <div class="carousel-inner"> -->
                             <div class="carousel-inner" role="listbox">
                                 <div class="item">
@@ -69,59 +69,5 @@
 
         </div>
         <!-- HOME SECTION END -->
-
-        <!--SWEETSPOT SECTION START-->
-        <!-- <section id="work">
-            <div class="container">
-                <div class="row text-center header animate-in" data-anim-type="fade-in-up">
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <h3>SWEet Spots</h3>
-                        <hr />
-                    </div>
-                </div>
-                <div class="row text-center animate-in" data-anim-type="fade-in-up">
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 pad-bottom">
-                        <div class="categories">
-                            <a href="#" data-filter="*" class="btn btn-custom btn-custom-two btn-sm">All</a>
-                            <a href="#" data-filter=".html" class="btn btn-custom btn-custom-two btn-sm">Restaurant</a>
-                            <a href="#" data-filter=".css" class="btn btn-custom btn-custom-two btn-sm">Attraction</a>
-                            <a href="#" data-filter=".code" class="btn btn-custom btn-custom-two btn-sm">Cities</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="row text-center animate-in" data-anim-type="fade-in-up" id="sweetspots-div">
-                    {% for att in attractions %}
-                        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 css">
-                            <div class="work-wrapper">
-                                <a class="fancybox-media" title="{{ att.name }}" href="/attractions/{{ att.id }}">
-                                    <img src="{{ att.image }}" class="img-responsive img-rounded center-block" alt="" />
-                                </a>
-                                <h4>{{ att.name }}</h4>
-                            </div>
-                        </div>
-                    {% endfor %}
-                    {% for rest in restaurants %}
-                        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 html">
-                            <div class="work-wrapper">
-                                <a class="fancybox-media" title="{{ rest.name }}" href="/restaurants/{{ rest.id }}">
-                                    <img src="{{ rest.image }}" class="img-responsive img-rounded center-block" alt="" />
-                                </a>
-                                <h4>{{ rest.name }}</h4>
-                            </div>
-                        </div>
-                    {% endfor %}
-                    {% for city in cities %}
-                        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 code">
-                            <div class="work-wrapper">
-                                <a class="fancybox-media" title="{{ city.name }}" href="/cities/{{ city.id }}">
-                                    <img src="{{ city.image }}" class="img-responsive img-rounded center-block" alt="" />
-                                </a>
-                                <h4>{{ city.name }}</h4>
-                            </div>
-                        </div>
-                    {% endfor %}
-                </div>
-        </section> -->
-        <!--SWEETSPOT SECTION END-->
     </div>
 {% endblock %}
