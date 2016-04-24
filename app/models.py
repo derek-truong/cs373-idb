@@ -5,6 +5,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+#from sqlalchemy_fulltext import FullText, FullTextSearch
 
 Base = declarative_base()
 
@@ -16,6 +17,11 @@ class City(Base):
 
     __tablename__ = 'city'
 
+    # __table_args__ = {'mysql_engine':'MyISAM',
+    #                   'mysql_charset':'utf8'}
+
+    #__fulltext_columns__ = ('id','name','population','country','demonym','elevation','description','image')
+
     id = Column(Integer, primary_key=True)
     name = Column(String(80), nullable=False)
     population = Column(Integer, nullable=False)
@@ -25,6 +31,15 @@ class City(Base):
     description = Column(String(1024), nullable=False)
     image = Column(String(255), nullable=False)
 
+    # def __init__(self, id, name,population,country,demonym,elevation,description,image) :
+    #     self.id = id
+    #     self.name = name
+    #     self.population = population
+    #     self.country = country
+    #     self.demonym = demonym
+    #     self.elevation = elevation
+    #     self.description = description
+    #     self.image = image
 """
 Model for attractions.
 It has a many to one relationship with City

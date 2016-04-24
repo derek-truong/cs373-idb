@@ -498,7 +498,7 @@ HOME SECTION STYLES - CAROUSEL
 
 @media (min-width: 992px) {
   .featurette-heading {
-    margin-top: 120px;
+    margin-top: 200px;
   }
 }
 
@@ -1246,4 +1246,33 @@ input, button, select, textarea {
     .dataTables_wrapper .dataTables_filter {
         margin-top: 0.5em
     }
+}
+
+/* =============================================================
+RECIPE SECTION STYLES
+============================================================ */
+
+#recipe {
+    height: 400px;
+    width: 283px;
+    position: relative;
+}
+
+#menuImage {
+    position: absolute;
+    left: 10px;
+    top: 0;
+}
+
+#menuList {
+    z-index: 100;
+    position: absolute;
+    color: #6f5d51;
+    font-size: 15px;
+    font-weight: bold;
+    left: 0px;
+    top: 100px;
+    /*width: 300px;*/
+    height: 350px;
+    overflow: auto;
 }

@@ -1,11 +1,13 @@
 import logging
 import os
 
+import requests
 from flask import Flask, render_template, request, redirect, url_for
 from flask.ext.script import Manager
 from flask.ext.sqlalchemy import SQLAlchemy
 from models import City, Restaurant, Attraction
 from sqlalchemy.orm import sessionmaker, class_mapper
+# from sqlalchemy_fulltext import FullText, FullTextSearch
 from sqlalchemy import or_, and_
 import json
 import subprocess
@@ -115,6 +117,10 @@ def attraction_detail(a_id):
 def about():
 	return render_template('about.html')
 
+@app.route('/recipes')
+def recipes():
+	return render_template('recipe.html')
+
 @app.route('/tests')
 def tests():
 	cmd = subprocess.Popen(['make', 'test'],stdout=subprocess.PIPE,stderr=subprocess.PIPE)
@@ -147,8 +153,12 @@ def restaurant_detail_api(r_id):
 #Cities api page
 @app.route('/api/cities')
 def city_api():
-	cl = [serialize(c) for c in db.session.query(City).all()]
-	return json.dumps(cl)
+	l = []
+	for c in db.session.query(City).all() :
+		d = serialize(c)
+		d["name"] = d["name"].decode('utf8')
+		l.append(d)
+	return json.dumps(l)
 
 #Attractions api page
 @app.route('/api/attractions')
@@ -156,8 +166,9 @@ def attraction_api():
 	l = []
 	for x in db.session.query(Attraction, City).filter(Attraction.city_id == City.id).all():
 		d = serialize(x[0])
-		print (x)
-		d["city_name"] = x[1].name
+		d["name"] = d["name"].decode('utf8')
+		# print (x)
+		d["city_name"] = x[1].name.decode('utf8')
 		l.append(d)
 	return json.dumps(l)
 
@@ -167,14 +178,32 @@ def restaurant_api():
 	l = []
 	for x in db.session.query(Restaurant, City).filter(Restaurant.city_id == City.id).all():
 		d = serialize(x[0])
-		print (x)
-		d["city_name"] = x[1].name
+		d["name"] = d["name"].decode('utf8')
+		# print (x)
+		d["city_name"] = x[1].name.decode('utf8')
+		d["address"] = d["address"].decode('utf8')
 		l.append(d)
 	return json.dumps(l)
 
+@app.route('/api/recipes')
+def recipes_api():
+	page_num = request.args.get('page')
+	r = requests.get("http://swedishchef.me/recipes?page=" + str(page_num))
+	json_str = r.content.decode('utf8')
+	d = json.loads(json_str)
+	return json.dumps(d["recipes"])
+	
 @app.route('/search', methods=['GET'])
 def search():
     return render_template('search.html')
+
+# <<<<<<< HEAD
+# 	query = request.args.get('q')
+# 	for x in db.session.query(City).filter(FullTextSearch(query, City)).all() :
+# 		d=serialize(x[0])
+# 		print(d['name'])
+	# return "hello"
+
 
 @app.route('/api/search', methods=['GET'])
 def search_api():
@@ -223,6 +252,7 @@ def search_api():
 	wl = {"or_results":ol, "and_results":al}
 	return json.dumps(wl)
 
+# >>>>>>> frontend-dev
 @manager.command
 def create_db():
 	db.create_all()
@@ -237,5 +267,10 @@ def drop_db():
 	db.session.query(City).delete()
 
 if __name__ == '__main__':
+# <<<<<<< HEAD
+# 	logger.debug("Main Method")
+# 	drop_db()
+# 	create_db()
+# =======
 	manager.run()
 
