@@ -3,7 +3,6 @@
 __pycache__
 .coverage
 *.pyc
-*.py~
 .idea
 venv
 *.swp
@@ -11,3 +10,5 @@ venv
 env
 config_secret.json
 swespt.db
+*.py~
+*.yml~

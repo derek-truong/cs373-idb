@@ -8,7 +8,7 @@ from flask.ext.sqlalchemy import SQLAlchemy
 from models import City, Restaurant, Attraction
 from sqlalchemy.orm import sessionmaker, class_mapper
 # from sqlalchemy_fulltext import FullText, FullTextSearch
-
+from sqlalchemy import or_, and_
 import json
 import subprocess
 
@@ -16,7 +16,6 @@ logging.basicConfig(
     level=logging.DEBUG,
     format='%(levelname)s: %(message)s')
 logger = logging.getLogger(__name__)
-logger.debug("Welcome to Carina Guestbook")
 
 
 # SQLALCHEMY_DATABASE_URI = \
@@ -26,6 +25,8 @@ logger.debug("Welcome to Carina Guestbook")
 #         password=os.getenv('MYSQL_PASSWORD'),
 #         hostname=os.getenv('MYSQL_HOST'),
 #         database=os.getenv('MYSQL_DATABASE'))
+
+# SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://travis:@localhost/test?charset=utf8'
 SQLALCHEMY_DATABASE_URI = 'sqlite:///swespt.db'
 
 app = Flask(__name__)
@@ -37,21 +38,30 @@ manager = Manager(app)
 db = SQLAlchemy(app)
 
 
+# def reload_data(s,type, file_path):
+# 	with open(file_path) as json_file:
+# 		json_str = json_file.read()
+# 		json_data = json.loads(json_str)
+# 		for x in json_data:
+# 			if type == City:
+# 				s.add(type(id=x["id"], name=x["name"].encode('utf8'), country=x["country"], population=x["population"], demonym=x["demonym"], elevation=x["elevation"], description=x["description"].encode('utf8'), image=x["image"]))
+# 			if type == Attraction:
+# 				s.add(type(id=x["id"], name=x["name"].encode('utf8'), rating=x["rating"], city_id = x["city_id"], num_reviews = x["num_reviews"], category = x["category"], image=x["image"]))
+# 			if type == Restaurant:
+# 				s.add(type(id=x["id"], name=x["name"].encode('utf8'), rating=x["rating"], city_id = x["city_id"], category = x["category"], address=x["address"].encode('utf8'), image=x["image"]))
+# 		s.commit()
+
 def reload_data(s,type, file_path):
-	with open(file_path) as json_file:
+	with open(file_path, encoding = "utf8") as json_file:
 		# print(json_file.read())
 		json_str = json_file.read()
 		json_data = json.loads(json_str)
 		for x in json_data:
-			if type == City:
-				s.add(type(id=x["id"], name=x["name"].encode('utf8'), country=x["country"], population=x["population"], demonym=x["demonym"], elevation=x["elevation"], description="description", image=x["image"]))
-			if type == Attraction:
-				s.add(type(id=x["id"], name=x["name"].encode('utf8'), rating=x["rating"], city_id = x["city_id"], num_reviews = x["num_reviews"], category = x["category"], image=x["image"]))
-			if type == Restaurant:
-				s.add(type(id=x["id"], name=x["name"].encode('utf8'), rating=x["rating"], city_id = x["city_id"], category = x["category"], address=x["address"].encode('utf8'), image=x["image"]))
+			s.add(type(**x))
 			s.commit()
 
-def serialize(model): 	
+
+def serialize(model):
 	# """Transforms a model into a dictionary which can be dumped to JSON."""
 	columns = [c.key for c in class_mapper(model.__class__).columns]
 	return dict((c, getattr(model, c)) for c in columns)
@@ -60,11 +70,9 @@ def serialize(model):
 @app.route('/')
 @app.route('/home')
 def home_page():
-
 	city = db.session.query(City).all()
 	attractions = db.session.query(Attraction).all()
 	restaurants = db.session.query(Restaurant).all()
-	# print("reading correctly")
 	return render_template('index.html', cities= city, attractions =attractions, restaurants = restaurants)
 
 #city detail page
@@ -127,7 +135,7 @@ def tests():
 #City detail api page
 @app.route('/api/cities/<int:city_id>')
 def city_detail_api(city_id):
-	c = session.query(City).filter_by(id=city_id).one()
+	c = db.session.query(City).filter_by(id=city_id).one()
 	return json.dumps(serialize(c))
 
 #Attraction detail api page
@@ -177,14 +185,6 @@ def restaurant_api():
 		l.append(d)
 	return json.dumps(l)
 
-@app.route('/search', methods=['GET'])
-def search():
-	query = request.args.get('q')
-	for x in db.session.query(City).filter(FullTextSearch(query, City)).all() :
-		d=serialize(x[0])
-		print(d['name'])
-	return "hello"
-
 @app.route('/api/recipes')
 def recipes_api():
 	page_num = request.args.get('page')
@@ -192,8 +192,67 @@ def recipes_api():
 	json_str = r.content.decode('utf8')
 	d = json.loads(json_str)
 	return json.dumps(d["recipes"])
-
 	
+@app.route('/search', methods=['GET'])
+def search():
+    return render_template('search.html')
+
+# <<<<<<< HEAD
+# 	query = request.args.get('q')
+# 	for x in db.session.query(City).filter(FullTextSearch(query, City)).all() :
+# 		d=serialize(x[0])
+# 		print(d['name'])
+	# return "hello"
+
+
+@app.route('/api/search', methods=['GET'])
+def search_api():
+	query_str = request.args.get('q')
+	words = query_str.split(' ')
+	ol = []
+	al = []
+
+	# Handles the OR Clauses
+	c = db.session.query(City).filter(or_(*[or_(City.id.contains(w), City.name.contains(w),
+		City.population.contains(w), City.country.contains(w), City.demonym.contains(w),
+		City.elevation.contains(w)) for w in words])).all()
+	a = db.session.query(Attraction).filter(or_(*[or_(Attraction.id.contains(w),
+		Attraction.name.contains(w), Attraction.rating.contains(w), Attraction.city_id.contains(w),
+		Attraction.num_reviews.contains(w), Attraction.category.contains(w)) for w in words])).all()
+	r = db.session.query(Restaurant).filter(or_(*[or_(Restaurant.id.contains(w),
+		Restaurant.name.contains(w), Restaurant.rating.contains(w), Restaurant.city_id.contains(w),
+		Restaurant.category.contains(w), Restaurant.address.contains(w)) for w in words])).all()
+
+	# Handles the AND Clauses
+	ca = db.session.query(City).filter(and_(*[or_(City.id.contains(w), City.name.contains(w),
+		City.population.contains(w), City.country.contains(w), City.demonym.contains(w),
+		City.elevation.contains(w)) for w in words]))
+	aa = db.session.query(Attraction).filter(and_(*[or_(Attraction.id.contains(w),
+		Attraction.name.contains(w), Attraction.rating.contains(w), Attraction.city_id.contains(w),
+		Attraction.num_reviews.contains(w), Attraction.category.contains(w)) for w in words])).all()
+	ra = db.session.query(Restaurant).filter(and_(*[or_(Restaurant.id.contains(w),
+		Restaurant.name.contains(w), Restaurant.rating.contains(w), Restaurant.city_id.contains(w),
+		Restaurant.category.contains(w), Restaurant.address.contains(w)) for w in words])).all()
+
+	for x in c:
+		ol.append({"name":x.name, "description":"Country: "+x.country,"address":"", "link":"/cities/"+str(x.id)})
+	for y in a:
+		ol.append({"name":y.name, "description":"Category: "+y.category,"address":"", "link":"/attractions/"+str(y.id)})
+	for z in r:
+		ol.append({"name":z.name, "description":"Category: "+z.category,"address":"Address: "+z.address, "link":"/restaurants/"+str(z.id)})
+
+	for m in ca:
+		al.append({"name":m.name, "description":"Country: "+m.country,"address":"", "link":"/cities/"+str(m.id)})
+	for n in aa:
+		al.append({"name":n.name, "description":"Category: "+n.category,"address":"", "link":"/attractions/"+str(n.id)})
+	for o in ra:
+		al.append({"name":o.name, "description":"Category: "+o.category,"address":"Address: "+z.address, "link":"/restaurants/"+str(o.id)})
+
+
+	wl = {"or_results":ol, "and_results":al}
+	return json.dumps(wl)
+
+# >>>>>>> frontend-dev
 @manager.command
 def create_db():
 	db.create_all()
@@ -203,13 +262,15 @@ def create_db():
 
 @manager.command
 def drop_db():
-	db.session.query(Attraction).delete()
 	db.session.query(Restaurant).delete()
+	db.session.query(Attraction).delete()
 	db.session.query(City).delete()
 
 if __name__ == '__main__':
-	logger.debug("Main Method")
-	drop_db()
-	create_db()
+# <<<<<<< HEAD
+# 	logger.debug("Main Method")
+# 	drop_db()
+# 	create_db()
+# =======
 	manager.run()
 

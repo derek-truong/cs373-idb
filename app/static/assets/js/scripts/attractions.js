@@ -34,7 +34,7 @@ var AttractionTable = React.createClass({
               <th>City</th>
               <th>Rating</th>
               <th>Number of Reviews</th>
-              <th>Category</th>
+              <th>Category  </th>
           </tr>
         </thead>
         <tbody>
