@@ -27,13 +27,16 @@ var SearchList = React.createClass({
     this.loadDataFromServer();
   },
   render: function() {
-    if(!isEmptyObject(this.state.data)){
+    if (isEmptyObject(this.state.data)) {
+      return (<p>Nothing found</p>);
+    } else {
+
       var searchOrNodes = this.state.data['or_results'].map(function(search) {
         return (<SearchItem search_ob={search}/>);});
 
       var searchAndNodes = this.state.data['and_results'].map(function(search) {
         return (<SearchItem search_ob={search}/>);});
-    }
+      
       return (
         <div>
         <h4>Or Results</h4>
@@ -48,10 +51,10 @@ var SearchList = React.createClass({
           </ul>
         </div>
       );
+    }
+    return (null);
   }
 });
-
-
 var SearchItem = React.createClass({
   render: function() {
     var name = this.props.search_ob.name;
