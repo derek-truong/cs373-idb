@@ -1260,3 +1260,32 @@ input, button, select, textarea {
         margin-top: 0.5em
     }
 }
+
+/* =============================================================
+RECIPE SECTION STYLES
+============================================================ */
+
+#recipe {
+    max-width: 100%;
+    max-height: auto;
+    position: relative;
+}
+
+#menuImage {
+    position: absolute;
+    max-width: 100%;
+    height: auto;
+}
+
+#menuList {
+    z-index: 100;
+    position: absolute;
+    color: #6f5d51;
+    font-size: 15px;
+    font-weight: bold;
+    left: 300px;
+    top: 100px;
+    width: 40%;
+    height: 350px;
+    overflow: auto;
+}
