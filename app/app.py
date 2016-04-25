@@ -9,7 +9,7 @@ from sqlalchemy.orm import sessionmaker, class_mapper
 from sqlalchemy import or_, and_
 import json
 import subprocess
-import requests
+# import requests
 
 logging.basicConfig(
     level=logging.DEBUG,
