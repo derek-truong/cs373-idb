@@ -30,7 +30,7 @@ GOOGLE FONT
 GENERAL STYLES
 ============================================================ */
 html,body {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     margin: 0;
     padding: 0;
     height: 100%; /* needed for container min-height */
@@ -198,10 +198,10 @@ border: 2px solid rgb(204, 0, 102);
 }
 
 .btn-custom-two:hover, .btn-custom-two:active {
-border: 2px solid rgba(204, 0, 102, 0.5);
+border: 1px solid rgba(204, 0, 102, 1);
 text-decoration: none;
 color: #fff;
-background-color: rgba(204, 0, 102, 0.5);;
+background-color: rgba(204, 0, 102, 0.5);
 }
 
 .btn-custom-three {
@@ -219,27 +219,11 @@ background-color: #66cccc;`
 }
 
 
-/*.btn-info.disabled,
-.btn-info[disabled],
-fieldset[disabled] .btn-info,
-.btn-info.disabled:hover,
-.btn-info[disabled]:hover,
-fieldset[disabled] .btn-info:hover,
-.btn-info.disabled:focus,
-.btn-info[disabled]:focus,
-fieldset[disabled] .btn-info:focus,
-.btn-info.disabled.focus,
-.btn-info[disabled].focus,
-fieldset[disabled] .btn-info.focus,
-.btn-info.disabled:active,
-.btn-info[disabled]:active,
-fieldset[disabled] .btn-info:active,
-.btn-info.disabled.active,
-.btn-info[disabled].active,
-fieldset[disabled] .btn-info.active {
+.btn-info.disabled,
+.btn-info[disabled] {
   background-color: rgba(204, 0, 102, 0.5);
-  border-color: rgba(204, 0, 102, 0.5);
-}*/
+  border-color: rgba(204, 0, 102, 1);
+}
 
 /* =============================================================
 MENU SECTION STYLES - TODO match with html
