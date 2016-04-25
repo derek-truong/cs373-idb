@@ -1,4 +1,5 @@
 {% extends "layout.html" %}
+{% block citiesunderline %} class="active" {% endblock %}
 {% block body %}
 <!--GRID SECTION START-->
 <section id="grid" >
@@ -41,44 +42,44 @@
 </section>
 <!--GRID SECTION END-->
 <!--SWEETSPOT SECTION START-->
-    <section id="work">
-        <div class="container">
-            <div class="row text-center header animate-in" data-anim-type="fade-in-up">
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <h3>SWEet Spots</h3>
-                    <hr />
+<section id="work">
+    <div class="container">
+        <div class="row text-center header animate-in" data-anim-type="fade-in-up">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <h3>SWEet Spots</h3>
+                <hr />
+            </div>
+        </div>
+        <div class="row text-center animate-in" data-anim-type="fade-in-up">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 pad-bottom">
+                <div class="categories">
+                    <a href="#" data-filter="*" class="btn btn-custom btn-custom-two btn-sm">All</a>
+                    <a href="#" data-filter=".html" class="btn btn-custom btn-custom-two btn-sm">Restaurants</a>
+                    <a href="#" data-filter=".css" class="btn btn-custom btn-custom-two btn-sm">Attractions</a>
                 </div>
             </div>
-            <div class="row text-center animate-in" data-anim-type="fade-in-up">
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 pad-bottom">
-                    <div class="categories">
-                        <a href="#" data-filter="*" class="btn btn-custom btn-custom-two btn-sm">All</a>
-                        <a href="#" data-filter=".html" class="btn btn-custom btn-custom-two btn-sm">Restaurants</a>
-                        <a href="#" data-filter=".css" class="btn btn-custom btn-custom-two btn-sm">Attractions</a>
-                    </div>
+        </div>
+        <div class="row text-center animate-in" data-anim-type="fade-in-up" id="sweetspots-div">
+        {% for att in Attractions %}
+            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 css">
+                <div class="work-wrapper">
+                    <a class="fancybox-media" title="{{ att.name }}" href="../attractions/{{ att.id }}">
+                        <img src="{{ att.image }}" class="img-responsive img-rounded center-block" alt="" />
+                    </a>
+                    <h4>{{ att.name }}</h4>
                 </div>
             </div>
-            <div class="row text-center animate-in" data-anim-type="fade-in-up" id="sweetspots-div">
-            {% for att in Attractions %}
-                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 css">
-                    <div class="work-wrapper">
-                        <a class="fancybox-media" title="{{ att.name }}" href="../attractions/{{ att.id }}">
-                            <img src="{{ att.image }}" class="img-responsive img-rounded center-block" alt="" />
-                        </a>
-                        <h4>{{ att.name }}</h4>
-                    </div>
+        {% endfor %}
+        {% for rest in Restaurants %}
+            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 html">
+                <div class="work-wrapper">
+                    <a class="fancybox-media" title="{{ rest.name }}" href="../restaurants/{{ rest.id }}">
+                        <img src="{{ rest.image }}" class="img-responsive img-rounded center-block" alt="" />
+                    </a>
+                    <h4>{{ rest.name }}</h4>
                 </div>
-            {% endfor %}
-            {% for rest in Restaurants %}
-                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 html">
-                    <div class="work-wrapper">
-                        <a class="fancybox-media" title="{{ rest.name }}" href="../restaurants/{{ rest.id }}">
-                            <img src="{{ rest.image }}" class="img-responsive img-rounded center-block" alt="" />
-                        </a>
-                        <h4>{{ rest.name }}</h4>
-                    </div>
-                </div>
-            {% endfor %}
             </div>
-        </section>
+        {% endfor %}
+        </div>
+    </section>
 {% endblock %}

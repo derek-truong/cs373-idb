@@ -27,7 +27,7 @@ var SearchList = React.createClass({
     this.loadDataFromServer();
   },
   render: function() {
-    if (isEmptyObject(this.state.data)) {
+    if (isEmptyObject(getParameterByName('q'))) {
       return (<p>Nothing found</p>);
     } else {
 

@@ -66,11 +66,11 @@
                 <div class="navbar-collapse collapse">
                     <!-- <ul id="menu-top" class="nav navbar-nav navbar-right"> -->
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="/cities">CITIES</a></li>
-                        <li><a href="/attractions">ATTRACTIONS</a></li>
-                        <li><a href="/restaurants">RESTAURANTS</a></li>
-                        <li><a href="/recipes">RECIPES</a></li>
-                        <li><a href="/about">ABOUT</a></li>
+                        <li {% block citiesunderline %} {% endblock %}><a href="/cities">CITIES</a></li>
+                        <li {% block attractionsunderline %} {% endblock %}><a href="/attractions">ATTRACTIONS</a></li>
+                        <li {% block restaurantsunderline %} {% endblock %}><a href="/restaurants">RESTAURANTS</a></li>
+                        <li {% block recipesunderline %} {% endblock %}><a href="/recipes">RECIPES</a></li>
+                        <li{% block aboutunderline %} {% endblock %}><a href="/about">ABOUT</a></li>
                         <li>
                             <form class="navbar-form" name="query" role="search" action="/search">
                                 <div class="input-group">
@@ -80,7 +80,6 @@
                                     </div>
                                 </div>
                             </form>
-
                         </li>
                     </ul>
 
@@ -91,7 +90,7 @@
     {% endblock %}
     {% block body %} {% endblock %}
     </div>
-    {% block footer%}
+    <!-- {% block footer%} -->
     <!--FOOTER SECTION START-->
     <footer>
         <div class="container">
@@ -113,6 +112,8 @@
     <!-- BOOTSTRAP SCRIPTS -->
     <!-- // <script src="../static/assets/js/bootstrap.js"></script> -->
     <script src="https://googledrive.com/host/0By8VsAnK-ZRDMkttUzU3WFdRcEk"></script>
+    <!-- DATATABLES SCRIPTS -->
+    <script src="https://googledrive.com/host/0By8VsAnK-ZRDZFIzZ0pkbXBjNHc"></script>
     <!-- EASING SCROLL SCRIPTS PLUGIN -->
     <!--<script src="../static/assets/js/vegas/jquery.vegas.min.js"></script>-->
     <script src="https://googledrive.com/host/0By8VsAnK-ZRDR2k4SEw5alVnMVU"></script>
@@ -136,4 +137,4 @@
 </body>
 
 </html>
-{% endblock %}
+<!-- {% endblock %} -->

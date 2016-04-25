@@ -32,7 +32,7 @@ GENERAL STYLES
 html,body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     margin: 0;
-    padding: 0;
+    /*padding: 0;*/
     height: 100%; /* needed for container min-height */
     width: 100%;
 }
@@ -554,7 +554,6 @@ RECIPE SECTION STYLES
 ==============================*/
 #recipesection > .container {
     width: 100%;
-    /*height: auto;*/
     padding-left: 0;
     padding-right: 0;
     margin-right: 0;
@@ -568,7 +567,6 @@ RECIPE SECTION STYLES
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  /*background-position: 50% 100%; */
 }
 
 #recipe {
