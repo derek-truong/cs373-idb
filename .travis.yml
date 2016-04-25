@@ -22,7 +22,7 @@ install:
     - pip install Flask-Testing
     - pip install sqlalchemy
     - pip install pymysql
-		- pip install requests 
+	- pip install requests 
 before_script:
     - uname -a
     - printenv
