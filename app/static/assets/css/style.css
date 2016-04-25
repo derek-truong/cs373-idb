@@ -24,8 +24,7 @@ GOOGLE FONT
 ============================================================ */
 
 @import url(http://fonts.googleapis.com/css?family=Montserrat); /* FREE GOOGLE FONT */
-@import url(http://fonts.googleapis.com/css?family=Roboto); /* FREE GOOGLE FONT */
-@import url(http://fonts.googleapis.com/css?family=Noto Sans); /* FREE GOOGLE FONT */
+/*@import url(http://fonts.googleapis.com/css?family=Noto Sans); /* FREE GOOGLE FONT */*/
 /*"Helvetica Neue", Helvetica, Arial, sans-serif*/
 /* =============================================================
 GENERAL STYLES
@@ -179,10 +178,6 @@ margin: 25px 5px 5px 0px;
 margin: 5px;
 }
 
-.gsc-search-button, .gsc-search-button-v2 {
-    padding: 10px;
-}
-
 .btn-custom-one {
 background-color: transparent;
 color: #fff;
@@ -202,7 +197,7 @@ border: 2px solid rgb(204, 0, 102);
 /*margin-bottom: 40px;*/
 }
 
-.btn-custom-two:hover {
+.btn-custom-two:hover, .btn-custom-two:active {
 border: 2px solid rgba(204, 0, 102, 0.5);
 text-decoration: none;
 color: #fff;
@@ -210,20 +205,21 @@ background-color: rgba(204, 0, 102, 0.5);;
 }
 
 .btn-custom-three {
-    border: 2px solid rgb(204, 0, 102);
-    background-color: rgb(204, 0, 102);
+    /*border: 2px solid rgb(255,255,255);*/
+    color: #66cccc;
+    background-color: rgb(255,255,255);
+    border-radius: 0px 4px 4px 0px;
 }
 
 .btn-custom-three:hover, .btn-custom-three:active {
-border: 2px solid rgba(204, 0, 102, 0.5);
+border: 1px solid rgba(255,255,255, 1);
 text-decoration: none;
-color: #fff;
-background-color: rgba(204, 0, 102, 0.5);
-background-color: rgba(204, 0, 102, 0.5);
+color: white;
+background-color: #66cccc;`
 }
 
 
-.btn-info.disabled,
+/*.btn-info.disabled,
 .btn-info[disabled],
 fieldset[disabled] .btn-info,
 .btn-info.disabled:hover,
@@ -243,15 +239,19 @@ fieldset[disabled] .btn-info:active,
 fieldset[disabled] .btn-info.active {
   background-color: rgba(204, 0, 102, 0.5);
   border-color: rgba(204, 0, 102, 0.5);
-}
+}*/
 
 /* =============================================================
 MENU SECTION STYLES - TODO match with html
 ============================================================ */
 /* TODO delete below?*/
 .navbar-brand {
-    width: 250px;
-    font-family: 'Montserrat', sans-serif;
+    padding: 5px;
+    color: #fff;
+}
+.navbar-brand > img {
+  height: 100%;
+  width: auto;
 }
 
 .navbar-inverse {
@@ -260,6 +260,7 @@ MENU SECTION STYLES - TODO match with html
     color: rgb(255,255,255); 
     width: 100%;
 }
+
 .nav .navbar-nav .navbar-right li:hover {
     /*border-bottom: 1px solid rgb(255,255,255);*/
     /*color: rgb(141, 204, 204);    */
@@ -282,41 +283,76 @@ MENU SECTION STYLES - TODO match with html
     color: white;
     padding: 3px 0px;
     letter-spacing: 2px;
-    margin: 10px 20px 10px 20px
+    margin: 10px 10px 10px 10px;
 }
 /* navbar-brand text */
-.navbar-inverse .navbar-brand, .navbar-inverse .navbar-brand:hover {
+/*.navbar-inverse .navbar-brand, .navbar-inverse .navbar-brand:hover {
     color:  white;
     font-size: 30px;
     /*font-weight: 900;*/
     /*font-family: 'Roboto', sans-serif;*/
-}
-
-.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
-    border-color: transparent;
-}
-/*.navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
-background-color: rgb(40, 141, 203);
-}
-.navbar-inverse .navbar-toggle {
-border-color: rgb(40, 141, 203);
-}*/
-
+/*}*/
 .navbar-form {
-  padding: 5px 0px;
-  margin-top: 5px;
-  margin-right: 10px;
-  margin-bottom: 0px;
-  margin-left: 0px;
+    margin-top: 8px;
+    margin-right: -15px;
 }
 .navbar-form .control-label {
     margin-bottom: 30;
     vertical-align: middle;
 }
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+    border-color: #fff;
+}
+
+.container > .navbar-header {
+  margin-left: -15px;
+}
+
+.form-control {
+  /*font-size: 14px;*/
+  color: #aaa;
+  background-color: #fff;
+  /*border: 1px solid #333;*/
+  border: none;
+  border-radius: 4px;
+  /*-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);*/
+}
+.form-control:focus {
+  border-color: #66cccc;
+  outline: 0;
+  /*-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+          box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);*/
+}
+
+.form-control::-moz-placeholder {
+  color: #aaa;
+  opacity: 1;
+}
+.form-control:-ms-input-placeholder {
+  color: #aaa;
+}
+.form-control::-webkit-input-placeholder {
+  color: #aaa;
+}
+
+.navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
+background-color: rgba(255,255,255,0.5);
+border-color: #fff;
+}
+.navbar-inverse .navbar-toggle {
+border-color: #fff;
+}
+
 /* HOME PAGE MENU LINKS SECTION*/
 #home-menu-section {
     position:absolute;
+    border-bottom: none;
+    color: #fff;
+    background-color: transparent;
+    position: center;
 }
+
 #home-menu-section .navbar-nav > li > a:hover {
     border-bottom: 1px solid rgb(255, 255, 255);
     color: rgb(255, 255, 255);
@@ -326,56 +362,78 @@ border-color: rgb(40, 141, 203);
     font-weight: bold;
     padding: 3px 0px;
     letter-spacing: 2px;
-    margin: 10px 20px 10px 20px;
+    margin: 10px 10px 10px 10px;
     color: rgb(255, 255, 255);
 }
-
-#home-menu-section .navbar-brand {
+/*#home-menu-section .navbar-brand {
     color: white;
     background-color: transparent;
+}*/
+
+/*#home-menu-section {
+}*/
+
+#home-menu-section .navbar-collapse {
+    /*background-color: rgba(255,255,255,0.5);*/
+    /*border-color: #fff;*/
+}
+#home-menu-section .navbar-toggle:hover, #home-menu-section .navbar-toggle:focus {
+    background-color: rgba(255,255,255,0.5);
 }
 
-#home-menu-section {
-    color: #fff;
-    background-color: transparent;
-    position: center;
+#home-menu-section .navbar-toggle {
+    border-color: #fff;    
 }
 
-/* MODEL PAGE MENU LINKS SECTION*/
-#menu-section .navbar-nav > li > a:hover {
-    border-bottom: 1px solid rgb(102, 204, 204);
-    color: rgb(102, 204, 204);
-}
-#menu-section .navbar-nav > li > a {
-    font-size: 13px;
-    font-weight: bold;
-    padding: 3px 0px;
-    letter-spacing: 2px;
-    margin: 10px 20px 10px 20px;
-    color: rgb(102, 204, 204);
-}
-
-#menu-section .navbar-brand {
-    color: rgb(102, 204, 204);
-    background-color: transparent;
-}
-
+ /*MODEL PAGE MENU LINKS SECTION*/
 #menu-section {
     color: rgb(102, 204, 204);
     background-color: rgba(255, 255, 255, 0.95);
     position: center;
 }
-.navbar-toggle {
-    /*color: #fff;*/
-    color: rgba(102, 204, 204, 1);
-    /*background-color: #F0677C;*/
-    /*border: 1px solid #fff;*/
+
+#menu-section .navbar-nav > .active > a, #menu-section .navbar-nav > .active > a:hover, #menu-section .navbar-nav > .active > a:focus {
+    background-color: transparent;
+    border-bottom: 1px solid rgb(102, 204, 204); 
+    color: rgb(102, 204, 204);
+}
+#menu-section .navbar-nav > li > a:hover {
+    /*border-bottom: 1px solid rgb(255,255,255);*/
+    border-bottom: 1px solid rgb(102, 204, 204);
+    color: rgb(102, 204, 204);        
+}
+
+#menu-section .navbar-nav > li > a {
+    font-size: 13px;
+    font-weight: bold;
+    padding: 3px 0px;
+    letter-spacing: 2px;
+    margin: 10px 10px 10px 10px;
+    color: rgb(102, 204, 204);
+}
+
+/*#menu-section .navbar-brand {
+    color: rgb(102, 204, 204);
+    background-color: transparent;
+}*/
+
+#menu-section .navbar-collapse, #menu-section .navbar-form {
+    color: rgba(102, 204, 204, 1.0);
+    border-color: rgb(102, 204, 204);
+}
+#menu-section .navbar-toggle:hover, #menu-section .navbar-toggle:focus {
+background-color: rgba(102, 204, 204, 0.5);
+border-color: rgb(102, 204, 204);
+}
+#menu-section .navbar-toggle {
+background-color: rgba(102, 204, 204, 1.0);
+border-color: white;
 }
 
 /*.navbar {
     color: #fff;
     margin-bottom: 0px;
-}*/
+}
 
 /* =============================================================
 HOME SECTION STYLES - CAROUSEL
@@ -507,6 +565,48 @@ filter: alpha(opacity=80); /* ie lt 7 */
 padding-top: 10px;
 }
 
+/*============================
+RECIPE SECTION STYLES
+==============================*/
+#recipesection > .container {
+    width: 100%;
+    /*height: auto;*/
+    padding-left: 0;
+    padding-right: 0;
+    margin-right: 0;
+    margin-left: 0;
+}
+
+#bgimg {
+  width: 100%;
+  height: 100%;
+  background: url(../img/recipe.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  /*background-position: 50% 100%; */
+}
+
+#recipe {
+    width: 50%;
+    position: relative;
+    margin: auto;
+    background-color: rgba(255, 255, 255, 0.90);
+}
+
+#menuList {
+    z-index: 100;
+    font-size: 1.2em;
+    line-height: 1.3em;
+    font-weight: 450;
+    padding: 5px 5px 5px 5px;
+    max-height: 650px;
+    overflow: auto;
+}
+#menuList ul {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
 /*============================
 TEAM SECTION STYLES
 ==============================*/
@@ -664,7 +764,7 @@ footer {
     text-align: right;
     /*background-color: rgba(204, 0, 102, 0.9);*/
     width: 100%;
-    bottom: 0; /* stick to bottom */
+    bottom: 0 !important; /* stick to bottom */
 }
 
 /*footer {
@@ -682,6 +782,8 @@ footer {
 /*============================
 DATA TABLE STYLE
 ==============================*/
+
+/*<input type="search" class="" placeholder="" aria-controls="example">*/
 table.dataTable {
     width: 100%;
     margin: 0 auto;

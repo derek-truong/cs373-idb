@@ -42,16 +42,25 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="/home">SWEetSpots</a>
+                    <a class="navbar-brand" href="/home"><img src="https://cloud.githubusercontent.com/assets/7130850/14767447/acc8b30a-09ea-11e6-82e0-79c0ddb8062d.png" /></a>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="/cities">CITIES</a></li>
                         <li><a href="/attractions">ATTRACTIONS</a></li>
                         <li><a href="/restaurants">RESTAURANTS</a></li>
+                        <li><a href="/recipes">RECIPES</a></li>                        
                         <li class="active"><a href="/about">ABOUT</a></li>
-                        <!-- <li><a href="#grid">GRIsD</a></li>
-                     -->
+                        <li>
+                            <form class="navbar-form" name="query" role="search" action="/search">
+                                <div class="input-group">
+                                    <input id="search" type="text" class="form-control" placeholder="Search" name="q">
+                                    <div class="input-group-btn">
+                                        <button class="btn btn-custom-three" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                                    </div>
+                                </div>
+                            </form>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -62,7 +71,7 @@
             <div class="container">
                 <div class="row text-center header animate-in" data-anim-type="fade-in-up">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <h3>Team Members </h3>
+                        <h3>Team Members</h3>
                         <hr />
                     </div>
                 </div>
@@ -252,10 +261,11 @@
                             <div class="description">
                                 <h3 id="detailsh3">Details</h3>
                                 <div id="details">
-                                    <ul><li> </li><li> </li></ul>
                                     <p></p>
                                     <p></p>
-                                    <button id="btn-id" class="btn btn-custom btn-custom-three btn-info" type="button" data-loading-text="loading tests...">Run Tests</button>
+                                    <p></p>
+                                    <p></p>
+                                    <button id="btn-id" class="btn btn-custom btn-custom-two btn-info" type="button" data-loading-text="loading tests...">Run Tests</button>
                                     <p></p>
                                     <a href="https://speakerdeck.com/j0natran/cs373-idb3">Speaker Deck</a>
                                 </div>
