@@ -9,6 +9,7 @@ from sqlalchemy.orm import sessionmaker, class_mapper
 from sqlalchemy import or_, and_
 import json
 import subprocess
+import requests
 
 logging.basicConfig(
     level=logging.DEBUG,
@@ -124,6 +125,11 @@ def tests():
 
 	return render_template('tests.html', memory = memory)
 
+@app.route('/recipes')
+def recipes():
+	return render_template('recipes.html')
+
+
 # ######### API ROUTES ###########
 
 #City detail api page
@@ -171,6 +177,14 @@ def restaurant_api():
 		d["city_name"] = x[1].name
 		l.append(d)
 	return json.dumps(l)
+
+@app.route('/api/recipes')
+def recipes_api():
+	page_num = request.args.get('page')
+	r = requests.get("http://swedishchef.me/recipes?page=" + str(page_num))
+	json_str = r.content.decode('utf8')
+	d = json.loads(json_str)
+	return json.dumps(d["recipes"])
 
 @app.route('/search', methods=['GET'])
 def search():
@@ -237,5 +251,7 @@ def drop_db():
 	db.session.query(City).delete()
 
 if __name__ == '__main__':
+	drop_db()
+	create_db()
 	manager.run()
 
