@@ -27,10 +27,9 @@ var SearchList = React.createClass({
     this.loadDataFromServer();
   },
   render: function() {
-    if (isEmptyObject(getParameterByName('q'))) {
+    if (isEmptyObject(getParameterByName('q')) {
       return (<p>Nothing found</p>);
     } else {
-
       var searchOrNodes = this.state.data['or_results'].map(function(search) {
         return (<SearchItem search_ob={search}/>);});
 
@@ -95,7 +94,7 @@ var SearchItem = React.createClass({
       <a id="ss" href={this.props.search_ob.link}>
       <li id="ll">
       <b id="search_name">{output}</b> 
-      <p id="cap">{output2}<br/>{output3}</p>
+      <p className="cap">{output2}<br/>{output3}</p>
       </li>
       <hr/>
       </a>

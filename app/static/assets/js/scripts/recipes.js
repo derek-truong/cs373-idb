@@ -84,7 +84,7 @@ var Recipe = React.createClass({
             <img className="img-responsive" src = {this.props.image_uri} />
             <div class="recipeInfo">
               <h4>Cuisine:</h4>
-              <p>{this.props.cuisine}</p>
+              <p className="cap">{this.props.cuisine}</p>
             </div>
 
             <div class="recipeInfo">
