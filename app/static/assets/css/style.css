@@ -399,7 +399,23 @@ SEARCHBAR STYLES COLORED
   -webkit-box-shadow: inset 0 1px 1px rgba(102, 204, 204, .075);
           box-shadow: inset 0 1px 1px rgba(102, 204, 204, .075);
 }
+.form-control-table {
+  color: #aaa;
+  background-color: #fff;
+  border: 1px solid #66cccc;
+  border-radius: 4px 4px 4px 4px;
+  /* changes top of box shadow */
+/*  -webkit-box-shadow: inset 0 1px 1px rgba(102, 204, 204, .075);
+          box-shadow: inset 0 1px 1px rgba(102, 204, 204, .075);*/
+}
 .form-control:focus {
+  border-color: #66cccc;
+  outline: 0;
+  /*highlight top and right side*/
+  -webkit-box-shadow: inset 0 1px 1px rgba(102, 204, 204, .075), 0 0 8px rgba(102, 204, 204, .6);
+          box-shadow: inset 0 1px 1px rgba(102, 204, 204, .075), 0 0 8px rgba(102, 204, 204, .6);
+}
+.form-control-table:focus {
   border-color: #66cccc;
   outline: 0;
   /*highlight top and right side*/
@@ -784,8 +800,10 @@ table.dataTable {
     margin: 0 auto;
     clear: both;
     border-collapse: separate;
-    border-spacing: 0
+    border-spacing: 0;
+
 }
+
 table.dataTable a, {
     width: 100%;
     margin: 0 auto;
@@ -836,6 +854,29 @@ table.dataTable thead .sorting_desc_disabled {
     background-repeat: no-repeat;
     background-position: center right
 }
+
+table.dataTable thead .sorting:after,
+table.dataTable thead .sorting_asc:after,
+table.dataTable thead .sorting_desc:after,
+table.dataTable thead .sorting_asc_disabled:after,
+table.dataTable thead .sorting_desc_disabled:after {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    display: block;
+    font-family: 'FontAwesome';
+    opacity: 0.5
+}
+table.dataTable thead .sorting:after {
+    opacity: 0.2;
+    content: "\f0dc"
+}
+table.dataTable thead .sorting_asc:after {
+    content: "\f0de"
+}
+table.dataTable thead .sorting_desc:after {
+    content: "\f0dd"
+}
 table.dataTable thead .sorting {
     /*background-image: url("../images/sort_both.png")*/
     position: relative;
@@ -854,6 +895,8 @@ table.dataTable:before thead:before .sorting_asc:before {
 }
 table.dataTable thead .sorting_desc {
     /*background-image: url("../images/sort_desc.png")*/
+    font-family: FontAwesome;    
+    content: "\f0dd";
     position: relative;
 }
 table.dataTable:before thead:before .sorting_desc:before {

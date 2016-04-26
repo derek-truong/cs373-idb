@@ -28,7 +28,7 @@ var AttractionTable = React.createClass({
       addTableRow(attraction);
     });
     return (
-      <table id="example" className="display" cellSpacing="0" width="100%">
+      <table id="example" className="display table-responsive" cellSpacing="0" width="100%">
         <thead>
           <tr>
               <th>Name</th>
