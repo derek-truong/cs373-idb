@@ -25,8 +25,8 @@ logger = logging.getLogger(__name__)
 #         hostname=os.getenv('MYSQL_HOST'),
 #         database=os.getenv('MYSQL_DATABASE'))
 
-# SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://travis:@localhost/test?charset=utf8'
-SQLALCHEMY_DATABASE_URI = 'sqlite:///swespt.db'
+SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://travis:@localhost/test?charset=utf8'
+# SQLALCHEMY_DATABASE_URI = 'sqlite:///swespt.db'
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = SQLALCHEMY_DATABASE_URI
@@ -37,27 +37,27 @@ manager = Manager(app)
 db = SQLAlchemy(app)
 
 
-# def reload_data(s,type, file_path):
-# 	with open(file_path) as json_file:
-# 		json_str = json_file.read()
-# 		json_data = json.loads(json_str)
-# 		for x in json_data:
-# 			if type == City:
-# 				s.add(type(id=x["id"], name=x["name"].encode('utf8'), country=x["country"], population=x["population"], demonym=x["demonym"], elevation=x["elevation"], description=x["description"].encode('utf8'), image=x["image"]))
-# 			if type == Attraction:
-# 				s.add(type(id=x["id"], name=x["name"].encode('utf8'), rating=x["rating"], city_id = x["city_id"], num_reviews = x["num_reviews"], category = x["category"], image=x["image"]))
-# 			if type == Restaurant:
-# 				s.add(type(id=x["id"], name=x["name"].encode('utf8'), rating=x["rating"], city_id = x["city_id"], category = x["category"], address=x["address"].encode('utf8'), image=x["image"]))
-# 		s.commit()
-
 def reload_data(s,type, file_path):
-	with open(file_path, encoding = "utf8") as json_file:
-		# print(json_file.read())
+	with open(file_path) as json_file:
 		json_str = json_file.read()
 		json_data = json.loads(json_str)
 		for x in json_data:
-			s.add(type(**x))
-			s.commit()
+			if type == City:
+				s.add(type(id=x["id"], name=x["name"].encode('utf8'), country=x["country"], population=x["population"], demonym=x["demonym"], elevation=x["elevation"], description=x["description"].encode('utf8'), image=x["image"]))
+			if type == Attraction:
+				s.add(type(id=x["id"], name=x["name"].encode('utf8'), rating=x["rating"], city_id = x["city_id"], num_reviews = x["num_reviews"], category = x["category"], image=x["image"]))
+			if type == Restaurant:
+				s.add(type(id=x["id"], name=x["name"].encode('utf8'), rating=x["rating"], city_id = x["city_id"], category = x["category"], address=x["address"].encode('utf8'), image=x["image"]))
+		s.commit()
+
+# def reload_data(s,type, file_path):
+# 	with open(file_path, encoding = "utf8") as json_file:
+# 		# print(json_file.read())
+# 		json_str = json_file.read()
+# 		json_data = json.loads(json_str)
+# 		for x in json_data:
+# 			s.add(type(**x))
+# 			s.commit()
 
 
 def serialize(model):
