@@ -104,6 +104,23 @@ p {
     -moz-background-size: cover;
     -webkit-background-size: cover;
 }*/
+#recipes .container {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/recipe.jpg');
+    opacity: 1.0;
+    /*filter: alpha(opacity=20); */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    -ms-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+}
 section {
     padding-top: 80px;
     /*padding-bottom: 40px;*/
@@ -500,24 +517,37 @@ padding-top: 10px;
 /*============================
 RECIPE SECTION STYLES
 ==============================*/
-#recipesection > .container {
+/*#recipe {
+    max-width: 100%;
+    max-height: auto;
+    position: relative;
+}*/
+
+/*#menuImage {
+    position: absolute;
     width: 100%;
+    height: auto;
+}*/
+
+#menuList {
+    /*z-index: 100;*/
+    font-size: 15px;
+    font-weight: bold;
+    margin: auto;
+    /*width: 40%;*/
+    height: 350px;
+    overflow: auto;
+}
+
+/*#recipesection > .container {
+    width: 100%;*/
     /*height: auto;*/
-    padding-left: 0;
+/*    padding-left: 0;
     padding-right: 0;
     margin-right: 0;
     margin-left: 0;
-}
-#bgimg {
-  width: 100%;
-  height: 100%;
-  background: url(../img/recipe.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-  /*background-position: 50% 100%; */
-}
-#recipe {
+}*/
+/*#recipe {
     width: 60%;
     position: relative;
     margin: auto;
@@ -530,13 +560,13 @@ RECIPE SECTION STYLES
     line-height: 2em;
     font-weight: 600;
     padding: 5px 5px 5px 5px;
-    max-height: 650px;
+    height: 50%;
     overflow: auto;
 }
 #menuList ul {
   margin-top: 20px;
   margin-bottom: 20px;
-}
+}*/
 
 /*============================
 TEAM SECTION STYLES
@@ -695,6 +725,7 @@ footer {
     text-align: right;
     /*background-color: rgba(204, 0, 102, 0.9);*/
     width: 100%;
+    position: absolute;
     bottom: 0; /* stick to bottom */
 }
 

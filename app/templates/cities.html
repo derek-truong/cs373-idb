@@ -31,6 +31,10 @@
                            
                        }
                        function addTableRow(c){
+                            var demonym = c.demonym;
+                            if (demonym == "NULL") {
+                                c.demonym = "Unknown"
+                            }
                             $('#example').dataTable().fnAddData(["<a href=\"/cities/"+ c.id +"\">"+c.name+"</a>", c.population, c.country, c.demonym, c.elevation]);
                        }
                     </script>

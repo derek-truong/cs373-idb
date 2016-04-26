@@ -27,7 +27,7 @@ var SearchList = React.createClass({
     this.loadDataFromServer();
   },
   render: function() {
-    if (isEmptyObject(getParameterByName('q')) {
+    if (isEmptyObject(this.state.data['or_results']) || isEmptyObject(this.state.data['and_results'])) {
       return (<p>Nothing found</p>);
     } else {
       var searchOrNodes = this.state.data['or_results'].map(function(search) {

@@ -72,7 +72,7 @@
 {
 "name": "Buenos Aires",
 "elevation": 25,
-"demonym": "porteño , porteña",
+"demonym": "Porteño , Porteña",
 "population": 2890151,
 "description": "Buenos Aires (/ˈbweɪnəs ˈɛəriːz/ or /ˈaɪrɪs/, Spanish: [ˈbwenos ˈaiɾes]) is the capital and largest city of Argentina, and the second-largest metropolitan area in South America. It is located on the western shore of the estuary of the Río de la Plata, on the continent's southeastern coast.",
 "country": "Argentina",
@@ -132,7 +132,7 @@
 {
 "name": "Edinburgh",
 "elevation": 47,
-"demonym": "Scots_language",
+"demonym": "Scots Language",
 "population": 492680,
 "description": "Edinburgh (/ˈɛdɪnbərə/; Scottish Gaelic: Dùn Èideann [ˈt̪uːn ˈɛːtʲɛɲ]) is the capital city of Scotland, located in Lothian on the southern shore of the Firth of Forth. It is the second most populous city in Scotland and the seventh most populous in the United Kingdom. The mid-year population estimate for 2014 is 492,680. Edinburgh lies at the heart of a Functional Urban Area with a population in 2011 of 834,648. The Edinburgh city region has a population of 1,330,480.",
 "country": "United Kingdom",
@@ -152,7 +152,7 @@
 {
 "name": "Granada",
 "elevation": 738,
-"demonym": "granadino , granadina",
+"demonym": "Granadino , Granadina",
 "population": 237540,
 "description": "Granada (/ɡrəˈnɑːdə/, Spanish: [ɡɾaˈnaða], locally: [ɡɾaˈnaː, -ˈnaða]) is a city and the capital of the province of Granada, in the autonomous community of Andalusia, Spain. Granada is located at the foot of the Sierra Nevada mountains, at the confluence of four rivers, the Beiro, the Darro, the Genil and the Monachil. It sits at an average elevation of 738 metres above sea level, yet is only one hour by car from the Mediterranean coast, the Costa Tropical.",
 "country": "Spain",
@@ -332,7 +332,7 @@
 {
 "name": "Paris",
 "elevation": 35,
-"demonym": "parisien",
+"demonym": "Parisien",
 "population": 2241346,
 "description": "Paris (UK: /ˈpærɪs/ PARR-iss; US: /ˈpɛərɪs/ PAIR-iss; French: [paʁi]) is the capital and most-populous city of France. Situated on the Seine River, in the north of the country, it is in the centre of the Île-de-France region, also known as the région parisienne, \"Paris Region\". The City of Paris has an area of 105.4 square kilometres (40.7 square miles) and had a population of 2,241,346 within its city limits in 2014.",
 "country": "France",
@@ -362,7 +362,7 @@
 {
 "name": "Puerto Rico",
 "elevation": 1338,
-"demonym": "Puerto_Ricans",
+"demonym": "Puerto Ricans",
 "population": 3548397,
 "description": "Puerto Rico (English /ˌpɔrtə ˈriːkoʊ/ or /ˌpwɛərtə ˈriːkoʊ/; Spanish: [ˈpweɾto ˈriko]), officially the Commonwealth of Puerto Rico (Spanish: Estado Libre Asociado de Puerto Rico, literally the \"Free Associated State of Puerto Rico\"), is a United States territory located in the northeastern Caribbean. Puerto Rico is an archipelago that includes the main island of Puerto Rico and a number of smaller islands. The capital and largest city is San Juan.",
 "country": "United States",
@@ -422,7 +422,7 @@
 {
 "name": "Seville",
 "elevation": 7,
-"demonym": "sevillano , sevillana",
+"demonym": "Sevillano , Sevillana",
 "population": 703021,
 "description": "Seville (/səˈvɪl/; Spanish: Sevilla [seˈβiʎa], locally: [seˈβi(ɟ)ʝa]) is the capital and largest city of the autonomous community of Andalusia and the province of Seville, Spain. It is situated on the plain of the River Guadalquivir. The inhabitants of the city are known as sevillanos (feminine form: sevillanas) or hispalenses, after the Roman name of the city, Hispalis.",
 "country": "Spain",
