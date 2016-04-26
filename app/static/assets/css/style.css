@@ -104,18 +104,21 @@ p {
     -moz-background-size: cover;
     -webkit-background-size: cover;
 }*/
-#recipes .container {
-    position: absolute;
-    left: 0;
+#recipes {
+  height: 100%;
+}
+#recipes .container-fluid {
+    /*position: absolute;*/
+    /*top: 50px;*/
+
+    display: block;
     width: 100%;
-    height: 100%;
     background-image: url('../img/recipe.jpg');
-    opacity: 1.0;
     /*filter: alpha(opacity=20); */
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
+    background-position: top center;
+    /*background-attachment: fixed;*/
     -ms-background-size: cover;
     -o-background-size: cover;
     -moz-background-size: cover;
@@ -125,9 +128,8 @@ section {
     padding-top: 80px;
     /*padding-bottom: 40px;*/
 }
-
-.pad-bottom {
-    padding-bottom: 30px;
+#recipesection {
+  padding-top: 0px;
 }
 
 /*.header {
@@ -147,13 +149,21 @@ text-transform: uppercase;
     margin-bottom: 40px
 }
 
+#recipesection h3 {
+  padding-top: 80px;
+  color: white;
+}
+#recipesection hr {
+    border-top: 2px solid rgb(255, 255, 255);
+}
 .content-wrapper {
     /*margin-top: 75px;*/
     position: relative;
     /*affects footer*/
     height: auto !important;
     min-height: 100%;
-    padding-bottom: 60px;
+    height: 100%;
+    padding-bottom: 70px;
 }
 .page-head-line {
     font-weight: 900;
@@ -236,7 +246,7 @@ background-color: rgba(204, 0, 102, 0.5);
     text-decoration: none;
 }
 
-#white-navbar .btn-custom-three {
+#white-navbar .btn-custom-three, #home-menu-section .btn-custom-three {
     color: #66cccc;
     background-color: rgb(255,255,255);
     border: 1px solid #66cccc;
@@ -244,11 +254,18 @@ background-color: rgba(204, 0, 102, 0.5);
 }
 #white-navbar .btn-custom-three:hover {
     color: white;
-    background-color: rgba(102, 204, 204, 0.5);
+    background-color: rgba(102, 204, 204, 1);
     border: 1px solid rgba(102, 204, 204, 1);
     text-decoration: none;
 }
-#white-navbar .btn-custom-three:active, #white-navbar .btn-custom-three:focus {
+#home-menu-section .btn-custom-three:hover {
+    color: white;
+    background-color: rgba(102, 204, 204, 0.75);
+    border: 1px solid rgba(102, 204, 204, 1);
+    text-decoration: none;
+}
+#white-navbar .btn-custom-three:active, #white-navbar .btn-custom-three:focus,
+#home-menu-section .btn-custom-three:active, #home-menu-section .btn-custom-three:focus {
     background-color: rgba(102, 204, 204, 1);
 }
 
@@ -274,10 +291,10 @@ MENU SECTION STYLES - TODO match with html
     border-color: transparent;
     color: rgb(255,255,255); 
     width: 100%;
+    margin-bottom: 300px;
 }
 .nav .navbar-nav .navbar-right li:hover {
     /*border-bottom: 1px solid rgb(255,255,255);*/
-    /*color: rgb(141, 204, 204);    */
     /*color: white;*/
     background-color: rgba(102, 204, 204, 0.95);
 }
@@ -314,15 +331,32 @@ MENU SECTION STYLES - TODO match with html
 .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
     border-color: #fff;
 }
-/*.navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
-background-color: rgb(40, 141, 203);
+.navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
+background-color: rgba(255,255,255,0.5);
+border-color: #fff;
 }
 .navbar-inverse .navbar-toggle {
-border-color: rgb(40, 141, 203);
-}*/
+border-color: #fff;
+}
 
+#home-menu-section {
+    background-color: transparent;
+    border-color: transparent;
+    color: rgb(255,255,255); 
+}
+/*#home-menu-section .navbar-toggle:hover, #home-menu-section .navbar-toggle:focus {
+    background-color: rgba(255,255,255,0.5);
+}
+
+#home-menu-section .navbar-toggle {
+    border-color: #fff;    
+}*/
 /* WHITE MENU LINKS SECTION*/
-#white-navbar .navbar-nav > .active > a, #white-navbar .navbar-nav > .active > a:hover, #white-navbar .navbar-nav > .active > a:focus {
+#white-navbar {
+    border-color: purple;
+}
+#white-navbar .navbar-nav > .active > a, #white-navbar .navbar-nav > .active > a:hover, #white-navbar .navbar-nav > .active > a:focus,
+#home-menu-section .navbar-nav > .active > a, #home-menu-section .navbar-nav > .active > a:hover, #home-menu-section .navbar-nav > .active > a:focus {
     border-bottom: 1px solid rgb(102, 204, 204);
     color: #66cccc;
 }
@@ -330,7 +364,8 @@ border-color: rgb(40, 141, 203);
 #white-navbar .navbar-nav > li > a {
     color: rgb(102, 204, 204);
 }
-#white-navbar .navbar-nav > li > a:hover {
+#white-navbar .navbar-nav > li > a:hover,
+#home-menu-section > li > a:hover {
     border-bottom: 1px solid rgb(102, 204, 204);
     color: rgb(102, 204, 204);
 }
@@ -338,14 +373,19 @@ border-color: rgb(40, 141, 203);
     color: rgb(102, 204, 204);
     background-color: rgba(255, 255, 255, 0.95);
 }
-.navbar-toggle {
-    color: rgba(102, 204, 204, 1);
+#white-navbar .navbar-toggle:hover, #white-navbar .navbar-toggle:focus {
+background-color: rgba(102, 204, 204, 0.5);
+border-color: rgb(102, 204, 204);
+}
+#white-navbar .navbar-toggle {
+background-color: rgba(102, 204, 204, 1.0);
+border-color: white;
 }
 
-/*.navbar {
-    color: #fff;
-    margin-bottom: 0px;
-}*/
+.navbar {
+/*    color: #fff;*/
+  min-height: 50px;
+}
 
 /*============================
 SEARCHBAR STYLES COLORED
@@ -380,7 +420,7 @@ SEARCHBAR STYLES COLORED
 /*============================
 SEARCHBAR STYLES WHITE
 ============================*/
-#white-navbar .form-control {
+#white-navbar .form-control, #home-menu-section .form-control {
   border: 1px solid #66cccc;
 }
 
@@ -517,26 +557,25 @@ padding-top: 10px;
 /*============================
 RECIPE SECTION STYLES
 ==============================*/
-/*#recipe {
-    max-width: 100%;
-    max-height: auto;
-    position: relative;
-}*/
-
+#recipe {
+  margin-bottom: 40px;
+  padding: 10px 0 10px 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: left;
+}
 /*#menuImage {
     position: absolute;
     width: 100%;
     height: auto;
 }*/
 
-#menuList {
-    /*z-index: 100;*/
-    font-size: 15px;
+#menuList ul li {
+    font-size: 18px;
     font-weight: bold;
-    margin: auto;
-    /*width: 40%;*/
-    height: 350px;
-    overflow: auto;
+}
+#menuList {
+  height: 500px;
+  overflow: auto;
 }
 
 /*#recipesection > .container {
@@ -547,12 +586,7 @@ RECIPE SECTION STYLES
     margin-right: 0;
     margin-left: 0;
 }*/
-/*#recipe {
-    width: 60%;
-    position: relative;
-    margin: auto;
-    background-color: rgba(255, 255, 255, 0.90);
-}
+/*
 
 #menuList {
     z-index: 100;
@@ -725,8 +759,9 @@ footer {
     text-align: right;
     /*background-color: rgba(204, 0, 102, 0.9);*/
     width: 100%;
-    position: absolute;
-    bottom: 0; /* stick to bottom */
+    /*position: absolute;*/
+    /*bottom: 0;*/
+    margin-bottom: 0px;
 }
 
 /*footer {
@@ -766,8 +801,12 @@ table.dataTable a:hover {
 table.dataTable thead th,
 table.dataTable tfoot th {
     font-weight: bold;
-    background-color: #66CCCC;
-    color: white;
+    /*background-color: #66CCCC;*/
+    /*color: white;*/
+    background-color: white;
+    border-top: 2px solid #66cccc;
+    border-bottom: 2px solid #66cccc;
+    color: #66cccc;
 }
 table.dataTable thead th,
 table.dataTable thead td {
