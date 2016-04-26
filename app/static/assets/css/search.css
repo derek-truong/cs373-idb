@@ -12,6 +12,7 @@
 }
 
 #search_name {
+  font-weight: 500;
   font-size: 18px;
 }
 
@@ -24,7 +25,8 @@
 }
 
 #result {
-  background-color: #E6BE42;
+  /*background-color: #E6BE42;*/
+  font-weight: bold;
 }
 
 #ll {
