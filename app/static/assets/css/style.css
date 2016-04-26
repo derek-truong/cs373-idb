@@ -128,9 +128,6 @@ section {
     padding-top: 80px;
     /*padding-bottom: 40px;*/
 }
-#recipesection {
-  padding-top: 0px;
-}
 
 /*.header {
 font-family: 'Roboto', sans-serif;
@@ -143,19 +140,7 @@ text-transform: uppercase;
     -webkit-border-radius: 0px;
 }*/
 
-.header hr {
-    width: 50px;
-    border-top: 2px solid rgb(102, 204, 204);
-    margin-bottom: 40px
-}
 
-#recipesection h3 {
-  padding-top: 80px;
-  color: white;
-}
-#recipesection hr {
-    border-top: 2px solid rgb(255, 255, 255);
-}
 .content-wrapper {
     /*margin-top: 75px;*/
     position: relative;
@@ -193,8 +178,7 @@ text-transform: uppercase;
 /* =============================================================
 CUSTOM BUTTON STYLES
 ============================================================ */
-.button-custom {
-/*border-radius: 0px;*/
+/*.button-custom {
 -webkit-border-radius: 0px;
 -moz-border-radius: 0px;
 -webkit-transition: all 0.5s ease-in-out;
@@ -203,20 +187,7 @@ CUSTOM BUTTON STYLES
 transition: all 0.5s ease-in-out;
 margin: 25px 5px 5px 0px;
 margin: 5px;
-}
-
-.btn-custom-one {
-background-color: transparent;
-color: #fff;
-border: 2px solid rgb(204, 0, 102);
-}
-
-.btn-custom-one:hover {
-background-color: rgb(204, 0, 102);
-text-decoration: none;
-color: #fff;
-}
-
+}*/
 .btn-custom-two {
 color: #fff;
 background-color: rgb(204, 0, 102);
@@ -225,6 +196,21 @@ border: 2px solid rgb(204, 0, 102);
 }
 
 .btn-custom-two:hover, .btn-custom-two:active, .btn-custom-two:focus {
+border: 2px solid rgba(204, 0, 102, 0.5);
+text-decoration: none;
+color: #fff;
+background-color: rgba(204, 0, 102, 0.5);
+}
+.btn-custom-two-r {
+  color: #fff;
+background-color: rgb(204, 0, 102);
+border: 2px solid rgb(204, 0, 102);
+border-radius: 4px 4px 4px 4px;
+margin-bottom: 15px;
+}
+
+.btn-custom-two-r:hover, .btn-custom-two-r:active, .btn-custom-two-r:focus {
+border-radius: 4px 4px 4px 4px;
 border: 2px solid rgba(204, 0, 102, 0.5);
 text-decoration: none;
 color: #fff;
@@ -245,7 +231,27 @@ background-color: rgba(204, 0, 102, 0.5);
     border: 1px solid rgba(102, 204, 204, 1);
     text-decoration: none;
 }
-
+.btn-info.disabled,
+.btn-info[disabled],
+fieldset[disabled] .btn-info,
+.btn-info.disabled:hover,
+.btn-info[disabled]:hover,
+fieldset[disabled] .btn-info:hover,
+.btn-info.disabled:focus,
+.btn-info[disabled]:focus,
+fieldset[disabled] .btn-info:focus,
+.btn-info.disabled.focus,
+.btn-info[disabled].focus,
+fieldset[disabled] .btn-info.focus,
+.btn-info.disabled:active,
+.btn-info[disabled]:active,
+fieldset[disabled] .btn-info:active,
+.btn-info.disabled.active,
+.btn-info[disabled].active,
+fieldset[disabled] .btn-info.active {
+  background-color: rgba(204, 0, 102, 0.5);
+  border-color: rgba(204, 0, 102, 0.5);
+}
 #white-navbar .btn-custom-three, #home-menu-section .btn-custom-three {
     color: #66cccc;
     background-color: rgb(255,255,255);
@@ -269,11 +275,6 @@ background-color: rgba(204, 0, 102, 0.5);
     background-color: rgba(102, 204, 204, 1);
 }
 
-.btn-info.disabled,
-.btn-info[disabled] {
-  background-color: rgba(204, 0, 102, 0.5);
-  border-color: rgba(204, 0, 102, 0.5);
-}
 
 /* =============================================================
 MENU SECTION STYLES - TODO match with html
@@ -579,6 +580,23 @@ RECIPE SECTION STYLES
   background-color: rgba(255, 255, 255, 0.8);
   text-align: left;
 }
+#recipesection {
+  padding-top: 0px;
+}
+.header hr {
+    width: 50px;
+    border-top: 2px solid rgb(102, 204, 204);
+    margin-top: 20px;
+    margin-bottom: 40px
+}
+
+#recipesection h3 {
+  padding-top: 80px;
+  color: white;
+}
+#recipesection hr {
+    border-top: 2px solid rgb(255, 255, 255);
+}
 /*#menuImage {
     position: absolute;
     width: 100%;
@@ -619,6 +637,23 @@ RECIPE SECTION STYLES
 }*/
 
 /*============================
+ABOUT PAGE STYLES
+==============================*/
+.description {
+padding: 5px 20px 5px;
+text-align: center;
+border-bottom: 1px solid #fff;
+border-right: 1px solid #fff;
+border-left: 1px solid #fff;
+border-radius: 0px 0px 10px 10px;
+}
+
+.description .bio {
+padding: 5px 20px 20px;
+text-align: left;
+}
+
+/*============================
 TEAM SECTION STYLES
 ==============================*/
 .team-wrapper {
@@ -653,12 +688,9 @@ transform: scale(1.1);
 .team-wrapper .description a {
 /*width: 80px;*/
 /*height: 80px;*/
-/*border-radius: 50%;
--moz-border-radius: 50%;
--webkit-border-radius: 50%;
-margin: 0 auto -50px;
-display: block;*/
+display: block;
 color: rgb(102,204,204);
+margin-bottom: -20px;
 /*z-index: 999;*/
 /*font-size: 40px;*/
 padding: 15px 22px;
@@ -675,26 +707,14 @@ transition: all 0.8s ease-in-out;*/
     /*background-color: rgb(102,204,204);*/
 }
 
-.team-wrapper .description {
-padding: 5px 20px 5px;
-text-align: center;
-border-bottom: 1px solid #fff;
-border-right: 1px solid #fff;
-border-left: 1px solid #fff;
-border-radius: 0px 0px 10px 10px;
-}
 
 .team-wrapper .description h5 {
 color: rgb(102,204,204);
 }
 
-.team-wrapper .description .bio {
-padding: 5px 20px 20px;
-text-align: left;
-}
 
 /*============================
-ABOUT PROJECT SECTION STYLES
+PROJECT SECTION STYLES
 ==============================*/
 .about-project {
 overflow-x: hidden;
@@ -705,12 +725,12 @@ position: relative;
 -o-transition: all 0.2s ease;
 transition: all 0.2s ease;
 
-/*border-top: 1px solid #fff;
+/*border-top: 1px solid blue;
 border-right: 1px solid #fff;
 border-left: 1px solid #fff;*/
 }
 
-.about-project > a {
+/*.about-project > a {
 color: rgb(102,204,204);
 width: 80px;
 height: 80px;
@@ -728,40 +748,49 @@ background-color: #fff;
 -moz-transition: all 0.8s ease-in-out;
 -o-transition: all 0.8s ease-in-out;
 transition: all 0.8s ease-in-out;
-}
+}*/
 
-.about-project > a:hover {
+/*.about-project > a:hover {
 color: #fff;
 text-decoration: none;
 background-color: rgb(102,204,204);
+}*/
+/**/
+#project .bio {
+  display: inline-block;
 }
 
-.about-project .description {
-padding: 0px 20px 5px;
-text-align: center;
-/*border-bottom: 1px solid #fff;
-border-right: 1px solid #fff;
-border-left: 1px solid #fff;*/
-/*border-radius: 0px 0px 10px 10px;*/
+#project .bio .abc {
+  padding-left: 0px;
 }
-
-.about-project .description .bio {
-padding: 5px 20px 20px;
-text-align: left;
-}
-
-.about-project .description h3 {
-    padding: -10px 20px 5px 20px;
-    margin: -4px auto;   
-}
-
-.about-project .description h5 {
+#project .description h5 {
 color: rgb(102,204,204);
 }
 
-.about-project #details {
-    padding: 5px 20px 20px;
-    text-align: center;
+#project .proj-elem hr {
+    width: 80%;
+    border-top: 2px dotted rgba(102, 204, 204, 0.5);
+    margin-top: 20px;
+}
+
+#project .proj-elem h3 {
+  line-height: 1em;
+  text-decoration: none;
+  padding: 10px;
+}
+#project .proj-elem p {
+  line-height: 1em;
+  text-decoration: none;
+  padding: 10px;
+  margin: 10px;
+}
+
+.proj-wrapper {
+  margin-bottom: 30px;
+}
+
+.project-details {
+  margin-top: 25px;
 }
 
 /*============================
@@ -796,7 +825,7 @@ footer {
 DATA TABLE STYLE
 ==============================*/
 table.dataTable {
-    width: 100%;
+    width: auto;
     margin: 0 auto;
     clear: both;
     border-collapse: separate;
