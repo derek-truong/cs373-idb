@@ -1,4 +1,4 @@
-﻿
+
 /*=============================================================
     Authour URL: www.designbootstrap.com
     
@@ -24,14 +24,14 @@ GOOGLE FONT
 ============================================================ */
 
 @import url(http://fonts.googleapis.com/css?family=Montserrat); /* FREE GOOGLE FONT */
-/*@import url(http://fonts.googleapis.com/css?family=Noto Sans); /* FREE GOOGLE FONT */*/
+@import url(http://fonts.googleapis.com/css?family=Roboto); /* FREE GOOGLE FONT */
+@import url(http://fonts.googleapis.com/css?family=Noto Sans); /* FREE GOOGLE FONT */
 /*"Helvetica Neue", Helvetica, Arial, sans-serif*/
 /* =============================================================
 GENERAL STYLES
 ============================================================ */
 html,body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    margin: 0;
     padding: 0;
     height: 100%; /* needed for container min-height */
     width: 100%;
@@ -197,46 +197,48 @@ border: 2px solid rgb(204, 0, 102);
 /*margin-bottom: 40px;*/
 }
 
-.btn-custom-two:hover, .btn-custom-two:active {
-border: 1px solid rgba(204, 0, 102, 1);
+.btn-custom-two:hover, .btn-custom-two:active, .btn-custom-two:focus {
+border: 2px solid rgba(204, 0, 102, 0.5);
 text-decoration: none;
 color: #fff;
 background-color: rgba(204, 0, 102, 0.5);
 }
 
+/* SEARCH BUTTON color nav-bar*/
 .btn-custom-three {
-    /*border: 2px solid rgb(255,255,255);*/
-    color: #66cccc;
-    background-color: rgb(255,255,255);
+    color: #fff;
+    background-color: #66cccc;
+    border: 1px solid rgba(255,255,255, 1);
     border-radius: 0px 4px 4px 0px;
 }
 
-.btn-custom-three:hover, .btn-custom-three:active {
-border: 1px solid rgba(255,255,255, 1);
-text-decoration: none;
-color: white;
-background-color: #66cccc;`
+.btn-custom-three:hover, .btn-custom-three:active, .btn-custom-three:focus {
+    color: #66cccc;
+    background-color: rgba(255, 255, 255, 1);
+    border: 1px solid rgba(102, 204, 204, 1);
+    text-decoration: none;
 }
 
-#menu-section .btn-custom-three {
-    /*border: 2px solid rgb(255,255,255);*/
+#white-navbar .btn-custom-three {
     color: #66cccc;
     background-color: rgb(255,255,255);
     border: 1px solid #66cccc;
     border-radius: 0px 4px 4px 0px;
 }
-
-#menu-section .btn-custom-three:hover, .btn-custom-three:active {
-  border: 1px solid #66cccc;
-  text-decoration: none;
-  color: white;
-  background-color: #66cccc;`
+#white-navbar .btn-custom-three:hover {
+    color: white;
+    background-color: rgba(102, 204, 204, 0.5);
+    border: 1px solid rgba(102, 204, 204, 1);
+    text-decoration: none;
+}
+#white-navbar .btn-custom-three:active, #white-navbar .btn-custom-three:focus {
+    background-color: rgba(102, 204, 204, 1);
 }
 
 .btn-info.disabled,
 .btn-info[disabled] {
   background-color: rgba(204, 0, 102, 0.5);
-  border-color: rgba(204, 0, 102, 1);
+  border-color: rgba(204, 0, 102, 0.5);
 }
 
 /* =============================================================
@@ -245,20 +247,17 @@ MENU SECTION STYLES - TODO match with html
 /* TODO delete below?*/
 .navbar-brand {
     padding: 5px;
-    color: #fff;
 }
 .navbar-brand > img {
   height: 100%;
   width: auto;
 }
-
 .navbar-inverse {
     background-color: rgba(102, 204, 204, 0.95);
     border-color: transparent;
     color: rgb(255,255,255); 
     width: 100%;
 }
-
 .nav .navbar-nav .navbar-right li:hover {
     /*border-bottom: 1px solid rgb(255,255,255);*/
     /*color: rgb(141, 204, 204);    */
@@ -276,46 +275,67 @@ MENU SECTION STYLES - TODO match with html
     color: white;        
 }
 .navbar-inverse .navbar-nav > li > a {
-    font-size: 1em;
+    font-size: 13px;
     font-weight: 600;
     color: white;
     padding: 3px 0px;
     letter-spacing: 2px;
-    margin: 10px 10px 10px 10px;
+    margin: 10px 10px 10px 10px
 }
-/* navbar-brand text */
-/*.navbar-inverse .navbar-brand, .navbar-inverse .navbar-brand:hover {
-    color:  white;
-    font-size: 30px;
-    /*font-weight: 900;*/
-    /*font-family: 'Roboto', sans-serif;*/
-/*}*/
 .navbar-form {
-    margin-top: 8px;
+    padding: 5px 0px;
+    margin-bottom: 0px;
+    margin-left: 5px;
+    margin-top: 3px;
     margin-right: -15px;
+
 }
 .navbar-form .control-label {
     margin-bottom: 30;
     vertical-align: middle;
 }
-/*changes border color on collapse*/
 .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
     border-color: #fff;
 }
-
-.container > .navbar-header {
-  margin-left: -15px;
+/*.navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
+background-color: rgb(40, 141, 203);
 }
+.navbar-inverse .navbar-toggle {
+border-color: rgb(40, 141, 203);
+}*/
+
+/* WHITE MENU LINKS SECTION*/
+#white-navbar .navbar-nav > .active > a, #white-navbar .navbar-nav > .active > a:hover, #white-navbar .navbar-nav > .active > a:focus {
+    border-bottom: 1px solid rgb(102, 204, 204);
+    color: #66cccc;
+}
+
+#white-navbar .navbar-nav > li > a {
+    color: rgb(102, 204, 204);
+}
+#white-navbar .navbar-nav > li > a:hover {
+    border-bottom: 1px solid rgb(102, 204, 204);
+    color: rgb(102, 204, 204);
+}
+#white-navbar {
+    color: rgb(102, 204, 204);
+    background-color: rgba(255, 255, 255, 0.95);
+}
+.navbar-toggle {
+    color: rgba(102, 204, 204, 1);
+}
+
+/*.navbar {
+    color: #fff;
+    margin-bottom: 0px;
+}*/
 
 /*============================
 SEARCHBAR STYLES COLORED
 ============================*/
-
 .form-control {
-  /*font-size: 14px;*/
   color: #aaa;
   background-color: #fff;
-  /*border: 1px solid #333;*/
   border: 1px solid #fff;
   border-radius: 4px 0 0 4px;
   /* changes top of box shadow */
@@ -340,96 +360,12 @@ SEARCHBAR STYLES COLORED
 .form-control::-webkit-input-placeholder {
   color: #aaa;
 }
-
 /*============================
 SEARCHBAR STYLES WHITE
 ============================*/
-
-#menu-section .form-control {
-  /*font-size: 14px;*/
-  color: #aaa;
-  background-color: #fff;
-  /*border: 1px solid #333;*/
+#white-navbar .form-control {
   border: 1px solid #66cccc;
-  border-radius: 4px 0 0 4px;
-  /*-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
-          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);*/
 }
-#menu-section .form-control:focus {
-  border-color: #66cccc;
-  outline: 0;
-  /*-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
-          box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);*/
-}
-
-#menu-section .form-control::-moz-placeholder {
-  color: #aaa;
-  opacity: 1;
-}
-#menu-section .form-control:-ms-input-placeholder {
-  color: #aaa;
-}
-#menu-section .form-control::-webkit-input-placeholder {
-  color: #aaa;
-}
-
-.navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
-background-color: rgba(255,255,255,0.5);
-border-color: #fff;
-}
-.navbar-inverse .navbar-toggle {
-border-color: #fff;
-}
-
- /*MODEL PAGE MENU LINKS SECTION*/
-#menu-section {
-    color: rgb(102, 204, 204);
-    background-color: rgba(255, 255, 255, 0.95);
-    position: center;
-}
-
-#menu-section .navbar-nav > .active > a, #menu-section .navbar-nav > .active > a:hover, #menu-section .navbar-nav > .active > a:focus {
-    background-color: transparent;
-    border-bottom: 1px solid rgb(102, 204, 204); 
-    color: rgb(102, 204, 204);
-}
-#menu-section .navbar-nav > li > a:hover {
-    /*border-bottom: 1px solid rgb(255,255,255);*/
-    border-bottom: 1px solid rgb(102, 204, 204);
-    color: rgb(102, 204, 204);        
-}
-
-#menu-section .navbar-nav > li > a {
-    font-size: 1em;
-    font-weight: 600;
-    padding: 3px 0px;
-    letter-spacing: 2px;
-    margin: 10px 10px 10px 10px;
-    color: rgb(102, 204, 204);
-}
-
-/*#menu-section .navbar-brand {
-    color: rgb(102, 204, 204);
-    background-color: transparent;
-}*/
-
-#menu-section .navbar-collapse, #menu-section .navbar-form {
-    color: rgba(102, 204, 204, 1.0);
-    border-color: rgb(102, 204, 204);
-}
-#menu-section .navbar-toggle:hover, #menu-section .navbar-toggle:focus {
-background-color: rgba(102, 204, 204, 0.5);
-border-color: rgb(102, 204, 204);
-}
-#menu-section .navbar-toggle {
-background-color: rgba(102, 204, 204, 1.0);
-border-color: white;
-}
-
-/*.navbar {
-    color: #fff;
-    margin-bottom: 0px;
-} */
 
 /* =============================================================
 HOME SECTION STYLES - CAROUSEL
@@ -572,7 +508,6 @@ RECIPE SECTION STYLES
     margin-right: 0;
     margin-left: 0;
 }
-
 #bgimg {
   width: 100%;
   height: 100%;
@@ -582,7 +517,6 @@ RECIPE SECTION STYLES
   position: relative;
   /*background-position: 50% 100%; */
 }
-
 #recipe {
     width: 60%;
     position: relative;
@@ -603,6 +537,7 @@ RECIPE SECTION STYLES
   margin-top: 20px;
   margin-bottom: 20px;
 }
+
 /*============================
 TEAM SECTION STYLES
 ==============================*/
@@ -760,7 +695,7 @@ footer {
     text-align: right;
     /*background-color: rgba(204, 0, 102, 0.9);*/
     width: 100%;
-    bottom: 0 !important; /* stick to bottom */
+    bottom: 0; /* stick to bottom */
 }
 
 /*footer {
@@ -778,8 +713,6 @@ footer {
 /*============================
 DATA TABLE STYLE
 ==============================*/
-
-/*<input type="search" class="" placeholder="" aria-controls="example">*/
 table.dataTable {
     width: 100%;
     margin: 0 auto;
@@ -1275,7 +1208,7 @@ input, button, select, textarea {
     font-size: inherit;
     line-height: inherit;
     color: #aaa;
-    background-color: white;
+    background-color: #fff;
     box-shadow: none;
     border-radius: 4px;
 }
