@@ -253,7 +253,15 @@ fieldset[disabled] .btn-info:active,
 .btn-info[disabled].active,
 fieldset[disabled] .btn-info.active {
   background-color: rgba(204, 0, 102, 0.5);
-  border-color: rgba(204, 0, 102, 0.5);
+  border-color: rgba(204, 0, 102, 1);
+}
+/*.btn-info {
+  color: #fff;
+  background-color: rgba(204, 0, 102, 0.5);
+  border-color: rgba(204, 0, 102, 1);
+}*/
+.progress-bar-info {
+  background-color: green;
 }
 #white-navbar .btn-custom-three, #home-menu-section .btn-custom-three {
     color: #66cccc;

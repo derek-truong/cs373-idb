@@ -58,4 +58,4 @@ IDB1.log:
 	git log > IDB2.log
 
 tests.out: tests.py
-	python3 app/tests.py
+	python3 tests.py
