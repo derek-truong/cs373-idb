@@ -255,11 +255,25 @@ fieldset[disabled] .btn-info.active {
   background-color: rgba(204, 0, 102, 0.5);
   border-color: rgba(204, 0, 102, 1);
 }
-/*.btn-info {
+.btn-info {
+  /*border-color: rgba(204, 0, 102, 1);*/
+}
+/*46b8da*/
+.btn-info:hover,
+.btn-info:focus,
+.btn-info.focus,
+.btn-info:active,
+.btn-info.active,
+.open > .dropdown-toggle.btn-info {
   color: #fff;
   background-color: rgba(204, 0, 102, 0.5);
   border-color: rgba(204, 0, 102, 1);
-}*/
+}
+.btn-info.active.focus, .btn-info.active:focus, .btn-info.active:hover, .btn-info:active.focus, .btn-info:active:focus, .btn-info:active:hover, .open>.dropdown-toggle.btn-info.focus, .open>.dropdown-toggle.btn-info:focus, .open>.dropdown-toggle.btn-info:hover {
+    background-color: rgba(204, 0, 102, 0.5);
+  border-color: rgba(204, 0, 102, 1);
+}
+
 .progress-bar-info {
   background-color: green;
 }
