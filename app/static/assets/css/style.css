@@ -532,17 +532,17 @@ SWEETSPOT SECTION STYLES
 background-color: transparent;
 color: #fff;
 }*/
-#sweetspots-div .categories a.active {
+#sweetspots .categories a.active {
     background-color: rgba(204, 0, 102, 0.5);
     color: white;    
 }
-/*.isotope .isotope-item {
+.isotope .isotope-item {
 -webkit-transition-duration: 0.8s;
 -moz-transition-duration: 0.8s;
 transition-duration: 0.8s;
-}*/
+}
 
-#sweetspots-div .sweetspots-div-wrapper {
+#sweetspots .sweetspots-div-wrapper {
 padding: 10px;
 border-radius: 5px;
 -moz-border-radius: 5px;
@@ -557,7 +557,7 @@ transition: all 0.5s ease-in-out;
 border: 1px solid rgb(102,204,204);
 }
 
-#sweetspots-div .sweetspots-div-wrapper:hover {
+#sweetspots .sweetspots-div-wrapper:hover {
 /*background-color: transparent;*/
 background-color: rgba(128,128,128, 1.0);
 border: 1px solid rgb(102,204,204);
@@ -570,7 +570,7 @@ filter: alpha(opacity=80); /* ie lt 7 */
 
 }
 
-#sweetspots-div .sweetspots-div-wrapper h4 {
+#sweetspots .sweetspots-div-wrapper h4 {
 padding-top: 10px;
 }
 

@@ -92,7 +92,7 @@
 {
 "name": "Charleston",
 "elevation": 6.096,
-"demonym": "NULL",
+"demonym": "Unknown",
 "population": 120083,
 "description": "Charleston is the oldest and second-largest city in the U.S. state of South Carolina, the county seat of Charleston County, and the principal city in the Charleston–North Charleston–Summerville Metropolitan Statistical Area.",
 "country": "United States",
@@ -112,7 +112,7 @@
 {
 "name": "Cologne",
 "elevation": 37,
-"demonym": "NULL",
+"demonym": "Unknown",
 "population": 1057327,
 "description": "Cologne (English pronunciation: /kəˈloʊn/; German Köln [kœln], Colognian: Kölle [ˈkœɫə]), Germany's fourth-largest city (after Berlin, Hamburg, and Munich), is the largest city both in the German Federal State of North Rhine-Westphalia and within the Rhine-Ruhr Metropolitan Area, one of the major European metropolitan areas with more than ten million inhabitants.Cologne is located on both sides of the Rhine River, fewer than eighty kilometers from Belgium.",
 "country": "Germany",
@@ -262,7 +262,7 @@
 {
 "name": "Maui",
 "elevation": 3055.0105,
-"demonym": "NULL",
+"demonym": "Unknown",
 "population": 144444,
 "description": "The island of Maui (/ˈmaʊ.iː/; Hawaiian: [ˈmɐuwi]) is the second-largest of the Hawaiian Islands at 727.2 square miles (1,883 km2) and is the 17th largest island in the United States. Maui is part of the State of Hawaii and is the largest of Maui County's four islands, bigger than Molokaʻi, Lānaʻi, and unpopulated Kahoʻolawe. In 2010, Maui had a population of 144,444, third-highest of the Hawaiian Islands, behind that of Oʻahu and Hawaiʻi Island.",
 "country": "United States",
@@ -372,7 +372,7 @@
 {
 "name": "Queenstown",
 "elevation": 310,
-"demonym": "NULL",
+"demonym": "Unknown",
 "population": 28224,
 "description": "Queenstown (Māori: Tāhuna) is a resort town in Otago in the south-west of New Zealand's South Island.It is built around an inlet called Queenstown Bay on Lake Wakatipu, a long thin Z-shaped lake formed by glacial processes, and has spectacular views of nearby mountains such as The Remarkables, Cecil Peak, Walter Peak and just above the town; Ben Lomond and Queenstown Hill.Queenstown has an urban population of 12,500 (June 2014 estimate), making it the 29th largest urban area in New Zealand, and the third largest urban area in Otago, behind Dunedin and Oamaru.The Queenstown-Lakes District has a land area of 8,704.97 square kilometres (3,361.01 sq mi) not counting its inland lakes (Lake Hāwea, Lake Wakatipu, and Lake Wanaka). ",
 "country": "New Zealand",
@@ -432,7 +432,7 @@
 {
 "name": "Sydney",
 "elevation": "19",
-"demonym": "NULL",
+"demonym": "Unknown",
 "population": 4840600,
 "description": "Sydney /ˈsɪdni/ is the state capital of New South Wales and the most populous city in Australia and Oceania. Located on Australia's east coast, the metropolis surrounds the world's largest natural harbour, and sprawls towards the Blue Mountains to the west. Residents of Sydney are known as \"Sydneysiders\".",
 "country": "Australia",
@@ -492,7 +492,7 @@
 {
 "name": "Yokohama",
 "elevation": "43",
-"demonym": "NULL",
+"demonym": "Unknown",
 "population": 3697894,
 "description": "Yokohama (横浜市, Yokohama-shi) (About this sound listen ), officially the City of Yokohama, is the second largest city in Japan by population after Tokyo, and most populous municipality of Japan. It is the capital city of Kanagawa Prefecture. It lies on Tokyo Bay, south of Tokyo, in the Kantō region of the main island of Honshu. It is a major commercial hub of the Greater Tokyo Area.Yokohama's population of 3.7 million makes it Japan's largest incorporated city.",
 "country": "Japan",

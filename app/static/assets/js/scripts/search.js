@@ -92,11 +92,11 @@ var SearchItem = React.createClass({
 
     return (
       <a id="ss" href={this.props.search_ob.link}>
-      <li id="ll">
-        <p id="search_name">{output}</p> 
-        <p className="cap">{output2}<br/>{output3}</p>
-      </li>
-      <hr/>
+        <li id="ll">
+          <p id="search_name">{output}</p> 
+          <p className="cap">{output2}<br/>{output3}</p>
+        </li>
+        <hr/>
       </a>
 
     );

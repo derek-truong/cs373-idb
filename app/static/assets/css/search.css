@@ -4,11 +4,14 @@
   transform: scale(1.02);
 }
 
-#ss{
+#ss p {
   color: #333;
   text-decoration: none;
   background-color: none;
   /*font-size: 18px;*/
+}
+#ss hr {
+  color: #eee;
 }
 
 #search_name {

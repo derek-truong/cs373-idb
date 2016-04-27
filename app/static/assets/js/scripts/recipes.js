@@ -93,7 +93,7 @@ var Recipe = React.createClass({
             </div>
           </Modal.Body>
           <Modal.Footer>
-            <Button bsStyle="info" onClick={this.close}>Close</Button>
+            <Button className="btn btn-custom btn-custom-two-r" bsStyle="info" onClick={this.close}>Close</Button>
           </Modal.Footer>
         </Modal>
       </div>
